@@ -1,0 +1,27 @@
+{
+  "name": "oraclewines",
+  "version": "1.0.0",
+  "description": "Oracle Wines:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francmauric/grupo_6_OracleWines.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francmauric/grupo_6_OracleWines/issues"
+  },
+  "homepage": "https://github.com/francmauric/grupo_6_OracleWines#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
