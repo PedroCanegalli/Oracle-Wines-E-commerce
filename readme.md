@@ -14,6 +14,8 @@ Referencias para la Web:
   //https://www.mercadolibre.com.ar/
   //https://www.amazon.com/
 
+Trello:
+https://trello.com/b/6ey7R3mJ/sprint-2
 
 INTEGRANTES.
 
