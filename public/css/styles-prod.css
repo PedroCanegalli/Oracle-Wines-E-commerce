@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Cardo', serif;
+}
+
+div.top-header{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+header div.top-header p{
+    display: flex;
+    text-align: center;
+    align-items: center;    
+}
+
+header div.logo{
+    width: 40%;
+}
+
+header div.logo img{
+    width: 40%;
+    border-radius:100px;
+}
+
+header div.marca{
+    width: 40%;
+}
+main{
+    margin: 5%;
+}
+
+main section.central{
+    display: flex;
+}
+
+section div.imagen{
+    display: flex;
+    width: 70%;
+    padding: 5%;
+    justify-content: center;
+}
+
+main section div img{
+    width: 50%;
+
+}
+
+section div.descripcionProducto{
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+}
+
+div input[type="number"]{
+	width:30%;  
+	padding:8px 16px;
+	margin-top:5px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#000;
+	background-color:#EEEEEE;
+}
+
+div input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:15px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+}
+
+div.masDescripcion{
+    width: 70%;
+    padding: 5%;
+}
+
+footer{
+    padding: 2%;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+footer section{
+    display: flex;
+
+}
+
+footer section div#contacto{
+    width: 50%;
+}
+
+div#contacto i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+}
+
+footer section div#redes{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+div#redes i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+}
+
+footer div p#copy{
+    text-align: left;
+    margin: 30px 5px;
+}
+
+
+
+
