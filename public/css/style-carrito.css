@@ -1,0 +1,330 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Cardo', serif;
+}
+
+/*Header*/
+
+header{
+    background-color: #6d0f1c;
+    height: 35%;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    max-width: 40%;
+    border-radius: 50%;
+}
+
+.espacio-busqueda{
+    max-width: 60%;
+}
+
+.burger-button{
+    color: white;
+    font-size: 30px;
+    width: 30px;
+    margin: auto;
+    transition: all 450ms;
+}
+
+.navbar-inferior{
+    display: none;
+}
+
+
+
+/*Cuerpo*/
+
+main{
+    margin: auto;
+    background-color: #ebebeb;;
+}
+
+.lista-productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 1px lightgrey;
+    border-radius: 3%;
+    margin: 2% 0;
+    transition: all 300ms;
+    background-color: white;
+}
+
+.producto:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.imagen-vino{
+    max-height: 200px;
+    padding: 5px;
+}
+
+.detalle-producto{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nombre-producto{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.precio-producto{
+    font-size: 20px;
+    color: #6d0f1c;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.unidades-producto{
+    display: flex;
+}
+
+.cantidad{
+    font-weight: bold;
+}
+
+button{
+    background-color: black;
+    border: solid 5px black;
+    color: white;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+button:hover{
+    background-color: darkslategrey;
+    border: solid 5px darkslategrey;
+}
+
+.descripcion-producto{
+    display: none;
+}
+
+.datos-entrega{
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    margin: 10px;
+}
+
+.domicilio{
+    font-weight: bold;
+}
+
+.direccion{
+    color: #6d0f1c;
+    font-style: italic;
+}
+
+.titulo-costo{
+    font-weight: bold;
+}
+
+.precio-envio{
+    color: #6d0f1c;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.confirmar-compra{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.precio-total{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+
+.total-pagar{
+    padding: 10px;
+    color: #6d0f1c;
+}
+
+.confirmar-compra button{
+    background-color: #6d0f1c;
+    border: solid 10px #6d0f1c;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8%;
+    transition: all 450ms;
+}
+
+.confirmar-compra button:hover{
+    background-color: #31060c;
+    border: solid 10px #31060c;
+}
+
+/*Footer*/
+.footer{
+    background-color: rgb(41, 44, 44);
+    height: 150px;
+    width: 100%;
+
+}
+
+.menu-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.redes-sociales{
+    display: flex;
+    font-size: 25px;
+    flex-direction: column;
+    padding: 25px;
+    color: white;
+}
+
+.contacto{
+    font-size: 16px;
+    padding: 25px;
+    color: white;
+}
+
+footer a{
+    color: rgb(187, 145, 145);
+}
+
+@media (min-width: 425px){
+    .descripcion-producto{
+        display: block;
+        padding-top: 10px;
+    }
+
+    header {
+        max-height: 195px;
+    }
+
+    .burger-button{
+        display: none;
+    }
+
+    .logo{
+        max-width: 130px;
+    }
+
+    .espacio-busqueda{
+        max-width: 60%;
+    }
+
+    .navbar-inferior{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        max-width: 750px;
+    }
+
+    .navbar-right{
+        display: flex;
+        color: #ebebeb;
+        font-size: 15px;
+    }
+
+    .navbar-right a{
+        color: #ebebeb;
+        text-decoration: none;
+        padding: 0 3px;
+    }
+
+    .navbar-left a{
+        color: #ebebeb;
+        justify-content: space-around;
+        text-decoration: none;
+        padding: 0 3px;
+        transition: all 450ms;
+    }
+
+    .navbar-left a:hover{
+        background-color: white;
+        color: black;
+    }
+
+    .logo-usuario{
+        display: flex;
+        padding: 5px;
+        transition: all 400ms;
+    }
+    .logo-carrito{
+        padding: 5px;
+        transition: all 400ms;
+        margin-left: 10px;
+    }
+
+    .logo-usuario:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-usuario a:hover{
+        color: black;
+    }
+
+    .logo-carrito:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-carrito a:hover{
+        color: black;
+    }
+
+}
+
+@media (min-width: 1024px){
+    .menu-footer{
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .espacio-busqueda{
+        max-width: 190px;
+    }
+
+    .navbar{
+        max-width: 850px;
+        margin: auto;
+    }
+    .lista-productos{
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .datos-entrega{
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .confirmar-compra{
+        max-width: 800px;
+        margin: auto;
+    }
+
+}
+
+
+
