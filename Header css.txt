@@ -1,0 +1,128 @@
+/*Header*/
+
+header{
+    background-color: #6d0f1c;
+    height: 35%;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    max-width: 40%;
+    border-radius: 50%;
+}
+
+.espacio-busqueda{
+    max-width: 60%;
+}
+
+.burger-button{
+    color: white;
+    font-size: 30px;
+    width: 30px;
+    margin: auto;
+    transition: all 450ms;
+}
+
+.navbar-inferior{
+    display: none;
+}
+
+@media (min-width: 425px){
+    header {
+        max-height: 195px;
+    }
+
+    .burger-button{
+        display: none;
+    }
+
+    .logo{
+        max-width: 130px;
+    }
+
+    .espacio-busqueda{
+        max-width: 60%;
+    }
+
+    .navbar-inferior{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        max-width: 750px;
+    }
+
+    .navbar-right{
+        display: flex;
+        color: #ebebeb;
+        font-size: 15px;
+    }
+
+    .navbar-right a{
+        color: #ebebeb;
+        text-decoration: none;
+        padding: 0 3px;
+    }
+
+    .navbar-left a{
+        color: #ebebeb;
+        justify-content: space-around;
+        text-decoration: none;
+        padding: 0 3px;
+        transition: all 450ms;
+    }
+
+    .navbar-left a:hover{
+        background-color: white;
+        color: black;
+    }
+
+    .logo-usuario{
+        display: flex;
+        padding: 5px;
+        transition: all 400ms;
+    }
+    .logo-carrito{
+        padding: 5px;
+        transition: all 400ms;
+        margin-left: 10px;
+    }
+
+    .logo-usuario:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-usuario a:hover{
+        color: black;
+    }
+
+    .logo-carrito:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-carrito a:hover{
+        color: black;
+    }
+
+}
+
+@media (min-width: 1024px){
+    .espacio-busqueda{
+        max-width: 190px;
+    }
+
+    .navbar{
+        max-width: 850px;
+        margin: auto;
+    }
+
+}

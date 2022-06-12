@@ -9,12 +9,16 @@ app.listen(3100,() => {
     console.log("wey esta madre si funciona")
 })
 
+app.get("/", (req,res)=> {
+    res.sendFile(path.resolve(__dirname,"./views/formulario-registro.html"))
+})
+
 app.get("/carrito", (req,res)=> {
     res.sendFile(path.resolve(__dirname,"./views/carrito.html"))
 })
 
-app.get("/", (req,res)=> {
-    res.sendFile(path.resolve(__dirname,"./views/formulario-registro.html"))
+app.get("/producto", (req,res)=> {
+    res.sendFile(path.resolve(__dirname,"./views/productDetail.html"))
 })
 
 

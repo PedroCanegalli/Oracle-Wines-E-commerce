@@ -179,34 +179,44 @@ button:hover{
 }
 
 /*Footer*/
-.footer{
-    background-color: rgb(41, 44, 44);
-    height: 150px;
-    width: 100%;
+
+footer{
+    padding: 2%;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+footer section{
+    display: flex;
 
 }
 
-.menu-footer{
+footer section div#contacto{
+    width: 50%;
+}
+
+div#contacto i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+}
+
+footer section div#redes{
     display: flex;
+    width: 50%;
     justify-content: space-between;
 }
 
-.redes-sociales{
-    display: flex;
-    font-size: 25px;
-    flex-direction: column;
-    padding: 25px;
-    color: white;
+div#redes i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
 }
 
-.contacto{
-    font-size: 16px;
-    padding: 25px;
-    color: white;
-}
-
-footer a{
-    color: rgb(187, 145, 145);
+footer div p#copy{
+    text-align: left;
+    margin: 30px 5px;
 }
 
 @media (min-width: 425px){
@@ -296,10 +306,6 @@ footer a{
 }
 
 @media (min-width: 1024px){
-    .menu-footer{
-        max-width: 850px;
-        margin: auto;
-    }
 
     .espacio-busqueda{
         max-width: 190px;
