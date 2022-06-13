@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Wines</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&family=Roboto&family=Tiro+Devanagari+Sanskrit:ital@1&display=swap" 
+    rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+          <div class="titulos">
+            <div class="main-burguer">
+                <button><i class="fas fa-bars"></i></button>
+            </div>
+            
+            <div class="logo-registro">
+                <img src="images/logo.jpeg" alt="Logo de Oracle Wines" ;>
+            </div>
+            <div class="ingreso-registro">
+                <a class="ingreso" href="">Ingresar</a>
+                <a class="registro" href="">Registrarse</a>
+                
+               <button class="usuario"><i class="fas fa-user-circle"></i><p>User</p></button>
+            </div>
+          </div>  
+           
+            <nav class="nav-bar">
+                <ul class="nav-bar1">
+                <li class="links" type=none><a href="">HOME</a></li>
+                <li class="links" type=none><a href="">HISTORIA</a></li>
+                <li class="links" type=none><a href="">SUCURSALES</a></li>
+                <li class="links" type=none><a href="">SERVICIOS</a></li>
+                <li class="links" type=none><a href="productDetail">PRODUCTOS</a></li>
+                <li class="links" type=none><a href="">SERVICIOS</a></li>
+                <li class="links" type=none><a href="">CONTACTO</a></li>
+                </ul>
+            </nav>
+                <form class="form1" action="#" method="GET">       
+                  <button class="button-search"><input type="search" placeholder="buscar productos" class="search" ><i class="fa fa-search"></i></button>
+              </form>
+           
+    </header>
+    <section class="puclicidad">
+        <img src="./images/banner3.jpg " width="100%" heigth="100%" class="puclidad-directo">
+    </section>
+    <main>
+        <div class="form">   
+            <form action="registro" method="post">
+                <input class="campos-registro"type="text" name="Nombre" placeholder="Nombre y Apellido">
+                <br>
+                <input class="campos-registro" type="text" name="usuario" placeholder="Nombre de usuario">
+                <br>
+                <input class="campos-registro" type="email" name="email" placeholder="E-mail">
+                <br>
+                <label class="titulos-registros"for="fechaNacimiento">Fecha de nacimiento</label>
+                <br>
+                <input type="date" name="fechaNaciomieto" placeholder="Fecha de Nacimiento">
+                <br>
+                <input class="campos-registro" type="text" name="domicilio"placeholder="Domicilio">
+                <br>
+                <label class="titulos-registros" for="perfilUsuario">Tipo de factura</label>
+                <br>
+                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura A  </label>
+                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura B  </label>
+                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura C  </label>
+                <br>
+                <label class="titulos-registros" for="checkbox">Categorías de interés</label>
+                <br>
+                <input type="checkbox" name="categorias" value="electro"><label for="categorias"> Fiestas </label>
+                <br>
+                <input type="checkbox" name="categorias" value="moda"><label for="categorias"> Casamientos </label>
+                <br>
+                <input type="checkbox" name="categorias" value="hogar"><label for="categorias"> Eventos Formales </label>
+                <br>
+                <input type="checkbox" name="categorias" value="jugueteria"><label for="categorias"> Reuniones </label>
+                <br>
+                <input type="checkbox" name="categorias" value="vidaSana"><label for="categorias"> Vida sana </label>
+                <br>
+                <label class="titulos-registros" for="foto">Foto de Usuario</label>
+                <br>
+                <input type="file" name="foto" accept=".jpg, .png">
+                <br>
+                <input class="campos-registro" type="password" name="contraseña" placeholder="Contraseña">
+                <br>
+                <input class="campos-registro" type="password" name="contraseña" placeholder="Confirmar contraseña">
+                <br>
+                <input class="enviar" type="submit" name="enviar" value="Registrarse" >
+                <input class="reset" type="reset" name="borrar" value="Borrar">
+            </form>
+        </div>   
+    </main>
+    <footer>
+        <section>
+            <div id="contacto">
+                <i class="fas fa-address-card"></i>
+                <h3>Contactanos</h4>
+                <p>Direccion</p>
+                <p>telefono</p>
+                <p>mail</p>
+            </div>
+
+            <div id="redes">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+                
+        </section>
+        <div>
+            <p id="copy">Copyright © 1999-2022 OracleWines S.R.L.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

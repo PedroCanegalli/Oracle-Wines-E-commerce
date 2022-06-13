@@ -1,0 +1,309 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    background-color: #6d0f1c; 
+
+}
+body{
+    
+    font-family: 'Cardo', serif;
+}
+/* encabezado */
+header{
+    background-color: #ffffff;
+}
+.logo-registro img{
+    width: 100%;
+    border-radius:50%;
+}
+.logo-registro{
+    width: 120px;
+    padding-top: 30px;
+}
+
+.main-burguer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 27%;
+    padding: 10px;
+    
+}
+.main-burguer i{
+    padding-top:3px
+}
+.main-burguer button{
+    margin: 0px;
+    color: #aa0303;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #5f0343;
+    padding: 8px;
+    font-size: 22px;
+    opacity:1
+}
+.main-burguer button:hover{
+    opacity: 1;
+    background-color: #790257;
+    color: #ffffff;
+}
+
+.nav-bar{
+    display:none;
+}
+/* menu hamburguesa- logo- usuario*/
+.titulos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ingreso-registro{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    
+}
+/* body*/
+.form1{   
+	padding:0px 10px;
+	margin:2px 0;
+    margin-top: 15px;
+
+	display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.search{
+    border-radius: 7px;
+    width: 90%;
+    border: 0px;
+    font-size: 18px;
+    align-self: flex-start;
+    height: 20px;
+    padding: 0%;
+    background-color: rgb(241, 241, 241);
+}
+.button-search i{
+    font-size: 15px;
+}
+.button-search{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgb(241, 241, 241);
+    border:rgb(241, 241, 241)
+
+}
+
+.ingreso, .registro{
+    font-size: 15px;
+    padding: 1px;
+    display:none
+}
+.usuario{
+    margin: 0px;
+    color: #aa0303;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #5f0343;
+    padding-top:10px;
+    padding: 8px;
+    font-size: 10px;
+    opacity:1;
+    height:40px;
+    width:40px;  
+    transition: 450ms; 
+}
+.usuario:hover{
+    opacity:1;
+    color: #ffffff;
+    background-color: #790257;
+    
+}
+.usuario i{
+    font-size: 20px;
+}
+footer{
+    background-color: rgb(58, 57, 57);
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding:2%;
+    border-radius:10px;
+    margin: auto;
+    padding: 16px;
+    
+}
+form input.campos-registro{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:7px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+form label{
+	
+	font-weight:bold;
+	display:inline-block;
+    padding: 3%;
+    color:rgb(51, 51, 51);
+}
+.titulos-registros{
+    font-size: 15px;
+    color: rgb(51, 51, 51);
+    padding: 10px;
+}
+.enviar, .reset{
+    width:90px;
+	padding:5px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:4px;
+    color: #ffffff;
+	background-color:#bebebe;
+	margin:8px 0;
+    transition: 450ms;
+    opacity:1;
+}
+.enviar:hover,.reset:hover{
+       opacity:1;
+       background-color:#6d0f1c; 
+}
+/*footer */
+footer{
+    padding: 2%;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+footer section{
+    display: flex;
+
+}
+
+footer section div#contacto{
+    width: 50%;
+}
+
+div#contacto i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+}
+
+footer section div#redes{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+div#redes i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+}
+
+footer div p#copy{
+    text-align: left;
+    margin: 30px 5px;
+}
+
+@media(min-width: 361px){
+    .nav-bar{
+        display: block;
+    }
+    .main-burguer button{
+        display: none;
+        width: 15%;
+    }
+    .nav-bar1 a{
+        text-decoration: none;
+        color: #bebebe;
+        font-size: 25px;
+        position: relative;
+    }
+    .nav-bar1 a:after{
+        content: "";
+        position:absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color:#bebebe;
+    
+    /*animacion derecha a izquierda*/
+       transform-origin: right;
+       transform: scaleX(0);
+       transition: transform 500ms ease-in-out;
+    }
+    .nav-bar1 a:hover:after{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    .nav-bar1{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;  
+        justify-content: space-around; 
+    }
+    .nav-bar1 li{
+        padding: 5px;
+        
+    }
+    
+    .logo-registro{
+        width: 180px;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: space-between;
+
+    }
+    .ingreso-registro{
+        width: 12%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        height: 110px;
+        
+    }
+   
+    .ingreso, .registro{
+        display:block;
+        text-decoration: none;
+        color:#bebebe;
+        padding:10px;
+        height: 30px;
+    }
+    .form1{
+        width: 30%;
+    }
+    .titulos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
