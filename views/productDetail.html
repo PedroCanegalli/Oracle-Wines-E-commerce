@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="/css/styles-prod.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,22 +17,41 @@
 
     <body>
         <header>
-            <div class="top-header">
-                <div class="logo">
-                    <img src="img/logo.jpeg" alt="Logo de Oracle Wines">
+            <div class="navbar">
+                <img class="logo" src="/images/logo.jpeg" alt="Oracle Wines">
+                <div class="barra-busqueda">
+                    <form action="/" method="get">
+                    <input class="espacio-busqueda" type="text" placeholder="Buscar producto">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
-                <div class="marca">
-                    Oracle Wines
+            </div>
+            <div class="burger-button"><i class="fa-solid fa-bars"></i></div>
+            <div class="navbar-inferior">
+                 <div class="navbar-left">
+                    <a href="">Historia</a>
+                    <a href="">Sucursales</a>
+                    <a href="">Productos</a>
+                    <a href="">Servicios</a>
+                    <a href="">Contacto</a>
                 </div>
-                <div class="usuario">
-                    <i class="fas fa-user"></i>
+                <div class="navbar-right">
+                    <div class="logo-usuario">
+                        <a href="/log-in">Ingresá </a> 
+                        <a href="/formulario-registro">Registrate </a> 
+                        <i class="fa-solid fa-circle-user"></i>
+                    </div>
+                    <div class="logo-carrito">
+                        <a href="/carrito">Carrito </a>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
                 </div>
-
+            </div>
         </header>
         <main>
             <section class="central">
                 <div class="imagen">
-                    <img src="img/wine1.png" alt="Imagen del producto">
+                    <img src="images/wine1.png" alt="Imagen del producto">
                 </div>
 
                 <div class="descripcionProducto">
