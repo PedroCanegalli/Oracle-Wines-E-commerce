@@ -1,0 +1,341 @@
+html{
+    width: 100%;
+}
+
+body{
+    font-family: 'Cardo', serif;
+    width: 100%;
+    margin: 0px;
+}
+
+/*Header*/
+
+header{
+    background-color: #6d0f1c;
+    width: 100%;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.barra{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+div.barra .barra-busqueda{
+    background-color: #FFF;
+    border: 1px solid black;
+    outline: none;
+    color: #666;
+    padding: 5px;
+    font-size: 12px;
+    width: 50%;
+    height: 30%;
+    align-items: center;
+    display: inline;
+}
+
+div.barra button{
+    padding: 5px;
+}
+
+div.barra button i{
+    text-align: center;
+}
+
+.logo{
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+h1{
+    font-size: 24px;
+    color: #FFF;
+    width: 45%;
+    text-align: center;
+}
+
+header div.categorias{
+    display: none;
+}
+
+header div.categorias .menu{
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+}
+
+header div.categorias .menu-usuario i{
+    color: #FFF;
+}
+
+header div.categorias .menu-usuario{
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+}
+
+header div.categorias .menu ul li a{
+    color: #FFF;
+    margin: 5px;
+}
+
+header div.categorias .menu-usuario ul li a{
+    color: #FFF;
+    margin: 5px;
+}
+
+.burger-button{
+    color: white;
+    font-size: 30px;
+    width: 30px;
+    margin: auto;
+    transition: all 450ms;
+    display: block;
+}
+
+/* Main */
+
+main{
+    background-color: #ebebeb;
+    text-align: center;
+    align-items: center;
+}
+
+.banner{
+    display: flex;
+    margin-bottom: 35px;
+}
+
+main div.banner img{
+    width: 100%;
+}
+
+main div.seccion1{
+    padding-bottom: 20px;
+}
+
+main div.slogan{
+    display: block;
+    margin: 30px 15px 30px 15px;  
+    background-color: #FFF;
+}
+
+main div.slogan h2{
+    font-size: 40px;
+    padding: 15px;
+    margin: 0px;
+}
+
+main div.slogan button{
+    background-color: #6d0f1c;
+    color: #FFF;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 20px;
+}
+
+main div.fondo{
+    display: flex;
+}
+
+main div.fondo img{
+    width: 100%;
+}
+
+main div.seccion2{
+    padding-bottom: 20px;
+}
+
+main div.producto{
+    display: block;
+    margin: 30px 15px 30px 15px;  
+    background-color: #FFF;
+    justify-content: center;
+}
+
+main div.producto h2{
+    font-size: 40px;
+    padding: 15px;
+    margin: 0px;
+}
+
+main div.producto button{
+    background-color: #6d0f1c;
+    color: #FFF;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 20px;
+}
+
+main div.imagenes{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+main div.imagen{
+    display: flex;
+    justify-content: center;
+}
+
+main div.imagen img{
+    width: 50%;
+}
+
+main div.segunda-imagen img{
+    width: 50%;
+    display: none;
+}
+
+/* Footer */
+
+footer{
+    padding: 2%;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+footer section{
+    display: flex;
+
+}
+
+footer section div#contacto{
+    width: 50%;
+}
+
+div#contacto i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+}
+
+footer section div#redes{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+div#redes i{
+    width: 30%;
+    font-size: 250%;
+    text-align: center;
+}
+
+footer div p#copy{
+    text-align: left;
+    margin: 30px 5px;
+}
+
+@media (min-width: 425px){
+    header ul li{
+        display: inline;
+    }
+
+    .burger-button{
+        display: none;
+    }
+
+    header div.categorias{
+        display: flex;
+    }
+
+    h1{
+        font-size: 48px;
+        color: #FFF;
+        width: 45%;
+        text-align: center;
+    }
+
+    main div.slogan h2{
+        font-size: 60px;
+        padding: 15px;
+        margin: 0px;
+    }
+    
+    main div.slogan button{
+        background-color: #6d0f1c;
+        color: #FFF;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 25px;
+        margin: 20px;
+    }
+
+    main div.producto h2{
+        font-size: 60px;
+        padding: 15px;
+        margin: 0px;
+    }
+    
+    main div.producto button{
+        background-color: #6d0f1c;
+        color: #FFF;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 25px;
+        margin: 20px;
+    }
+
+    main div.imagen{
+        display: flex;
+        justify-content: center;
+    }
+    
+    main div.imagen img{
+        width: 60%;
+    }
+    
+}
+
+@media (min-width: 769px){
+    main div.imagenes{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    main div.imagen img{
+        width: 100%;
+        display: inline;
+        background-color: #FFF;
+    }
+    
+    main div.segunda-imagen img{
+        width: 100%;
+        display: inline;
+        background-color: #FFF;
+    }
+
+    main div.producto h2{
+        font-size: 60px;
+        padding: 15px;
+        margin: 0px;
+        background-color: #FFF;
+    }
+
+    main div.producto{
+        display: block;
+        margin: 30px 15px 30px 15px;  
+        background-color:#ebebeb;
+        justify-content: center;
+    }
+}
