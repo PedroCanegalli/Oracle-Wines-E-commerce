@@ -12,66 +12,43 @@ body{
     font-family: 'Cardo', serif;
 }
 /* encabezado */
+/*Header*/
+
 header{
-    background-color: #ffffff;
-}
-.logo-registro img{
+    background-color: #6d0f1c;
+    height: 35%;
     width: 100%;
-    border-radius:50%;
-}
-.logo-registro{
-    width: 120px;
-    padding-top: 30px;
 }
 
-.main-burguer{
+.navbar{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 27%;
+    justify-content: space-around;
+    align-items: center;
     padding: 10px;
-    
-}
-.main-burguer i{
-    padding-top:3px
-}
-.main-burguer button{
-    margin: 0px;
-    color: #aa0303;
-    background-color: #ffffff;
-    border-radius: 10px;
-    border: #5f0343;
-    padding: 8px;
-    font-size: 22px;
-    opacity:1
-}
-.main-burguer button:hover{
-    opacity: 1;
-    background-color: #790257;
-    color: #ffffff;
 }
 
-.nav-bar{
-    display:none;
+.logo{
+    max-width: 40%;
+    border-radius: 50%;
 }
-/* menu hamburguesa- logo- usuario*/
-.titulos{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+
+.espacio-busqueda{
+    max-width: 60%;
 }
-.ingreso-registro{
-    display: flex;
-    flex-wrap: wrap;
-    width: 30%;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 10px;
-    
+
+.burger-button{
+    color: white;
+    font-size: 30px;
+    width: 30px;
+    margin: auto;
+    transition: all 450ms;
 }
+
+.navbar-inferior{
+    display: none;
+}
+
+
 /* body*/
 .form1{   
 	padding:0px 10px;
@@ -230,80 +207,102 @@ footer div p#copy{
 }
 
 @media(min-width: 361px){
-    .nav-bar{
-        display: block;
-    }
-    .main-burguer button{
-        display: none;
-        width: 15%;
-    }
-    .nav-bar1 a{
-        text-decoration: none;
-        color: #bebebe;
-        font-size: 25px;
-        position: relative;
-    }
-    .nav-bar1 a:after{
-        content: "";
-        position:absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color:#bebebe;
-    
-    /*animacion derecha a izquierda*/
-       transform-origin: right;
-       transform: scaleX(0);
-       transition: transform 500ms ease-in-out;
-    }
-    .nav-bar1 a:hover:after{
-        transform-origin: left;
-        transform: scaleX(1);
-    }
-    .nav-bar1{
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;  
-        justify-content: space-around; 
-    }
-    .nav-bar1 li{
-        padding: 5px;
-        
-    }
-    
-    .logo-registro{
-        width: 180px;
-        padding-top: 30px;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: space-between;
 
-    }
-    .ingreso-registro{
-        width: 12%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        height: 110px;
-        
-    }
-   
-    .ingreso, .registro{
-        display:block;
-        text-decoration: none;
-        color:#bebebe;
-        padding:10px;
-        height: 30px;
-    }
     .form1{
         width: 30%;
     }
-    .titulos{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+
+}
+
+@media (min-width: 425px){
+    header {
+        max-height: 195px;
     }
+
+    .burger-button{
+        display: none;
+    }
+
+    .logo{
+        max-width: 130px;
+    }
+
+    .espacio-busqueda{
+        max-width: 60%;
+    }
+
+    .navbar-inferior{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        max-width: 750px;
+    }
+
+    .navbar-right{
+        display: flex;
+        color: #ebebeb;
+        font-size: 15px;
+    }
+
+    .navbar-right a{
+        color: #ebebeb;
+        text-decoration: none;
+        padding: 0 3px;
+    }
+
+    .navbar-left a{
+        color: #ebebeb;
+        justify-content: space-around;
+        text-decoration: none;
+        padding: 0 3px;
+        transition: all 450ms;
+    }
+
+    .navbar-left a:hover{
+        background-color: white;
+        color: black;
+    }
+
+    .logo-usuario{
+        display: flex;
+        padding: 5px;
+        transition: all 400ms;
+    }
+    .logo-carrito{
+        padding: 5px;
+        transition: all 400ms;
+        margin-left: 10px;
+    }
+
+    .logo-usuario:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-usuario a:hover{
+        color: black;
+    }
+
+    .logo-carrito:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-carrito a:hover{
+        color: black;
+    }
+
+}
+
+@media (min-width: 1024px){
+    .espacio-busqueda{
+        max-width: 190px;
+    }
+
+    .navbar{
+        max-width: 850px;
+        margin: auto;
+    }
+
 }
