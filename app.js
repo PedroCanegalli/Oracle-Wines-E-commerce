@@ -21,3 +21,14 @@ app.get("/producto", (req,res)=> {
     res.sendFile(path.resolve(__dirname,"./views/productDetail.html"))
 })
 
+app.get('/login', (req,res)=>{
+    res.sendFile(__dirname + '/views/login.html');
+});
+
+app.get('/recuperar', (req,res)=>{
+    res.sendFile(__dirname + '/views/recuperar.html');
+});
+
+app.get('/historial', (req,res)=>{
+    res.sendFile(__dirname + '/views/historial.html');
+});
