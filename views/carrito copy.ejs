@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style-carrito copy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <title>Oracle Wines - Carrito</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <section class="lista-productos">
+            <article class="producto">
+                <img class="imagen-vino" src="/images/Vino2.jpg" alt="Vino">
+                <div class="detalle-producto">
+                    <div class="nombre-producto">Vino 1</div>
+                    <div class="descripcion-producto">Vino de Mendoza Malbec Cosecha 2019</div>
+                    <div class="precio-producto">$300</div>
+                    <div class="unidades-producto">
+                            <div class="cantidad">Cantidad: <input type="number" name="cantidadProducto" min="1" max="20"></div>                    </div>
+                </div>
+                <button class="boton-eliminar">Eliminar</button>
+            </article>
+            
+            <article class="producto">
+                <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
+                <div class="detalle-producto">
+                    <div class="nombre-producto">Vino 2</div>
+                    <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
+                    <div class="precio-producto">$100</div>
+                    <div class="unidades-producto">
+                        <div class="cantidad">Cantidad: <input type="number" name="cantidadProducto" min="1" max="20"></div>
+                    </div>
+                </div>
+                <button class="boton-eliminar">Eliminar</button>
+            </article>
+            
+            <article class="producto">
+                <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
+                <div class="detalle-producto">
+                    <div class="nombre-producto">Vino 3</div>
+                    <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
+                    <div class="precio-producto">$200</div>
+                    <div class="unidades-producto">
+                        <div class="unidades-producto">
+                            <div class="cantidad">Cantidad: <input type="number" name="cantidadProducto" min="1" max="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="boton-eliminar">Eliminar</button>
+            </article>
+        </section>
+
+        <hr>
+        
+        <section class="datos-entrega">
+            <div class="direccion-envio">
+                <p class="domicilio">Domicilio</p>
+                <p class="direccion">Calle A, Numero 1, Dpto 1, CABA</p>
+                <button class="editar-domicilio">Editar</button>
+            </div>
+            <div class="costo-envío">
+                <p class="titulo-costo">Costo de envío</p>
+                <p class="precio-envio">$200</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="confirmar-compra">
+            <div class="precio-total">
+                <h2>Total a pagar</h2>
+                <h2 class="total-pagar">$800</h2>
+            </div>
+            <button class="boton-confirmar">Continuar</button>
+        </section>
+    </main>
+
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>
