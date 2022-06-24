@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oracle Wines</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles-registro.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,38 +19,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <a href="/"><img class="logo" src="/images/logo.jpeg" alt="Oracle Wines"></a>
-            <div class="barra-busqueda">
-                <form action="/" method="get">
-                <input class="espacio-busqueda" type="text" placeholder="Buscar producto">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="burger-button"><i class="fa-solid fa-bars"></i></div>
-        <div class="navbar-inferior">
-             <div class="navbar-left">
-                <a href="">Historia</a>
-                <a href="">Sucursales</a>
-                <a href="">Productos</a>
-                <a href="">Servicios</a>
-                <a href="">Contacto</a>
-            </div>
-            <div class="navbar-right">
-                <div class="logo-usuario">
-                    <a href="/login">Ingresá </a> 
-                    <a href="/registro">Registrate </a> 
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="logo-carrito">
-                    <a href="/carrito">Carrito </a>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
 
         <main>
         <div class="form">   
@@ -98,27 +67,7 @@
             </form>
         </div>   
     </main>
-    <footer>
-        <section>
-            <div id="contacto">
-                <i class="fas fa-address-card"></i>
-                <h3>Contactanos</h4>
-                <p>Direccion</p>
-                <p>telefono</p>
-                <p>mail</p>
-            </div>
-
-            <div id="redes">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-            </div>
-                
-        </section>
-        <div>
-            <p id="copy">Copyright © 1999-2022 OracleWines S.R.L.</p>
-        </div>
-    </footer>
+    <%- include('./partials/footer') %>
 </body>
 
 </html>

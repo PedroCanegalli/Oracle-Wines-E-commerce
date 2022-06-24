@@ -1,5 +1,14 @@
 *{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+}
+nav{
+    background-color: #6d0f1c; 
+
+}
+body{
+    
     font-family: 'Cardo', serif;
 }
 
@@ -70,69 +79,7 @@ header{
 
 }
 
-
-/*Cuerpo*/
-
-main{
-    margin: auto;
-    background-color: #ebebeb;;
-}
-
-.lista-productos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.producto{
-    display: flex;
-    width: 90%;
-    align-items: center;
-    justify-content: space-around;
-    border: solid 1px lightgrey;
-    border-radius: 3%;
-    margin: 2% 0;
-    transition: all 300ms;
-    background-color: white;
-}
-
-.producto:hover{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.imagen-vino{
-    max-height: 200px;
-    padding: 5px;
-}
-
-.detalle-producto{
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.nombre-producto{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.precio-producto{
-    font-size: 20px;
-    color: #6d0f1c;
-    font-weight: bold;
-    padding: 15px 0;
-}
-
-.unidades-producto{
-    display: flex;
-}
-
-.cantidad{
-    font-weight: bold;
-}
-
-button{
+header button{
     background-color: black;
     border: solid 5px black;
     color: white;
@@ -140,76 +87,130 @@ button{
     transition: all 450ms;
 }
 
-button:hover{
+header button:hover{
     background-color: darkslategrey;
     border: solid 5px darkslategrey;
 }
 
-.descripcion-producto{
-    display: none;
-}
 
-.datos-entrega{
+/* body*/
+.form1{   
+	padding:0px 10px;
+	margin:2px 0;
+    margin-top: 15px;
+
+	display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.search{
+    border-radius: 7px;
+    width: 90%;
+    border: 0px;
+    font-size: 18px;
+    align-self: flex-start;
+    height: 20px;
+    padding: 0%;
+    background-color: rgb(241, 241, 241);
+}
+.button-search i{
+    font-size: 15px;
+}
+.button-search{
     display: flex;
-    justify-content: space-around;
-    align-items: top;
-    margin: 10px;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgb(241, 241, 241);
+    border:rgb(241, 241, 241)
+
 }
 
-.domicilio{
-    font-weight: bold;
+.ingreso, .registro{
+    font-size: 15px;
+    padding: 1px;
+    display:none
 }
-
-.direccion{
-    color: #6d0f1c;
-    font-style: italic;
+.usuario{
+    margin: 0px;
+    color: #aa0303;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #5f0343;
+    padding-top:10px;
+    padding: 8px;
+    font-size: 10px;
+    opacity:1;
+    height:40px;
+    width:40px;  
+    transition: 450ms; 
 }
-
-.titulo-costo{
-    font-weight: bold;
+.usuario:hover{
+    opacity:1;
+    color: #ffffff;
+    background-color: #790257;
+    
 }
-
-.precio-envio{
-    color: #6d0f1c;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-.confirmar-compra{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.precio-total{
-    display: flex;
-    flex-direction: center;
-    align-items: center;
-}
-
-.total-pagar{
-    padding: 10px;
-    color: #6d0f1c;
-}
-
-.confirmar-compra button{
-    background-color: #6d0f1c;
-    border: solid 10px #6d0f1c;
-    color: white;
-    font-weight: bold;
+.usuario i{
     font-size: 20px;
-    border-radius: 8%;
-    transition: all 450ms;
+}
+footer{
+    background-color: rgb(58, 57, 57);
 }
 
-.confirmar-compra button:hover{
-    background-color: #31060c;
-    border: solid 10px #31060c;
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding:2%;
+    border-radius:10px;
+    margin: auto;
+    padding: 16px;
+    
 }
-
-/*Footer*/
-
+form input.campos-registro{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:7px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+form label{
+	
+	font-weight:bold;
+	display:inline-block;
+    padding: 3%;
+    color:rgb(51, 51, 51);
+}
+.titulos-registros{
+    font-size: 15px;
+    color: rgb(51, 51, 51);
+    padding: 10px;
+}
+.enviar, .reset{
+    width:90px;
+	padding:5px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:4px;
+    color: #ffffff;
+	background-color:#bebebe;
+	margin:8px 0;
+    transition: 450ms;
+    opacity:1;
+}
+.enviar:hover,.reset:hover{
+       opacity:1;
+       background-color:#6d0f1c; 
+}
+/*footer */
 footer{
     padding: 2%;
     background-color: #6d0f1c;
@@ -249,12 +250,15 @@ footer div p#copy{
     margin: 30px 5px;
 }
 
-@media (min-width: 425px){
-    .descripcion-producto{
-        display: block;
-        padding-top: 10px;
+@media(min-width: 361px){
+
+    .form1{
+        width: 30%;
     }
 
+}
+
+@media (min-width: 425px){
     header {
         max-height: 195px;
     }
@@ -346,22 +350,5 @@ footer div p#copy{
         max-width: 850px;
         margin: auto;
     }
-    .lista-productos{
-        max-width: 850px;
-        margin: auto;
-    }
-
-    .datos-entrega{
-        max-width: 800px;
-        margin: auto;
-    }
-
-    .confirmar-compra{
-        max-width: 800px;
-        margin: auto;
-    }
 
 }
-
-
-

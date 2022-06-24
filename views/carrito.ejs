@@ -14,38 +14,8 @@
     <title>Oracle Wines - Carrito</title>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <a href="/"><img class="logo" src="/images/logo.jpeg" alt="Oracle Wines"></a>
-            <div class="barra-busqueda">
-                <form action="/" method="get">
-                <input class="espacio-busqueda" type="text" placeholder="Buscar producto">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-        </div>
-        <div class="burger-button"><i class="fa-solid fa-bars"></i></div>
-        <div class="navbar-inferior">
-             <div class="navbar-left">
-                <a href="">Historia</a>
-                <a href="">Sucursales</a>
-                <a href="">Productos</a>
-                <a href="">Servicios</a>
-                <a href="">Contacto</a>
-            </div>
-            <div class="navbar-right">
-                <div class="logo-usuario">
-                    <a href="/login">Ingresá </a> 
-                    <a href="/registro">Registrate </a> 
-                    <i class="fa-solid fa-circle-user"></i>
-                </div>
-                <div class="logo-carrito">
-                    <a href="/carrito">Carrito </a>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
+
     <main>
         <section class="lista-productos">
             <article class="producto">
@@ -115,27 +85,7 @@
     </main>
 
 
-    <footer>
-        <section>
-            <div id="contacto">
-                <i class="fas fa-address-card"></i>
-                <h3>Contactanos</h4>
-                <p>Direccion</p>
-                <p>telefono</p>
-                <p>mail</p>
-            </div>
+    <%- include('./partials/footer') %>
 
-            <div id="redes">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-            </div>
-                
-        </section>
-        <div>
-            <p id="copy">Copyright © 1999-2022 OracleWines S.R.L.</p>
-        </div>
-  
-    </footer>
 </body>
 </html>

@@ -9,36 +9,32 @@ app.set('view engine', 'ejs');
 
 
 app.get("/", (req,res)=> {
-    res.sendFile(path.resolve(__dirname,"./views/home.html"))
+    res.render(path.resolve(__dirname,"./views/home.ejs"))
 })
 
 app.get("/registro", (req,res)=> {
-    res.sendFile(path.resolve(__dirname,"./views/registro.html"))
+    res.render(path.resolve(__dirname,"./views/registro.ejs"))
 })
 
 app.get("/carrito", (req,res)=> {
-    res.sendFile(path.resolve(__dirname,"./views/carrito.html"))
-})
-
-app.get("/carrito2", (req,res)=> {
-    res.render(path.resolve(__dirname,"./views/carrito copy.ejs"))
+    res.render(path.resolve(__dirname,"./views/carrito.ejs"))
 })
 
 app.get("/producto", (req,res)=> {
-    res.sendFile(path.resolve(__dirname,"./views/productDetail.html"))
+    res.render(path.resolve(__dirname,"./views/productDetail.ejs"))
 })
 
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
-});
+app.get("/login", (req,res)=> {
+    res.render(path.resolve(__dirname,"./views/login.ejs"))
+})
 
-app.get('/recuperar', (req,res)=>{
-    res.sendFile(__dirname + '/views/recuperar.html');
-});
+app.get("/recuperar", (req,res)=> {
+    res.render(path.resolve(__dirname,"./views/recuperar.ejs"))
+})
 
-app.get('/historial', (req,res)=>{
-    res.sendFile(__dirname + '/views/historial.html');
-});
+app.get("/historial", (req,res)=> {
+    res.render(path.resolve(__dirname,"./views/historial.ejs"))
+})
 
 app.listen(3100,() => {
     console.log("wey esta madre si funciona")

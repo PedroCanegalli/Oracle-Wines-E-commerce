@@ -8,8 +8,8 @@
 /*Header*/
 
 header{
-  background-color: #6d0f1c;
-  height: 35%;
+  background-image: url("../images/Header Vinos 1.jpg");
+  background-size: cover;
   width: 100%;
 }
 
@@ -18,15 +18,18 @@ header{
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+
 }
 
 .logo{
   max-width: 40%;
   border-radius: 50%;
+  border: solid 2px black;
 }
 
 .espacio-busqueda{
   max-width: 60%;
+  border: solid 2px black;
 }
 
 .burger-button{
@@ -39,7 +42,49 @@ header{
 
 .navbar-inferior{
   display: none;
+  background-color: #6d0f1c;
+  
 }
+
+.reg-log{
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: hsl(352, 76%, 24%, 0.8);
+  color: white;
+  padding-top: 10px;
+  
+}
+
+.reg-log li {
+  padding: 5px 5px 5px;
+  
+}
+
+.logo-usuario:hover .reg-log{
+  display: block;
+  justify-content: left;
+      
+}
+
+.reg-log li:hover {
+  font-weight: bold;
+
+}
+
+header button{
+  background-color: black;
+  border: solid 5px black;
+  color: white;
+  font-weight: bold;
+  transition: all 450ms;
+}
+
+header button:hover{
+  background-color: darkslategrey;
+  border: solid 5px darkslategrey;
+}
+
 
 @media (min-width: 425px){
   header {
@@ -60,16 +105,23 @@ header{
 
   .navbar-inferior{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       margin: auto;
-      max-width: 750px;
+      max-width: 775px;
   }
 
   .navbar-right{
       display: flex;
+      justify-content: space-around;
+      align-items: center;
       color: #ebebeb;
       font-size: 15px;
+      margin-right: 20px;
+  }
+
+  .navbar-left{
+      margin-left: 20px;
   }
 
   .navbar-right a{
@@ -82,7 +134,7 @@ header{
       color: #ebebeb;
       justify-content: space-around;
       text-decoration: none;
-      padding: 0 3px;
+      padding: 0 15px;
       transition: all 450ms;
   }
 
@@ -95,6 +147,7 @@ header{
       display: flex;
       padding: 5px;
       transition: all 400ms;
+      margin-right: 10px;
   }
   .logo-carrito{
       padding: 5px;
@@ -102,14 +155,7 @@ header{
       margin-left: 10px;
   }
 
-  .logo-usuario:hover{
-      color: black;
-      background-color: white;
-  }
 
-  .logo-usuario a:hover{
-      color: black;
-  }
 
   .logo-carrito:hover{
       color: black;
@@ -123,6 +169,7 @@ header{
 }
 
 @media (min-width: 1024px){
+
   .espacio-busqueda{
       max-width: 190px;
   }
@@ -132,7 +179,7 @@ header{
       margin: auto;
   }
 
-} 
+}
 
 
 /*Body Login*/

@@ -8,91 +8,32 @@ body{
     margin: 0px;
 }
 
+
 /*Header*/
 
 header{
-    background-color: #6d0f1c;
+    background-image: url("../images/Header Vinos 1.jpg");
+    background-size: cover;
     width: 100%;
 }
 
-header nav{
+.navbar{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
-}
 
-.barra{
-    width: 30%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-div.barra .barra-busqueda{
-    background-color: #FFF;
-    border: 1px solid black;
-    outline: none;
-    color: #666;
-    padding: 5px;
-    font-size: 12px;
-    width: 50%;
-    height: 30%;
-    align-items: center;
-    display: inline;
-}
-
-div.barra button{
-    padding: 5px;
-}
-
-div.barra button i{
-    text-align: center;
 }
 
 .logo{
-    width: 20%;
-    height: 20%;
+    max-width: 40%;
     border-radius: 50%;
-    margin-top: 10px;
-    margin-left: 10px;
+    border: solid 2px black;
 }
 
-h1{
-    font-size: 24px;
-    color: #FFF;
-    width: 45%;
-    text-align: center;
-}
-
-header div.categorias{
-    display: none;
-}
-
-header div.categorias .menu{
-    width: 50%;
-    text-align: center;
-    font-size: 18px;
-}
-
-header div.categorias .menu-usuario i{
-    color: #FFF;
-}
-
-header div.categorias .menu-usuario{
-    width: 50%;
-    text-align: center;
-    font-size: 18px;
-}
-
-header div.categorias .menu ul li a{
-    color: #FFF;
-    margin: 5px;
-}
-
-header div.categorias .menu-usuario ul li a{
-    color: #FFF;
-    margin: 5px;
+.espacio-busqueda{
+    max-width: 60%;
+    border: solid 2px black;
 }
 
 .burger-button{
@@ -101,7 +42,51 @@ header div.categorias .menu-usuario ul li a{
     width: 30px;
     margin: auto;
     transition: all 450ms;
+}
+
+.navbar-inferior{
+    display: none;
+    background-color: #6d0f1c;
+    
+}
+
+.reg-log{
+    display: none;
+    list-style: none;
+    position: absolute;
+    background-color: hsl(352, 76%, 24%, 0.8);
+    color: white;
+    padding-top: 10px;
+    
+}
+
+.reg-log li {
+    padding: 5px 5px 5px;
+    
+}
+
+.logo-usuario:hover .reg-log{
     display: block;
+    justify-content: left;
+        
+}
+
+.reg-log li:hover {
+    font-weight: bold;
+
+}
+
+header button{
+    background-color: black;
+    border: solid 5px black;
+    color: white;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+header button:hover{
+    background-color: darkslategrey;
+    border: solid 5px darkslategrey;
 }
 
 /* Main */
@@ -243,17 +228,85 @@ footer div p#copy{
 }
 
 @media (min-width: 425px){
-    header ul li{
-        display: inline;
+    header {
+        max-height: 195px;
     }
 
     .burger-button{
         display: none;
     }
 
-    header div.categorias{
-        display: flex;
+    .logo{
+        max-width: 130px;
     }
+
+    .espacio-busqueda{
+        max-width: 60%;
+    }
+
+    .navbar-inferior{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        max-width: 775px;
+    }
+
+    .navbar-right{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #ebebeb;
+        font-size: 15px;
+        margin-right: 20px;
+    }
+
+    .navbar-left{
+        margin-left: 20px;
+    }
+
+    .navbar-right a{
+        color: #ebebeb;
+        text-decoration: none;
+        padding: 0 3px;
+    }
+
+    .navbar-left a{
+        color: #ebebeb;
+        justify-content: space-around;
+        text-decoration: none;
+        padding: 0 15px;
+        transition: all 450ms;
+    }
+
+    .navbar-left a:hover{
+        background-color: white;
+        color: black;
+    }
+
+    .logo-usuario{
+        display: flex;
+        padding: 5px;
+        transition: all 400ms;
+        margin-right: 10px;
+    }
+    .logo-carrito{
+        padding: 5px;
+        transition: all 400ms;
+        margin-left: 10px;
+    }
+
+
+
+    .logo-carrito:hover{
+        color: black;
+        background-color: white;
+    }
+
+    .logo-carrito a:hover{
+        color: black;
+    }
+
 
     h1{
         font-size: 48px;
@@ -338,4 +391,17 @@ footer div p#copy{
         background-color:#ebebeb;
         justify-content: center;
     }
+}
+
+@media (min-width: 1024px){
+
+    .espacio-busqueda{
+        max-width: 190px;
+    }
+
+    .navbar{
+        max-width: 850px;
+        margin: auto;
+    }
+
 }
