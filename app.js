@@ -23,7 +23,7 @@ app.use('/', homeRouter);
 app.use('/carrito', carritoRouter);
 app.use('/historial', historialRouter);
 app.use('/login', loginRouter);
-app.use('/productDetail', productDetailRouter);
+app.use('/producto', productDetailRouter);
 app.use('/recuperar', recuperarRouter);
 app.use('/registro', registroRouter);
 
