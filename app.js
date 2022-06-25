@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 
 var homeRouter = require('./routes/home');
 var carritoRouter = require('./routes/carrito');
+var catalogoRouter = require('./routes/catalogo');
 var historialRouter = require('./routes/historial');
 var loginRouter = require('./routes/login');
 var productDetailRouter = require('./routes/productDetail');
@@ -21,6 +22,7 @@ var registroRouter = require('./routes/registro');
 
 app.use('/', homeRouter);
 app.use('/carrito', carritoRouter);
+app.use('/catalogo', catalogoRouter);
 app.use('/historial', historialRouter);
 app.use('/login', loginRouter);
 app.use('/producto', productDetailRouter);

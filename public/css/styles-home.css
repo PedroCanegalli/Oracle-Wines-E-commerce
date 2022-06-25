@@ -17,6 +17,13 @@ header{
     width: 100%;
 }
 
+.navbarGral{
+    width: 100%;
+    display: none;
+    background-color: #6d0f1c;
+
+}
+
 .navbar{
     display: flex;
     justify-content: space-around;
@@ -26,14 +33,14 @@ header{
 }
 
 .logo{
-    max-width: 40%;
+    max-width: 70px;
     border-radius: 50%;
-    border: solid 2px black;
+    border: solid 1px lightgray;
 }
 
 .espacio-busqueda{
     max-width: 60%;
-    border: solid 2px black;
+    border: solid 1px lightgray;
 }
 
 .burger-button{
@@ -77,16 +84,17 @@ header{
 }
 
 header button{
-    background-color: black;
-    border: solid 5px black;
-    color: white;
+    background-color: white;
+    border-radius: 5%;
+    border: solid 3px white;
+    color: #6d0f1c;
     font-weight: bold;
     transition: all 450ms;
 }
 
 header button:hover{
-    background-color: darkslategrey;
-    border: solid 5px darkslategrey;
+    background-color: lightgrey;
+    border: solid 3px lightgrey;
 }
 
 /* Main */
@@ -242,6 +250,10 @@ footer div p#copy{
 
     .espacio-busqueda{
         max-width: 60%;
+    }
+
+    .navbarGral{
+        display: block;
     }
 
     .navbar-inferior{
