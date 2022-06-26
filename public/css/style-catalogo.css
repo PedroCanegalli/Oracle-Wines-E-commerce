@@ -55,15 +55,50 @@ header{
     display: none;
     list-style: none;
     position: absolute;
-    background-color: hsl(352, 76%, 24%, 0.8);
+    background-color: hsl(352, 76%, 24%);
     color: white;
     padding-top: 10px;
     
 }
 
+.logo-usuario ul{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+.seccion-menu{
+    text-decoration: none;
+    color: #bebebe;
+    position: relative;
+}
+
+.seccion-menu:after{
+    content: "";
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color:#bebebe;
+   transform-origin: right;
+   transform: scaleX(0);
+   transition: transform 500ms ease-in-out;
+}
+.seccion-menu:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
 .reg-log li {
     padding: 5px 5px 5px;
     
+}
+
+.logo-usuario{
+    transition: all 450ms;
 }
 
 .logo-usuario:hover .reg-log{
@@ -72,9 +107,18 @@ header{
         
 }
 
-.reg-log li:hover {
-    font-weight: bold;
+.logo-usuario:hover{
+    background-color: white;
+    color:black;
+}
 
+.icono-home{
+    transition: all 450ms;
+}
+
+.icono-home:hover{
+    background-color: white;
+    color:black;
 }
 
 header button{
@@ -282,11 +326,6 @@ footer div p#copy{
         text-decoration: none;
         padding: 0 15px;
         transition: all 450ms;
-    }
-
-    .navbar-left a:hover{
-        background-color: white;
-        color: black;
     }
 
     .logo-usuario{

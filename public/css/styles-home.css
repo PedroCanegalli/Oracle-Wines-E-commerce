@@ -17,13 +17,6 @@ header{
     width: 100%;
 }
 
-.navbarGral{
-    width: 100%;
-    display: none;
-    background-color: #6d0f1c;
-
-}
-
 .navbar{
     display: flex;
     justify-content: space-around;
@@ -51,6 +44,13 @@ header{
     transition: all 450ms;
 }
 
+.navbarGral{
+    width: 100%;
+    display: none;
+    background-color: #6d0f1c;
+
+}
+
 .navbar-inferior{
     display: none;
     background-color: #6d0f1c;
@@ -61,15 +61,50 @@ header{
     display: none;
     list-style: none;
     position: absolute;
-    background-color: hsl(352, 76%, 24%, 0.8);
+    background-color: hsl(352, 76%, 24%);
     color: white;
     padding-top: 10px;
     
 }
 
+.logo-usuario ul{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+.seccion-menu{
+    text-decoration: none;
+    color: #bebebe;
+    position: relative;
+}
+
+.seccion-menu:after{
+    content: "";
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color:#bebebe;
+   transform-origin: right;
+   transform: scaleX(0);
+   transition: transform 500ms ease-in-out;
+}
+.seccion-menu:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
 .reg-log li {
     padding: 5px 5px 5px;
     
+}
+
+.logo-usuario{
+    transition: all 450ms;
 }
 
 .logo-usuario:hover .reg-log{
@@ -78,9 +113,18 @@ header{
         
 }
 
-.reg-log li:hover {
-    font-weight: bold;
+.logo-usuario:hover{
+    background-color: white;
+    color:black;
+}
 
+.icono-home{
+    transition: all 450ms;
+}
+
+.icono-home:hover{
+    background-color: white;
+    color:black;
 }
 
 header button{
@@ -96,6 +140,7 @@ header button:hover{
     background-color: lightgrey;
     border: solid 3px lightgrey;
 }
+
 
 /* Main */
 
@@ -291,11 +336,6 @@ footer div p#copy{
         transition: all 450ms;
     }
 
-    .navbar-left a:hover{
-        background-color: white;
-        color: black;
-    }
-
     .logo-usuario{
         display: flex;
         padding: 5px;
@@ -307,8 +347,6 @@ footer div p#copy{
         transition: all 400ms;
         margin-left: 10px;
     }
-
-
 
     .logo-carrito:hover{
         color: black;
@@ -410,7 +448,7 @@ footer div p#copy{
     .espacio-busqueda{
         max-width: 190px;
     }
-
+  
     .navbar{
         max-width: 850px;
         margin: auto;
