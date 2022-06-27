@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+let historialRouter = require("../controller/homeController")
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('historial', { title: 'Historial de Compras' });
-});
+router.get("/", historialRouter.historial)
+
 
 module.exports = router;

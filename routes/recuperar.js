@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+let recuperarRouter = require("../controller/homeController")
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('recuperar', { title: 'Recuperar' });
-});
+router.get("/", recuperarRouter.recuperar)
+
 
 module.exports = router;
