@@ -51,12 +51,59 @@ div input[type="submit"]{
 	display:block;
 	color:#fff;
 	background-color:#000;
+	transition: all 450ms;
+}
+
+div input[type="submit"]:hover{
+    background-color: darkslategrey;
+    border: solid 5px darkslategrey;
 }
 
 div.masDescripcion{
     width: 70%;
     padding: 5%;
 }
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+    text-align: left;
+  }
+  
+  #form p {
+    text-align: left;
+  }
+  
+  #form label {
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  input[type="radio"] {
+    display: none;
+    text-align: left;
+  }
+  
+  label {
+    color: grey;
+    text-align: left;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: left;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
 
 
 
