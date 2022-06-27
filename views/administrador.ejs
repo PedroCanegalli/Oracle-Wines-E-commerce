@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-admin.css">
+    <title>Administrador productos</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <form action="/administrador" method="POST">
+        <section class="central">
+            <div class="imagen">
+                <label for="avatar">Seleccionar una imagen para el producto:</label>
+                <input type="file" name="avatar" accept=".jpg" multiple>
+            </div>
+
+            <div class="descripcionProducto">
+                <h1> Nombre del producto </h1>
+                <input type="text" name="nombre">
+                <h4>Precio</h4>
+                <input type="text" name="precio">
+                <h4>Cantidad</h4>
+                <input type="number" id="cantidad" name="cantidad" min="1" max="20">
+                <input type="submit" name="submit" value="Agregar al carrito">
+                <input type="submit" name="submit" value="Comprar">
+                <h2>Descripcion del procucto</h2>
+                <input type="text" name="descripcion">
+
+            </div>
+            
+        </section>
+        <div class="masDescripcion">
+            <input type="text" name="detalles">
+        </div>
+        </form>
+    
+        <!-- <form action="/administrador" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" id="descripcion">
+
+            <label for="avatar">Seleccionar una imagen para el producto:</label>
+            <input type="file" name="avatar" accept=".jpg" multiple>
+
+            <label for="precio">Precio:</label>
+            <input type="text" name="precio" id="precio">
+
+
+           </form> -->
+           
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
