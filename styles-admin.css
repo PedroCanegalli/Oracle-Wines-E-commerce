@@ -1,0 +1,52 @@
+main{
+    margin: 5%;
+}
+
+main section.central{
+    display: flex;
+}
+
+section div.imagen{
+    display: flex;
+    width: 70%;
+    padding: 5%;
+    justify-content: center;
+}
+
+main section div img{
+    width: 50%;
+
+}
+
+section div.descripcionProducto{
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+}
+
+div input[type="number"]{
+	width:30%;  
+	padding:8px 16px;
+	margin-top:5px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#000;
+	background-color:#EEEEEE;
+}
+
+div input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:15px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+}
+
+div.masDescripcion{
+    width: 70%;
+    padding: 5%;
+}
