@@ -1,0 +1,86 @@
+/*Footer*/
+
+footer{
+    padding: 15px;
+    background-color: #6d0f1c;
+    color: white;
+}
+
+footer section{
+    display: flex;
+
+}
+
+footer section div#contacto{
+    width: 50%;
+}
+
+#contacto{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer section div#redes{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer div p#copy{
+    text-align: left;
+    margin: 5px 5px;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.lista-contactos{
+    list-style: none;
+    display: none;
+}
+
+.det-contacto{
+    font-size: 13px;
+    padding: 2px;
+}
+
+.det-contacto a {
+    color:hsl(352, 30%, 53%);
+}
+
+.contactanos{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.icono-redes{
+    font-size: 30px;
+    transition: all 450ms;
+}
+
+.icono-redes:hover{
+    color: rgb(151, 135, 135);
+
+}
+
+.imagen-contacto{
+    font-size: 30px;
+}
+
+#contacto ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media (min-width: 425px){
+    .imagen-contacto{
+        display: none;
+    }
+
+    .lista-contactos{
+        display: block;
+    }
+}
