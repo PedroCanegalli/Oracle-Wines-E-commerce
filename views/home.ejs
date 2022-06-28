@@ -17,32 +17,71 @@
     <%- include('./partials/header') %>
 
     <main>
-        <div class="banner">
-            <img src="/images/banner3.jpg" alt="promo" class="promocion">
-        </div>
-        <div class="seccion1">
+        <section class="seccion1">
             <div class="slogan">
-                <h2>Experts of Wines</h2>
-                <div class="fondo">
-                    <img src="/images/publicidad2.jpg" alt="banner-boda" class="publicidad">
+                <h2>NUESTRO VINOS</h2>
+                <div class="categorias">
+                    <div class="vinos-andinos">
+                        <img src="/images/Vinos andinos.jpg" alt="andinos">
+                        <p>VINOS ANDINOS</p>
+                    </div>
+                    <div class="vinos-patagonicos">
+                        <img src="/images/Vinos patagonicos.jpg" alt="patagonicos">
+                        <p>VINOS PATAGÓNICOS</p>
+                    </div> 
+                    <div class="vinos-importados">
+                        <img src="/images/Vinos importados.jpg" alt="importados">
+                        <p>VINOS IMPORTADOS</p>
+                    </div>
                 </div>
-                <button>Ver más</button>
             </div>
-        </div>
-       <div class="seccion2">
-           <div class="producto">
-               <h2>Premiados</h2>
-               <div class="imagenes">
-                <div class="imagen">
-                    <img src="/images/Vino1.png" alt="vino" class="premiado">
-                </div>
-                <div class="segunda-imagen">
-                    <img src="/images/Vino3.png" alt="vino" class="premiado">
-                </div>
-               </div>
-               <button>Ver más</button>
-           </div>
-       </div>
+        </section>
+        <br>
+
+        <section class="seccion-experts">
+            <h2>EXPERTS OF WINES</h2>
+            <div class="experts">
+                <img class="imagen-experts" src="/images/banner22.jpg" alt="">
+                <div class="boton-ver-mas"><button>Ver más</button></div>
+            </div>
+
+        </section>
+
+        <section class="vinos-premiados">
+            <h2>VINOS PREMIADOS</h2>
+            <div class="lista-premiados">
+                <article class="producto">
+                    <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
+                    <div class="detalle-producto">
+                        <div class="nombre-producto">Vino 1</div>
+                        <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
+                        <div class="precio-producto">$100</div>
+                        <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
+                    </div>
+                </article>
+                
+                <article class="producto">
+                    <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
+                    <div class="detalle-producto">
+                        <div class="nombre-producto">Vino 2</div>
+                        <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
+                        <div class="precio-producto">$100</div>
+                        <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
+                    </div>
+                </article>
+                
+                <article class="producto">
+                    <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
+                    <div class="detalle-producto">
+                        <div class="nombre-producto">Vino 3</div>
+                        <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
+                        <div class="precio-producto">$200</div>
+                        <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
+                    </div>
+                </article>
+            </div>
+            <div class="boton-ver-mas"><button>Ver más</button></div>
+        </section>
     </main>
 
     <%- include('./partials/footer') %>

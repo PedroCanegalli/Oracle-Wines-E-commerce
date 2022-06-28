@@ -25,6 +25,9 @@ let homeController ={
     registro: (req,res)=> {
         res.render(path.resolve(__dirname,"../views/registro.ejs"))
     },
+    administrador: (req,res)=> {
+        res.render(path.resolve(__dirname,"../views/administrador.ejs"))
+    },
 }
 
 module.exports=homeController

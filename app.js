@@ -18,7 +18,7 @@ var loginRouter = require('./routes/login');
 var productDetailRouter = require('./routes/productDetail');
 var recuperarRouter = require('./routes/recuperar');
 var registroRouter = require('./routes/registro');
-
+var administradorRouter = require('./routes/administrador');
 
 app.use('/', homeRouter);
 app.use('/carrito', carritoRouter);
@@ -28,7 +28,7 @@ app.use('/login', loginRouter);
 app.use('/producto', productDetailRouter);
 app.use('/recuperar', recuperarRouter);
 app.use('/registro', registroRouter);
-
+app.use('/administrador', administradorRouter);
 
 
 

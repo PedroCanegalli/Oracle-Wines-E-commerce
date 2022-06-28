@@ -1,197 +1,272 @@
-html{
-    width: 100%;
-}
-
-body{
+*{
+    box-sizing: border-box;
     font-family: 'Cardo', serif;
-    width: 100%;
-    margin: 0px;
 }
 
 
 
-/* Main */
+/*Cuerpo*/
 
-main{
-    background-color: #ebebeb;
+/*Categorías*/
+
+h2{
+    color: #6d0f1c;
+    font-size: 30px;
+}
+
+.vinos-andinos{
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.vinos-andinos img{
+    width: 100%;
+    
+}
+
+.vinos-andinos p{
     text-align: center;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(194, 146, 14, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+    transition: all 450ms;
+}
+
+.vinos-andinos p:hover{
+    background-color: rgba(240, 189, 48, 0.5);
+}
+
+.vinos-patagonicos{
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.vinos-patagonicos img{
+    width: 100%;
+    
+}
+
+.vinos-patagonicos p{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(63, 177, 230, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+    transition: all 450ms;
+}
+
+.vinos-patagonicos p:hover{
+    background-color: rgba(63, 80, 230, 0.5);
+}
+
+
+.vinos-importados{
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+.vinos-importados img{
+    width: 100%;
+    
+}
+
+.vinos-importados p{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(194, 14, 68, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+    transition: all 450ms;
+}
+
+.vinos-importados p:hover{
+    background-color: rgba(78, 8, 8, 0.5);
+}
+
+.categorias{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin: auto;
 }
 
-.banner{
+
+/*Premiados*/
+main{
+    margin: auto;
+    background-color: #ebebeb;
+}
+
+main h2{
+    margin: auto;
+    background-color: #ebebeb;
+    padding: 25px;
+    text-align: center;
+}
+
+.lista-premiados{
     display: flex;
-    margin-bottom: 35px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 800px;
 }
 
-main div.banner img{
-    width: 100%;
-}
-
-main div.seccion1{
-    padding-bottom: 20px;
-}
-
-main div.slogan{
+.boton-ver-mas button{
     display: block;
-    margin: 30px 15px 30px 15px;  
-    background-color: #FFF;
-}
-
-main div.slogan h2{
-    font-size: 40px;
-    padding: 15px;
-    margin: 0px;
-}
-
-main div.slogan button{
+    justify-content: center;
+    margin: auto;
     background-color: #6d0f1c;
-    color: #FFF;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 15px;
-    margin: 20px;
+    border: solid 5px #6d0f1c;
+    border-radius: 5%;
+    width: 100px;
+    font-size: 18px;
+    transition: all 450ms;
+    text-align: center;
+    margin-bottom: 15px;
+
 }
 
-main div.fondo{
+.boton-ver-mas button:hover{
+    background-color: black;
+    border: solid 5px black;
+}
+
+.producto{
     display: flex;
+    width: 250px;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 1px lightgrey;
+    border-radius: 3%;
+    margin: auto;
+    margin-top: 15px;
+    padding: 0 20px;
+    transition: all 300ms;
+    background-color: white;
 }
 
-main div.fondo img{
-    width: 100%;
-}
-
-main div.seccion2{
+.vinos-premiados{
     padding-bottom: 20px;
+    background-color: #ebebeb;
 }
 
-main div.producto{
-    display: block;
-    margin: 30px 15px 30px 15px;  
-    background-color: #FFF;
-    justify-content: center;
+.producto:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-main div.producto h2{
-    font-size: 40px;
-    padding: 15px;
-    margin: 0px;
-}
-
-main div.producto button{
-    background-color: #6d0f1c;
-    color: #FFF;
+.imagen-vino{
+    max-height: 200px;
     padding: 5px;
-    border-radius: 5px;
-    font-size: 15px;
-    margin: 20px;
 }
 
-main div.imagenes{
+.detalle-producto{
+    padding: 5%;
     display: flex;
-    justify-content: center;
-    width: 60%;
-    margin-left: 20%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-main div.imagen{
+.nombre-producto{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.precio-producto{
+    font-size: 20px;
+    color: #6d0f1c;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.unidades-producto{
     display: flex;
-    justify-content: center;
 }
 
-main div.imagen img{
-    width: 50%;
+.cantidad{
+    font-weight: bold;
 }
 
-main div.segunda-imagen img{
-    width: 50%;
+button{
+    background-color: #6d0f1c;
+    border: solid 5px #6d0f1c;
+    color: white;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+button:hover{
+    background-color: black;
+    border: solid 5px black;
+}
+
+.descripcion-producto{
     display: none;
 }
 
+/*Experts*/
+
+.seccion-experts{
+    width: 90%;
+    height: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.experts{
+    margin: auto;
+}
+.imagen-experts{
+    max-width: 100%;
+    margin: auto;
+}
 
 @media (min-width: 425px){
 
-    h1{
-        font-size: 48px;
-        color: #FFF;
-        width: 45%;
-        text-align: center;
-    }
 
-    main div.slogan h2{
-        font-size: 60px;
-        padding: 15px;
-        margin: 0px;
-    }
-    
-    main div.slogan button{
-        background-color: #6d0f1c;
-        color: #FFF;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 25px;
-        margin: 20px;
-    }
-
-    main div.producto h2{
-        font-size: 60px;
-        padding: 15px;
-        margin: 0px;
-    }
-    
-    main div.producto button{
-        background-color: #6d0f1c;
-        color: #FFF;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 25px;
-        margin: 20px;
-    }
-
-    main div.imagen{
-        display: flex;
-        justify-content: center;
-    }
-    
-    main div.imagen img{
-        width: 60%;
-    }
-    
-}
-
-@media (min-width: 769px){
-    main div.imagenes{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 15px;
-        margin-bottom: 20px;
-        width: 60%;
-        margin-left: 20%;
-    }
-
-    main div.imagen img{
-        width: 100%;
-        display: inline;
-        background-color: #FFF;
-    }
-    
-    main div.segunda-imagen img{
-        width: 100%;
-        display: inline;
-        background-color: #FFF;
-    }
-
-    main div.producto h2{
-        font-size: 60px;
-        padding: 15px;
-        margin: 0px;
-        background-color: #FFF;
-    }
-
-    main div.producto{
+    .descripcion-producto{
         display: block;
-        margin: 30px 15px 30px 15px;  
-        background-color:#ebebeb;
-        justify-content: center;
+        padding-top: 10px;
     }
+
+
+
+
 }
 
+@media (min-width: 1024px){
+
+    .lista-productos{
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .imagen-experts{
+        max-width: 750px;
+
+    }
+
+    
+
+}
