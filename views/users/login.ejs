@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Historial de compras</title>
+    <title>Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -11,29 +11,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/estiloshistorial.css">
-    <title>Oracle Wines - Historial de compras</title>
+        <link rel="stylesheet" href="css/estiloslogin.css">
+    <title>Oracle Wines - Login</title>
 </head>
 <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
 
         <div class="titulo">
-            <h4>HISTORIAL DE COMPRAS</h4>
+            <h4>LOGIN</h4>
         </div>
 
         <div class="login-page">
             <div class="form">
               <form class="login-form">
-                <p>Compras realizadas: 0</p>
-              </form>
+                    <input type="text" placeholder="E-mail"/>
+                    <input type="password" placeholder="Contraseña"/>
+                        <form>
+                            <button type="submit" formaction="/historial">INGRESAR</button>
+                        </form>
+                </form>
+
+                <div class="checkbox"> 
+                    <label><input type="checkbox"/>Recuerda mi usuario</label>
+                </div> 
+
+                <p class="message">Olvidaste tu contraseña? <a href="/recuperar">Recupérala</a></p>
             </div>
         </div>      
 
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 
     
 </body>
