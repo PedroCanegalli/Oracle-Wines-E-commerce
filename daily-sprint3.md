@@ -1,7 +1,7 @@
-Tomas: Separar los componentes repetidos en archivos parciales
-Justo: Implementar el motor de templates
-Pedro y Mauricio: Creación y edición de productos
-Patricio: Separar las vistas en carpetas
+Tomas: Separar los componentes repetidos en archivos parciales;
+Justo: Implementar el motor de templates;
+Pedro y Mauricio: Creación y edición de productos;
+Patricio: Separar las vistas en carpetas.
 
 
 Dividimos las distintas tareas que debiamos desarrollar para completar el Sprint 3, siendo que a cada uno le surgieron distintas dudas que pudimos resolver a lo largo de los días (por ejemplo problemas de rutas)
