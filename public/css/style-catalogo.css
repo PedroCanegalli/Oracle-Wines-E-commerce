@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Cardo', serif;
+}
+
+
+
+/*Cuerpo*/
+
+main{
+    margin: auto;
+    background-color: #ebebeb;
+}
+
+main h2{
+    margin: auto;
+    background-color: #ebebeb;
+    color: #6d0f1c;
+    padding: 25px;
+    text-align: center;
+}
+
+.lista-productos{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.producto{
+    display: flex;
+    width: 250px;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 1px lightgrey;
+    border-radius: 3%;
+    margin: auto;
+    margin-top: 15px;
+    padding: 0 20px;
+    transition: all 300ms;
+    background-color: white;
+}
+
+.producto:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.imagen-vino{
+    max-height: 200px;
+    padding: 5px;
+}
+
+.detalle-producto{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nombre-producto{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.precio-producto{
+    font-size: 20px;
+    color: #6d0f1c;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.unidades-producto{
+    display: flex;
+}
+
+.cantidad{
+    font-weight: bold;
+}
+
+button{
+    background-color: #6d0f1c;
+    border: solid 5px #6d0f1c;
+    color: white;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+button:hover{
+    background-color: black;
+    border: solid 5px black;
+}
+
+.descripcion-producto{
+    display: none;
+}
+
+@media (min-width: 425px){
+
+
+    .descripcion-producto{
+        display: block;
+        padding-top: 10px;
+    }
+
+
+}
+
+@media (min-width: 1024px){
+
+    .lista-productos{
+        max-width: 850px;
+        margin: auto;
+    }
+
+}
+
+
+

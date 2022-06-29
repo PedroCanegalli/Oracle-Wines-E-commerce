@@ -1,0 +1,93 @@
+main{
+	margin: 5%;
+	font-family: 'Cardo', serif;
+}
+
+main section.central{
+    display: flex;
+    justify-content: space-around;
+}
+
+section div.imagen{
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: lightgrey;
+    border: solid 3px black;
+}
+
+section div.in-imagen{
+    padding-top: 40%;
+}
+
+section div.imagen label{
+    font-size: 24px;
+}
+
+section div.descripcionProducto{
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+}
+
+div input[type="number"]{
+	width:30%;  
+	padding:8px 16px;
+	margin-top:5px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#000;
+	background-color:#EEEEEE;
+}
+
+div input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:15px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+	transition: all 450ms;
+}
+
+div input[type="submit"]:hover{
+    background-color: darkslategrey;
+    border: solid 5px darkslategrey;
+}
+
+div .descripcion input{
+    width: 100%;
+    padding:8px 16px;
+    height: 70px;
+	margin-top:5px;
+    border:1px solid #000;
+	border-radius:5px;
+}
+
+div .name input{
+    border:1px solid #000;
+	border-radius:5px;
+    width: 70%;
+    height: 20px;
+    padding:8px 16px;
+	margin-top:5px;
+}
+
+div.detalles{
+    margin: 25px;
+}
+
+div.detalles input{
+    width: 60%;
+    padding: 20px 16px;
+	border:1px solid #000;
+	border-radius:5px;
+}
+
+h1, h2, h4{
+    margin: 5px 0px 5px 0px;
+}
