@@ -1,0 +1,15 @@
+[
+ {
+  "idUser": 1,
+  "name": "Juan Perez",
+  "userName": "user1",
+  "email": "juanperez@gmail.com",
+  "bday": "01/01/2000",
+  "address":"9 de Julio 123",
+  "invoice": "C",
+  "interest":["Fiestas", "Reuniones"],
+  "picture": "photo1.jpg",
+  "password": "AS123."
+ }
+ 
+]
