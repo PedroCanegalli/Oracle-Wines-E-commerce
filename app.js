@@ -13,6 +13,7 @@ app.set('view engine', 'ejs');
 var homeRouter = require('./routes/home');
 var carritoRouter = require('./routes/carrito');
 var catalogoRouter = require('./routes/catalogo');
+var catalogoRouter2 = require('./routes/catalogo2');
 var historialRouter = require('./routes/historial');
 var loginRouter = require('./routes/login');
 var productDetailRouter = require('./routes/productDetail');
@@ -20,9 +21,11 @@ var recuperarRouter = require('./routes/recuperar');
 var registroRouter = require('./routes/registro');
 var administradorRouter = require('./routes/administrador');
 
+
 app.use('/', homeRouter);
 app.use('/carrito', carritoRouter);
 app.use('/catalogo', catalogoRouter);
+app.use('/catalogo2', catalogoRouter2);
 app.use('/historial', historialRouter);
 app.use('/login', loginRouter);
 app.use('/producto', productDetailRouter);
