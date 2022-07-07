@@ -8,7 +8,7 @@ const controller = {
 	// Root - Show all products
 	index: (req, res) => {
 		
-		res.render(path.resolve(__dirname,"../views/catalogo2.ejs"),{products})
+		res.render(path.resolve(__dirname,"../views/products/catalogo2.ejs"),{products})
 	},
 
 	// Detail - Detail from one product
