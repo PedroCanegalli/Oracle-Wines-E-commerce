@@ -8,19 +8,19 @@ const controller = {
 	// Root - Show all products
 	index: (req, res) => {
 		
-		res.render(path.resolve(__dirname,"../views/products/catalogo2.ejs"),{products})
+		res.render(path.resolve(__dirname,"../views/products/catalogo.ejs"),{products})
 	},
 
 	// Detail - Detail from one product
-	/*detail: (req, res) => {
+	detail: (req, res) => {
 		let variableid = parseInt(req.params.id)
 		let productEncontrado = products.find(element => element.id === variableid)
 		//console.log(productEncontrado)
 
 
-		res.render(path.resolve(__dirname,"../views/detail.ejs"),{productEncontrado})*/
+		res.render(path.resolve(__dirname,"../views/products/productDetail.ejs"),{productEncontrado})
 		
-	//}
+	}
 
 	// Create - Form to create
 	/*create: (req, res) => {

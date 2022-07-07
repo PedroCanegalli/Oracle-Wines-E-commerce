@@ -42,8 +42,8 @@
     "stock": 35,
     "discount": 0,
     "category": "Andino",
-    "description": "Vino fresco y ligero de color dorado con reflejos verdosos y aromas a frutas blancas como banana y pera, y cítricas como lima, acompañada de algunas notas minerales. En boca es delicado y equilibrado.",
-    "descripcionExtra":"Selección manual de racimos. Prensado de uva con prensa neumática. Enfriamiento de mosto y posterior desborre.",
+    "description": "Vino fresco y ligero de color dorado con reflejos verdosos y aromas a frutas blancas como banana y pera, y cítricas como lima, acompañada de algunas notas minerales.",
+    "descripcionExtra":" En boca es delicado y equilibrado. Selección manual de racimos. Prensado de uva con prensa neumática. Enfriamiento de mosto y posterior desborre.",
     "rate": 3,
     "image": "id4.jpg"
    },
@@ -66,8 +66,8 @@
     "stock": 5,
     "discount": 0,
     "category": "Andino",
-    "description": "Angélica Zapata Malbec es un 100% malbec pero de 5 viñedos distintos. Es un blend de altitudes, es un representante notable del Malbec mendocino que nos hace únicos en el mundo, ideal para acompañar con tus platos preferidos o beberlo solo",
-    "descripcionExtra":"Nicasia cuartel 2, aporta frutos rojos del bosque , frescura y elegancia. El cuartel 3 de Adrianna presenta aromas florales intensos que recuerdan a violeta y lavanda, mientras que el cuartel 9 de este viñedo aporta un color violeta oscuro y profundo, aroma de frutos negros maduros, notas minerales y un largo final en boca . Estos cinco elementos se conjugan de manera excepcional otorgando una gran complejidad al blend final. Ideal para acompañar un gran asado argentino.",
+    "description": "Angélica Zapata Malbec es un 100% malbec pero de 5 viñedos distintos.",
+    "descripcionExtra": "Es un blend de altitudes, es un representante notable del Malbec mendocino que nos hace únicos en el mundo, ideal para acompañar con tus platos preferidos o beberlo solo. Nicasia cuartel 2, aporta frutos rojos del bosque , frescura y elegancia. El cuartel 3 de Adrianna presenta aromas florales intensos que recuerdan a violeta y lavanda, mientras que el cuartel 9 de este viñedo aporta un color violeta oscuro y profundo, aroma de frutos negros maduros, notas minerales y un largo final en boca . Estos cinco elementos se conjugan de manera excepcional otorgando una gran complejidad al blend final. Ideal para acompañar un gran asado argentino.",
     "rate": 5,
     "image": "id6.png"
    }

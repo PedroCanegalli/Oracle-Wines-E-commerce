@@ -21,17 +21,17 @@
         <main>
             <section class="central">
                 <div class="imagen">
-                    <img src="images/wine1.png" alt="Imagen del producto">
+                    <img src="/images/<%= productEncontrado.image%>" alt="Imagen del producto">
                 </div>
 
                 <div class="descripcionProducto">
-                    <h1> Nombre del producto </h1>
-                    <h4>Precio</h4>
-                    <h4>Cantidad</h4>
+                    <h1> <%= productEncontrado.name%> </h1>
+                    <h4> $<%= productEncontrado.price%> </h4>
+                    <h4> Stock: <%= productEncontrado.stock%></h4>
                     <input type="number" id="cantidad" name="cantidad" min="1" max="20">
                     <input type="submit" name="submit" value="Agregar al carrito">
                     <input type="submit" name="submit" value="Comprar">
-                    <h2>Descripción del producto</h2>
+                    <h2><%= productEncontrado.description%></h2>
                     
                     <form>
                         <p class="clasificacion">
@@ -52,7 +52,7 @@
                 
             </section>
             <div class="masDescripcion">
-                <h2>Mas detalles sobre el producto, de donde viene, etc</h2>
+                <h2><%= productEncontrado.descripcionExtra%></h2>
             </div>
 
         </main>

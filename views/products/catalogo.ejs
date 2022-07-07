@@ -20,66 +20,17 @@
         <h2>Nuestro catalogo de vinos</h2>
 
         <section class="lista-productos">
-
+            <% for(let i = 0 ; i < products.length; i++){%>
             <article class="producto">
-                <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
+                <img class="imagen-vino" src="/images/<%= products[i].image%>" alt="Vino">
                 <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 1</div>
-                    <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
-                    <div class="precio-producto">$100</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
+                    <div class="nombre-producto"><%= products[i].name%></div>
+                    <div class="descripcion-producto"><%= products[i].description%></div>
+                    <div class="precio-producto">$<%= products[i].price%></div>
+                    <a href="/producto/<%= products[i].id%>"><button class="boton-eliminar">Ver producto</button></a>
                 </div>
             </article>
-            
-            <article class="producto">
-                <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
-                <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 2</div>
-                    <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
-                    <div class="precio-producto">$100</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
-                </div>
-            </article>
-            
-            <article class="producto">
-                <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
-                <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 3</div>
-                    <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
-                    <div class="precio-producto">$200</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
-                </div>
-            </article>
-
-            <article class="producto">
-                <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
-                <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 4</div>
-                    <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
-                    <div class="precio-producto">$200</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
-                </div>
-            </article>
-            
-            <article class="producto">
-                <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
-                <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 5</div>
-                    <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
-                    <div class="precio-producto">$100</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
-                </div>
-            </article>
-            
-            <article class="producto">
-                <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
-                <div class="detalle-producto">
-                    <div class="nombre-producto">Vino 6</div>
-                    <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
-                    <div class="precio-producto">$200</div>
-                    <a href="/producto"><button class="boton-eliminar">Ver producto</button></a>
-                </div>
-            </article>
+            <% } %>
 
         </section>
 
