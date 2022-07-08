@@ -26,9 +26,8 @@
 
                 <div class="descripcionProducto">
                     <h1> <%= productEncontrado.name%> </h1>
-                    <h4> $<%= productEncontrado.price%> </h4>
-                    <h4> Stock: <%= productEncontrado.stock%></h4>
-                    <input type="number" id="cantidad" name="cantidad" min="1" max="20">
+                    <h3> $<%= productEncontrado.price%> </h3>
+                    <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad" min="1" max=<%= productEncontrado.stock%>>
                     <input type="submit" name="submit" value="Agregar al carrito">
                     <input type="submit" name="submit" value="Comprar">
                     <h2><%= productEncontrado.description%></h2>
@@ -52,7 +51,7 @@
                 
             </section>
             <div class="masDescripcion">
-                <h2><%= productEncontrado.descripcionExtra%></h2>
+                <h3><%= productEncontrado.descripcionExtra%></h3>
             </div>
 
         </main>

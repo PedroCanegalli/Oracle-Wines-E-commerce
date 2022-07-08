@@ -50,6 +50,8 @@ main h2{
 .imagen-vino{
     max-height: 200px;
     padding: 5px;
+    margin: 1px;
+    max-width: 120px;
 }
 
 .detalle-producto{
@@ -57,15 +59,18 @@ main h2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 100%;
+    
 }
 
 .nombre-producto{
-    font-size: 20px;
+    font-size: 100%;
     font-weight: bold;
+    
 }
 
 .precio-producto{
-    font-size: 20px;
+    font-size: 100%;
     color: #6d0f1c;
     font-weight: bold;
     padding: 15px 0;

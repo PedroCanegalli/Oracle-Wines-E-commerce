@@ -3,33 +3,54 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Cardo', serif;
+    
 }
 
 main{
-    margin: 5%;
-}
-
-main section.central{
-    display: flex;
+    padding: 2%;
+    background-color: #ebebeb;
+    
 }
 
 section div.imagen{
-    display: flex;
-    width: 70%;
-    padding: 5%;
-    justify-content: center;
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius:2em;
 }
 
 main section div img{
-    width: 50%;
-
+    width: 75%;
 }
 
 section div.descripcionProducto{
     display: flex;
-    padding: 5%;
+    margin: 1rem;
+    padding: 1rem;
     flex-direction: column;
+    background-color: white;
+    border-radius:2em;
 }
+
+section div.descripcionProducto h1,h2,h3{
+  padding: 2%;
+}
+
+section div.descripcionProducto h2{
+  margin-top: 25px;
+  padding: 2%;
+}
+
+
+div.masDescripcion{
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius:2em;
+}
+
 
 div input[type="number"]{
 	width:30%;  
@@ -55,14 +76,10 @@ div input[type="submit"]{
 }
 
 div input[type="submit"]:hover{
-    background-color: darkslategrey;
-    border: solid 5px darkslategrey;
+    background-color: #6d0f1c;
+    border: solid 5px #6d0f1c;
 }
 
-div.masDescripcion{
-    width: 70%;
-    padding: 5%;
-}
 
 #form {
     width: 250px;
@@ -104,6 +121,34 @@ div.masDescripcion{
   input[type="radio"]:checked ~ label {
     color: orange;
   }
+
+
+@media (min-width: 769px){
+  main section.central{
+    display: flex;
+  }
+  section div.imagen{
+    margin: 1%;
+    width: 75%;
+  }
+  main section div img{
+    width: 100%;
+  }
+
+
+  section div.descripcionProducto{
+    margin: 1%;
+  }
+
+  div.masDescripcion{
+    margin: 1%; 
+    padding: 1%;
+  }
+
+  div input[type="number"]{
+    width: 40%;  
+  }
+}
 
 
 
