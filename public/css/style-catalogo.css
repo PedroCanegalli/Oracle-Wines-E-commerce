@@ -32,6 +32,7 @@ main h2{
 .producto{
     display: flex;
     width: 250px;
+    height: 300px;
     align-items: center;
     justify-content: space-around;
     border: solid 1px lightgrey;
@@ -118,6 +119,7 @@ button:hover{
         max-width: 850px;
         margin: auto;
     }
+
 
 }
 

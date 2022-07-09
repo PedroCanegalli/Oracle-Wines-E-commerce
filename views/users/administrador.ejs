@@ -17,40 +17,83 @@
     <%- include('../partials/header') %>
 
     <main>
+            <form action="/administrador" method="POST" enctype="multipart/form-data">
             <section class="central">
-                <div class="imagen">
-                    <div class="in-imagen">
-                        <label for="avatar">Seleccionar una imagen para el producto:</label>
-                        <input type="file" name="avatar" accept=".jpg" multiple>
-                    </div>
-                </div>
+
                 <div class="descripcionProducto">
-                    <h1>Nombre del producto</h1>
+                    
                     <div class="name">
-                        <input type="text" name="nombre">
+                        <h4>Nombre del producto</h1>
+                        <input type="text" name="name">
                     </div>
-                    <h4>Precio</h4>
+                    
                     <div class="precio">
-                        <input type="number" name="precio">
+                        <h4>Precio</h4>
+                        <input type="number" name="price">
                     </div>
-                    <h4>Cantidad</h4>
+                    
                     <div class="cant">
-                        <input type="number" id="cantidad" name="cantidad" min="1">
+                        <h4>Cantidad</h4>
+                        <input type="number" id="cantidad" name="stock" min="1">
                     </div>
-                    <h2>Descripcion del procucto</h2>
+                    
+                    <div class="descuento">
+                        <h4>Descuento</h4>
+                        <input type="number" name="discount">
+                    </div>
+
+                    <div class="categoria">
+                        <h4>Tipo de vino</h4>
+                        <select name="category" >
+							<option value="Andino">Andino</option>
+							<option value="Patagonico">Patagónico</option>
+							<option value="Importado">Importado</option>
+					    </select>
+                    </div>
+
+                    <div class="categoria">
+                        <h4>Calificación</h4>
+                        <select name="rate" >
+							<option value="1">1 Estella</option>
+							<option value="2">2 Estellas</option>
+							<option value="3">3 Estellas</option>
+                            <option value="4">4 Estellas</option>
+                            <option value="5">5 Estellas</option>
+					    </select>
+                    </div>
+                    
                     <div class="descripcion">
-                        <input type="text" name="descripcion">
+                        <h4>Descripcion del procucto</h2>
+                        <input type="text" name="description">
                     </div>
-                    <div class="botones">
-                        <input type="submit" name="submit" value="Añadir producto">
-                        <input type="submit" name="submit" value="Restrablecer">
-                    </div>
+
                 </div>
+
+                <div class="imagen-con-botones">
+
+                    <div class="imagen">
+                        <div class="in-imagen">
+                            <label for="image">Seleccionar una imagen para el producto:</label>
+                            <input type="file" name="image">
+                        </div>
+                    </div>
+
+                    <div class="descripcion">
+                        <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
+                        <input type="text" name="descripcionExtra">
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit">Añadir producto</button>
+                        <button type="reset">Restablecer</button>
+                    </div>
+
+                </div>
+
+
             </section>
-            <div class="detalles">
-                <h2>Mas detalles sobre el producto, de donde viene, etc</h2>
-                <input type="text" name="detalles">
-            </div>
+
+            </form>
     </main>
     <%- include('../partials/footer') %>
 </body>

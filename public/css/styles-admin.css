@@ -1,15 +1,21 @@
 main{
 	margin: 5%;
 	font-family: 'Cardo', serif;
+    background-color: #ebebeb;
 }
 
 main section.central{
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     justify-content: space-around;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 2%;
+    margin: 10px;
+    padding-bottom: 10px;
 }
 
 section div.imagen{
-    width: 50%;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -17,17 +23,23 @@ section div.imagen{
     border: solid 3px black;
 }
 
+.imagen-con-botones{
+    display: flex;
+    flex-direction: column;
+    max-width: 205px;
+}
+
 section div.in-imagen{
     padding-top: 40%;
 }
 
 section div.imagen label{
-    font-size: 24px;
+    font-size: 12px;
 }
 
 section div.descripcionProducto{
     display: flex;
-    padding: 5%;
+    padding: 10px;
     flex-direction: column;
 }
 
@@ -39,28 +51,27 @@ div input[type="number"]{
 	border-radius:5px;
 	display:block;
 	color:#000;
-	background-color:#EEEEEE;
 }
 
-div input[type="submit"]{
+.botones button{
 	width:100%;
 	padding:8px 16px;
 	margin-top:15px;
-	border:1px solid #000;
+	border:1px solid #6d0f1c;
 	border-radius:5px;
 	display:block;
 	color:#fff;
-	background-color:#000;
+	background-color:#6d0f1c;
 	transition: all 450ms;
 }
 
-div input[type="submit"]:hover{
-    background-color: darkslategrey;
-    border: solid 5px darkslategrey;
+.botones button:hover{
+    background-color: black;
+    border: solid 1px black;
 }
 
 div .descripcion input{
-    width: 100%;
+    width: 90%;
     padding:8px 16px;
     height: 70px;
 	margin-top:5px;
@@ -90,4 +101,33 @@ div.detalles input{
 
 h1, h2, h4{
     margin: 5px 0px 5px 0px;
+}
+
+@media (min-width: 425px){
+
+    section div.imagen label{
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 792px){
+
+
+    main{
+        max-width: 900px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .imagen-con-botones{
+        max-width: 40%;
+        padding-top: 50px;
+    }
+
+    .imagen{
+        height: 331px;
+    }
+
 }
