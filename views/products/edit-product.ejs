@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-admin.css">
+    <title>Editar productos</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+            <form action="/edit-product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <section class="central">
+
+                <div class="descripcionProducto">
+                    
+                    <div class="name">
+                        <h4>Nombre del producto</h1>
+                        <input type="text" name="name">
+                    </div>
+                    
+                    <div class="precio">
+                        <h4>Precio</h4>
+                        <input type="number" name="price">
+                    </div>
+                    
+                    <div class="cant">
+                        <h4>Cantidad</h4>
+                        <input type="number" id="cantidad" name="stock" min="1">
+                    </div>
+                    
+                    <div class="descuento">
+                        <h4>Descuento</h4>
+                        <input type="number" name="discount">
+                    </div>
+
+                    <div class="categoria">
+                        <h4>Tipo de vino</h4>
+                        <select name="category" >
+							<option value="Andino">Andino</option>
+							<option value="Patagonico">Patagónico</option>
+							<option value="Importado">Importado</option>
+					    </select>
+                    </div>
+
+                    <div class="categoria">
+                        <h4>Calificación</h4>
+                        <select name="rate" >
+							<option value="1">1 Estella</option>
+							<option value="2">2 Estellas</option>
+							<option value="3">3 Estellas</option>
+                            <option value="4">4 Estellas</option>
+                            <option value="5">5 Estellas</option>
+					    </select>
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h4>Descripcion del procucto</h2>
+                        <input type="text" name="description">
+                    </div>
+
+                </div>
+
+                <div class="imagen-con-botones">
+
+                    <div class="imagen">
+                        <div class="in-imagen">
+                            <label for="image">Seleccionar una imagen para el producto:</label>
+                            <input type="file" name="image">
+                        </div>
+                    </div>
+
+                    <div class="descripcion">
+                        <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
+                        <input type="text" name="descripcionExtra">
+                    </div>
+
+                    <div class="botones">
+                        <button type="submit">Guardar Producto</button>
+                        <button type="reset">Restablecer</button>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            </form>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

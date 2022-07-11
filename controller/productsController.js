@@ -7,8 +7,8 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		
-		res.render(path.resolve(__dirname,"../views/products/catalogo.ejs"),{products})
+
+		res.render(path.resolve(__dirname, "../views/products/catalogo.ejs"), { products })
 	},
 
 	// Detail - Detail from one product
@@ -19,24 +19,24 @@ const controller = {
 		//console.log(productEncontrado)
 
 
-		res.render(path.resolve(__dirname,"../views/products/productDetail.ejs"),{productEncontrado})
-		
+		res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), { productEncontrado })
+
 	},
 
 	// Create - Get form to create
 	create: (req, res) => {
-		
-		res.render(path.resolve(__dirname,"../views/users/administrador.ejs"))
+
+		res.render(path.resolve(__dirname, "../views/users/administrador.ejs"))
 	},
 
 	// Create - Post form to create
-	
+
 	store: (req, res) => {
-		
+
 		//Agregar el producto nuevo al array
 
 		let productNew = {
-			id: Math.max(...products.map( e => e.id )) + 1,
+			id: Math.max(...products.map(e => e.id)) + 1,
 			name: req.body.name,
 			price: req.body.price,
 			discount: req.body.discount,
@@ -49,37 +49,57 @@ const controller = {
 		}
 
 		products.push(productNew);
-
+		console.log(products)
 		//Transformar en JSON
 
 		productsDataBaseJSON = JSON.stringify(products, null, 4);
 
 		//Sobreescribir el archivo
 
-		fs.writeFileSync(path.resolve(__dirname,"../data/productsDataBase.json"), productsDataBaseJSON);
+		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
 
 		//Redirección a la URL de Productos
-		res.redirect(path.resolve(__dirname,"../views/products/catalogo.ejs"));
+		res.redirect(path.resolve(__dirname, "../views/products/catalogo.ejs"));
 	},
-	/*
+
 	// Update - Form to edit
 	edit: (req, res) => {
 		let variableid = parseInt(req.params.id)
 		let productToEdit = products.find(element => element.id === variableid)
 		//console.log(productToEdit)
-	    res.render(path.resolve(__dirname,"../views/product-edit-form.ejs"),{productToEdit})
-	},
-	// Update - Method to update
-	update: (req, res) => {
-		res.send("Producto Actualizado")
+		res.render(path.resolve(__dirname, "../views/products/edit-product.ejs"), { productToEdit })
+
 	},
 
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+	// Update - Method to update
+	update: (req, res) => {
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+		let id = req.params.id;  
+		products.forEach(product => {
+			if (product.id == id) {
+				product.name = req.body.name,
+					product.price = req.body.price,
+					product.discount = req.body.discount,
+					product.category = req.body.category,
+					product.image = req.file == undefined ? product.image : req.file.filename,
+					product.description = req.body.description
+			}
+		})
+
+		let productJson = JSON.stringify(products, null, 2);
+		fs.writeFileSync(productsFilePath, productJson, "utf-8")
+		console.log(productJson) 
+		res.redirect(`/producto/${id}`)
 		
-		res.send("El Producto fue eliminado")
-	}
-*/	
+	},
+	/*
+	  // Delete - Delete one product from DB
+	  destroy : (req, res) => {
+	  	
+		  res.send("El Producto fue eliminado")
+	  }*/
+
 };
 
 module.exports = controller;

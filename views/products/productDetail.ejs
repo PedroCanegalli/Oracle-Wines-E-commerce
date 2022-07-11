@@ -25,11 +25,15 @@
                 </div>
 
                 <div class="descripcionProducto">
+                   
                     <h1> <%= productEncontrado.name%> </h1>
                     <h3> $<%= productEncontrado.price%> </h3>
                     <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad" min="1" max=<%= productEncontrado.stock%>>
                     <input type="submit" name="submit" value="Agregar al carrito">
                     <input type="submit" name="submit" value="Comprar">
+                   
+                    <a href="/edit-product/<%= productEncontrado.id%>"><input type="submit" name="edit" value="Editar"></a>
+                   
                     <h2><%= productEncontrado.description%></h2>
                     
                     <form>
