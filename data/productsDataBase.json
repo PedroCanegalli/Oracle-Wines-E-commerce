@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "name": "vino tanto",
+        "name": "MOSQUITA MUERTA BLACK",
         "price": "5000",
         "stock": 10,
         "discount": "20",
         "category": "Patagonico",
-        "description": "aaaa",
+        "description": "BLEND DE CABERNET 750 cc",
         "descripcionExtra": "Del valle de Uco, en barrica de roble de 12 años",
         "rate": 4,
         "image": "id1.png"
@@ -122,5 +122,27 @@
         "descripcionExtra": "",
         "rate": "4",
         "image": "image-1657573778175.png"
+    },
+    {
+        "id": 12,
+        "name": "EL ESTECO OLD VINES",
+        "price": "3565",
+        "discount": "10",
+        "category": "Andino",
+        "description": "750 cc  MALBEC EL ESTECO OLD VINES",
+        "descripcionExtra": "",
+        "rate": "4",
+        "image": "image-1657575784743.png"
+    },
+    {
+        "id": 13,
+        "name": "EL ESTECO OLD VINES",
+        "price": "3565",
+        "discount": "10",
+        "category": "Andino",
+        "description": "750 cc  MALBEC EL ESTECO OLD VINES",
+        "descripcionExtra": "",
+        "rate": "4",
+        "image": "image-1657575900626.png"
     }
 ]

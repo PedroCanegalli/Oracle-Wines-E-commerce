@@ -59,7 +59,7 @@ const controller = {
 		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
 
 		//Redirección a la URL de Productos
-		res.redirect(path.resolve(__dirname, "../views/products/catalogo.ejs"));
+		res.redirect((`/producto/`+ productNew.id));
 	},
 
 	// Update - Form to edit
