@@ -93,13 +93,28 @@ const controller = {
 		res.redirect(`/producto/${id}`)
 		
 	},
-	/*
+	
 	  // Delete - Delete one product from DB
 	  destroy : (req, res) => {
 	  	
-		  res.send("El Producto fue eliminado")
-	  }*/
+		const productId = parseInt(req.params.id, 10);
 
+        for (let i = 0; i < products.length; i++) {
+            if ( products[i].id === productId ) {
+                products.splice(i, 1)
+            }
+        }
+
+		productsDataBaseJSON = JSON.stringify(products, null, 4);
+
+		//Sobreescribir el archivo
+
+		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
+
+        res.redirect("/catalogo");
+    }
+	  
 };
+
 
 module.exports = controller;

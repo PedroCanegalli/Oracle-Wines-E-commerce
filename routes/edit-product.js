@@ -21,4 +21,6 @@ const upload = multer({storage});
 router.get('/:id', editRouter.edit);
 router.put('/edit/:id', upload.single("thisimage"), editRouter.update)
 
+
+
 module.exports = router;

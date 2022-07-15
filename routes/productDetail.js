@@ -7,6 +7,7 @@ router.get("/", productDetailRouter.detail)
 router.get('/:id/', productDetailRouter.detail); 
 router.get('/detail/:id', productDetailRouter.detail);
 
+router.delete('/:id', productDetailRouter.destroy);
 
 
 module.exports = router;

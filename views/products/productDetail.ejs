@@ -33,6 +33,12 @@
                     <input type="submit" name="submit" value="Comprar">
                    
                     <a href="/edit-product/<%= productEncontrado.id%>"><input type="submit" name="edit" value="Editar"></a>
+                    
+                    <form method="POST" action="/producto/<%= productEncontrado.id%>?_method=DELETE">
+                
+                    <input type="submit" name="destroy" value="Borrar">
+
+                    </form>
                    
                     <h2><%= productEncontrado.description%></h2>
                     
