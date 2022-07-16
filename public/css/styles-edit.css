@@ -1,0 +1,133 @@
+main{
+	margin: 5%;
+	font-family: 'Cardo', serif;
+    background-color: #ebebeb;
+}
+
+main section.central{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border-radius: 2%;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+section div.imagen{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: lightgrey;
+    border: solid 3px black;
+}
+
+.imagen-con-botones{
+    display: flex;
+    flex-direction: column;
+    max-width: 205px;
+}
+
+section div.in-imagen{
+    padding-top: 40%;
+}
+
+section div.imagen label{
+    font-size: 12px;
+}
+
+section div.descripcionProducto{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+div input[type="number"]{
+	width:30%;  
+	padding:8px 16px;
+	margin-top:5px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#000;
+}
+
+.botones button{
+	width:100%;
+	padding:8px 16px;
+	margin-top:15px;
+	border:1px solid #6d0f1c;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#6d0f1c;
+	transition: all 450ms;
+}
+
+.botones button:hover{
+    background-color: black;
+    border: solid 1px black;
+}
+
+div .descripcion input{
+    width: 90%;
+    padding:8px 16px;
+    height: 70px;
+	margin-top:5px;
+    border:1px solid #000;
+	border-radius:5px;
+}
+
+div .name input{
+    border:1px solid #000;
+	border-radius:5px;
+    width: 70%;
+    height: 20px;
+    padding:8px 16px;
+	margin-top:5px;
+}
+
+div.detalles{
+    margin: 25px;
+}
+
+div.detalles input{
+    width: 60%;
+    padding: 20px 16px;
+	border:1px solid #000;
+	border-radius:5px;
+}
+
+h1, h2, h4{
+    margin: 5px 0px 5px 0px;
+}
+
+@media (min-width: 425px){
+
+    section div.imagen label{
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 792px){
+
+
+    main{
+        max-width: 900px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .imagen-con-botones{
+        max-width: 40%;
+        padding-top: 50px;
+    }
+
+    .imagen{
+        height: 331px;
+    }
+
+}

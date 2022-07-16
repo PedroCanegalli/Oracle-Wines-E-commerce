@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles-admin.css">
+    <link rel="stylesheet" href="/css/styles-edit.css">
     <title>Editar productos</title>
 </head>
 <body>
@@ -25,23 +25,23 @@
                     <div class="name">
                         <h4>Nombre del producto</h1>
                         <input type="text" name="name"
-                        value="<%productToEdit.name%>"
+                        value="<%=productToEdit.name%>" 
                         >
                     </div>
                     
                     <div class="precio">
                         <h4>Precio</h4>
-                        <input type="number" name="price">
+                        <input type="number" name="price" value="<%=productToEdit.price%>">
                     </div>
                     
                     <div class="cant">
                         <h4>Cantidad</h4>
-                        <input type="number" id="cantidad" name="stock" min="1">
+                        <input type="number" id="cantidad" name="stock" min="1" value="<%=productToEdit.stock%>">
                     </div>
                     
                     <div class="descuento">
                         <h4>Descuento</h4>
-                        <input type="number" name="discount">
+                        <input type="number" name="discount" value="<%=productToEdit.discount%>">
                     </div>
 
                     <div class="categoria">
@@ -66,7 +66,7 @@
                     
                     <div class="descripcion">
                         <h4>Descripcion del procucto</h2>
-                        <input type="text" name="description">
+                        <input type="text" name="description" value="<%=productToEdit.description%>">
                     </div>
 
                 </div>
@@ -82,7 +82,7 @@
 
                     <div class="descripcion">
                         <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
-                        <input type="text" name="descripcionExtra">
+                        <input type="text" name="descripcionExtra" value="<%=productToEdit.descripcionExtra%>">
                     </div>
 
                     <div class="botones">
