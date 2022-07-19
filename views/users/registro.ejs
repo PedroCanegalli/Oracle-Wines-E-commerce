@@ -23,42 +23,42 @@
 
         <main>
         <div class="form">   
-            <form action="registro" method="post">
-                <input class="campos-registro"type="text" name="Nombre" placeholder="Nombre y Apellido">
+            <form action="/registro" method="POST" enctype="multipart/form-data">
+                <input class="campos-registro"type="text" name="name" placeholder="Nombre y Apellido">
                 <br>
-                <input class="campos-registro" type="text" name="usuario" placeholder="Nombre de usuario">
+                <input class="campos-registro" type="text" name="userName" placeholder="Nombre de usuario">
                 <br>
                 <input class="campos-registro" type="email" name="email" placeholder="E-mail">
                 <br>
-                <label class="titulos-registros"for="fechaNacimiento">Fecha de nacimiento</label>
+                <label class="titulos-registros"for="bday">Fecha de nacimiento</label>
                 <br>
-                <input type="date" name="fechaNaciomieto" placeholder="Fecha de Nacimiento">
+                <input type="date" name="bday" placeholder="Fecha de Nacimiento">
                 <br>
-                <input class="campos-registro" type="text" name="domicilio"placeholder="Domicilio">
+                <input class="campos-registro" type="text" name="address"placeholder="Domicilio">
                 <br>
                 <label class="titulos-registros" for="perfilUsuario">Tipo de factura</label>
                 <br>
-                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura A  </label>
-                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura B  </label>
-                <input type="radio" name="perfilUsuario"><label for="perfilUsuario">  Factura C  </label>
+                <input type="radio" name="invoice" value="Factura A"><label for="invoice">  Factura A  </label>
+                <input type="radio" name="invoice" value="Factura B"><label for="invoice">  Factura B  </label>
+                <input type="radio" name="invoice" value="Factura C"><label for="invoice">  Factura C  </label>
                 <br>
                 <label class="titulos-registros" for="checkbox">Categorías de interés</label>
                 <br>
-                <input type="checkbox" name="categorias" value="electro"><label for="categorias"> Fiestas </label>
+                <input type="checkbox" name="interest" value="Fiestas"><label for="interests"> Fiestas </label>
                 <br>
-                <input type="checkbox" name="categorias" value="moda"><label for="categorias"> Casamientos </label>
+                <input type="checkbox" name="interest" value="Casamientos"><label for="interest"> Casamientos </label>
                 <br>
-                <input type="checkbox" name="categorias" value="hogar"><label for="categorias"> Eventos Formales </label>
+                <input type="checkbox" name="interest" value="Eventos Formales"><label for="interest"> Eventos Formales </label>
                 <br>
-                <input type="checkbox" name="categorias" value="jugueteria"><label for="categorias"> Reuniones </label>
+                <input type="checkbox" name="interest" value="Reuniones"><label for="interest"> Reuniones </label>
                 <br>
-                <input type="checkbox" name="categorias" value="vidaSana"><label for="categorias"> Vida sana </label>
+                <input type="checkbox" name="interest" value="Vida sana"><label for="interest"> Vida sana </label>
                 <br>
                 <label class="titulos-registros" for="foto">Foto de Usuario</label>
                 <br>
-                <input type="file" name="foto" accept=".jpg, .png">
+                <input type="file" name="picture">
                 <br>
-                <input class="campos-registro" type="password" name="contraseña" placeholder="Contraseña">
+                <input class="campos-registro" type="password" name="password" placeholder="Contraseña">
                 <br>
                 <input class="campos-registro" type="password" name="contraseña" placeholder="Confirmar contraseña">
                 <br>

@@ -1,15 +1,31 @@
 [
- {
-  "idUser": 1,
-  "name": "Juan Perez",
-  "userName": "user1",
-  "email": "juanperez@gmail.com",
-  "bday": "01/01/2000",
-  "address":"9 de Julio 123",
-  "invoice": "C",
-  "interest":["Fiestas", "Reuniones"],
-  "picture": "photo1.jpg",
-  "password": "AS123."
- }
- 
+    {
+        "idUser": 1,
+        "name": "Juan Perez",
+        "userName": "user1",
+        "email": "juanperez@gmail.com",
+        "bday": "01/01/2000",
+        "address": "9 de Julio 123",
+        "invoice": "C",
+        "interest": [
+            "Fiestas",
+            "Reuniones"
+        ],
+        "picture": "photo1.jpg",
+        "password": "AS123."
+    },
+    {
+        "idUser": 2,
+        "name": "Juan Topo",
+        "userName": "juantopo",
+        "email": "jtopo@gmail.com",
+        "bday": "1960-02-10",
+        "invoice": "Factura C",
+        "interest": [
+            "electro",
+            "jugueteria"
+        ],
+        "picture": "picture-1658199307786.jpg",
+        "password": "hola1234"
+    }
 ]
