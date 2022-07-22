@@ -27,5 +27,20 @@
         ],
         "picture": "picture-1658199307786.jpg",
         "password": "hola1234"
+    },
+    {
+        "idUser": 3,
+        "name": "Rocky",
+        "userName": "Balboa",
+        "email": "elsemental@italiano.com",
+        "bday": "1980-02-19",
+        "invoice": "Factura A",
+        "interest": [
+            "Casamientos",
+            "Eventos Formales",
+            "Vida sana"
+        ],
+        "picture": "picture-1658414886091.jpg",
+        "password": "1234"
     }
 ]

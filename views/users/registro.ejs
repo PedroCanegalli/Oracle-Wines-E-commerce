@@ -24,17 +24,37 @@
         <main>
         <div class="form">   
             <form action="/registro" method="POST" enctype="multipart/form-data">
-                <input class="campos-registro"type="text" name="name" placeholder="Nombre y Apellido">
+                <input class="campos-registro"type="text" name="name" placeholder="Nombre y Apellido" value="<%= locals.oldData ? oldData.name : null %>">
+                <% if (locals.errors && errors.name) {%>
+                <div class="text-danger">
+                    <%= errors.name.msg %>
+                </div>
+                <% } %>
                 <br>
-                <input class="campos-registro" type="text" name="userName" placeholder="Nombre de usuario">
+                <input class="campos-registro" type="text" name="userName" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.userName : null %>">
+                <% if (locals.errors && errors.userName) {%>
+                    <div class="text-danger">
+                        <%= errors.userName.msg %>
+                    </div>
+                    <% } %>
                 <br>
-                <input class="campos-registro" type="email" name="email" placeholder="E-mail">
+                <input class="campos-registro" type="email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) {%>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
                 <br>
-                <label class="titulos-registros"for="bday">Fecha de nacimiento</label>
+                <label class="titulos-registros"for="bday" >Fecha de nacimiento</label>
                 <br>
-                <input type="date" name="bday" placeholder="Fecha de Nacimiento">
+                <input type="date" name="bday" placeholder="Fecha de Nacimiento" value="<%= locals.oldData ? oldData.bday : null %>">
                 <br>
-                <input class="campos-registro" type="text" name="address"placeholder="Domicilio">
+                <input class="campos-registro" type="adress" name="textDirection" placeholder="Domicilio" value="<%= locals.oldData ? oldData.textDirection : null %>">
+                <% if (locals.errors && errors.textDirection) {%>
+                    <div class="text-danger">
+                        <%= errors.textDirection.msg %>
+                    </div>
+                    <% } %>
                 <br>
                 <label class="titulos-registros" for="perfilUsuario">Tipo de factura</label>
                 <br>
@@ -44,7 +64,7 @@
                 <br>
                 <label class="titulos-registros" for="checkbox">Categorías de interés</label>
                 <br>
-                <input type="checkbox" name="interest" value="Fiestas"><label for="interests"> Fiestas </label>
+                <input type="checkbox" name="interest" value="Fiestas"><label for="interests" > Fiestas </label>
                 <br>
                 <input type="checkbox" name="interest" value="Casamientos"><label for="interest"> Casamientos </label>
                 <br>
@@ -56,11 +76,21 @@
                 <br>
                 <label class="titulos-registros" for="foto">Foto de Usuario</label>
                 <br>
-                <input type="file" name="picture">
+                <input type="file" name="picture" >
                 <br>
-                <input class="campos-registro" type="password" name="password" placeholder="Contraseña">
+                <input class="campos-registro" type="password" name="password" placeholder="contraseña">
+                <% if (locals.errors && errors.password) {%>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                    <% } %>
                 <br>
-                <input class="campos-registro" type="password" name="contraseña" placeholder="Confirmar contraseña">
+                <input class="campos-registro" type="password" name="repassword" placeholder="Confirmar contraseña">
+                <% if (locals.errors && errors.repassword) {%>
+                    <div class="text-danger">
+                        <%= errors.repassword.msg %>
+                    </div>
+                    <% } %>
                 <br>
                 <input class="enviar" type="submit" name="enviar" value="Registrarse" >
                 <input class="reset" type="reset" name="borrar" value="Borrar">

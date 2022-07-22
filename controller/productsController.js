@@ -3,7 +3,7 @@ const path = require('path');
 
 let productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+// console.log(products)
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
@@ -34,7 +34,7 @@ const controller = {
 	store: (req, res) => {
 
 		//Agregar el producto nuevo al array
-
+		
 		let productNew = {
 			id: Math.max(...products.map(e => e.id)) + 1,
 			name: req.body.name,

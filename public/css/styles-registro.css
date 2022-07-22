@@ -86,11 +86,23 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    padding:2%;
+    border-top: 50px;
     border-radius:10px;
     margin: auto;
     padding: 16px;
-    
+}
+.form {
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin:  20px auto;
+    padding: 20px ;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+.text-danger{
+    color: #aa0303;
+    font-size: 13px;
 }
 form input.campos-registro{
     width:180px;
@@ -114,13 +126,14 @@ form label{
     padding: 10px;
 }
 .enviar, .reset{
-    width:90px;
+    width:120px;
+    
 	padding:5px 10px;
 	border:1px solid #f6f6f6;
-	border-radius:4px;
+	border-radius:2px;
     color: #ffffff;
 	background-color:#bebebe;
-	margin:8px 0;
+	margin:1px 0;
     transition: 450ms;
     opacity:1;
 }

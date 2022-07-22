@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-
+const {validationResult} = require("express-validator")
 let usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-console.log(users)
+
 
 const controller = {
 	
@@ -14,7 +14,17 @@ const controller = {
 	},
 
 	store: (req, res) => {
-
+		let resultValidation = validationResult(req)
+		// if para encontrar el error 
+		if(resultValidation.errors.length > 0){
+			
+			res.render("users/registro", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+				
+			})
+		}else{
+			
 		//Agregar el usuario nuevo al array
 
 		let userNew = {
@@ -27,12 +37,11 @@ const controller = {
 			invoice: req.body.invoice,
 			interest: req.body.interest,
 			picture: req.file.filename,
-			password: req.body.password,
+			password: req.body.password
 
 		}
-
-		users.push(userNew);
-		console.log(users)
+		users.push(userNew)
+		
 		//Transformar en JSON
 
 		usersDataBaseJSON = JSON.stringify(users, null, 4);
@@ -40,9 +49,12 @@ const controller = {
 		//Sobreescribir el archivo
 
 		fs.writeFileSync(path.resolve(__dirname, "../data/usersDataBase.json"), usersDataBaseJSON);
-
+console.log(usersDataBaseJSON)
 		//Redirección a la URL de Login
 		res.redirect('/login');
+	  }
+
+		
 	},
 
 
