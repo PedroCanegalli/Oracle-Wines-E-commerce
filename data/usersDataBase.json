@@ -42,5 +42,16 @@
         ],
         "picture": "picture-1658414886091.jpg",
         "password": "1234"
+    },
+    {
+        "idUser": 4,
+        "name": "aaaa",
+        "userName": "gsd",
+        "email": "aldimar-15@hotmail.com",
+        "bday": "2022-07-10",
+        "invoice": "Factura B",
+        "interest": "Fiestas",
+        "picture": "picture-1658511568028.jpg",
+        "password": "$2a$10$2kd9sH7E0nTd6LtbLBKEg.QmLao.cm89F8iGRNIzOhokdRBOmCIQ."
     }
 ]

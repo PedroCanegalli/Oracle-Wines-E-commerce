@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="css/estiloslogin.css">
+        <link rel="stylesheet" href="/css/estiloslogin.css">
     <title>Oracle Wines - Login</title>
 </head>
 <body>
@@ -28,16 +28,14 @@
               <form class="login-form">
                     <input type="text" placeholder="E-mail"/>
                     <input type="password" placeholder="repassword"/>
-                        <form>
-                            <button type="submit" formaction="/historial">INGRESAR</button>
-                        </form>
+                        <button type="submit" formaction="/historial">INGRESAR</button>               
                 </form>
 
                 <div class="checkbox"> 
                     <label><input type="checkbox"/>Recuerda mi usuario</label>
                 </div> 
 
-                <p class="message">Olvidaste tu repassword? <a href="/recuperar">Recupérala</a></p>
+                <p class="message">Olvidaste tu repassword? <a href="/users/recover">Recupérala</a></p>
             </div>
         </div>      
 

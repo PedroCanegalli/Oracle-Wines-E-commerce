@@ -5,13 +5,12 @@ let productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 // console.log(products)
 const controller = {
-	// Root - Show all products
-	index: (req, res) => {
-
+	//vista de todos los productos
+	catalogo: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/products/catalogo.ejs"), { products })
 	},
 
-	// Detail - Detail from one product
+	// vista del detalle de cada producto
 	detail: (req, res) => {
 
 		let variableid = parseInt(req.params.id)
@@ -23,15 +22,14 @@ const controller = {
 
 	},
 
-	// Create - Get form to create
+	// vista para crear producto por metodo GET
 	create: (req, res) => {
-
-		res.render(path.resolve(__dirname, "../views/users/administrador.ejs"))
+		res.render("products/create-product")
 	},
 
-	// Create - Post form to create
+	// vista para creado de producto por metodo POST
 
-	store: (req, res) => {
+	createProcess: (req, res) => {
 
 		//Agregar el producto nuevo al array
 		
@@ -45,7 +43,6 @@ const controller = {
 			descripcionExtra: req.body.descripcionExtra,
 			rate: req.body.rate,
 			image: req.file.filename,
-
 		}
 
 		products.push(productNew);
@@ -59,10 +56,10 @@ const controller = {
 		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
 
 		//Redirección a la URL de Productos
-		res.redirect((`/producto/`+ productNew.id));
+		res.redirect("/products");
 	},
 
-	// Update - Form to edit
+	// Vista para el Edit del producto por metodo GET
 	edit: (req, res) => {
 		let variableid = parseInt(req.params.id)
 		let productToEdit = products.find(element => element.id === variableid)
@@ -71,8 +68,8 @@ const controller = {
 
 	},
 
-	// Update - Method to update
-	update: (req, res) => {
+	// Vista para el proceso del Edit de producto por metodo PUT
+		editProcess: (req, res) => {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 		let id = req.params.id;  
@@ -90,11 +87,11 @@ const controller = {
 		let productJson = JSON.stringify(products, null, 2);
 		fs.writeFileSync(productsFilePath, productJson, "utf-8")
 		console.log(productJson) 
-		res.redirect(`/producto/${id}`)
+		res.redirect(`/products/detail/${id}`)
 		
 	},
 	
-	  // Delete - Delete one product from DB
+	  // Vista para eliminar un producto por metodo DELETE
 	  destroy : (req, res) => {
 	  	
 		const productId = parseInt(req.params.id, 10);
@@ -111,9 +108,12 @@ const controller = {
 
 		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
 
-        res.redirect("/catalogo");
-    }
-	  
+        res.redirect("/products");
+    },
+	//vista del Carrito de compras
+	carrito: (req,res)=> {
+		res.render('products/carrito')
+	}  
 };
 
 
