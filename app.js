@@ -2,6 +2,7 @@ let express = require("express");
 let path = require("path");
 let app = express();
 const methodOverride= require("method-override")
+const session = require('express-session');
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use ( express.static(publicPath));
@@ -12,6 +13,12 @@ app.use(express.json())
 //configuracion ejs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+//Session
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+}));
 // rutas requeridas
 let productsRouter = require("./routes/products.routes");
 let usersRouter = require("./routes/users.routes");

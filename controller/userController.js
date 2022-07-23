@@ -4,7 +4,7 @@ const { validationResult } = require("express-validator")
 let usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const bcryptjs = require("bcryptjs");
-
+const usersModel = require('../models/user');
 
 const controller = {
 	//vista del registro por metodo GET
@@ -37,7 +37,7 @@ const controller = {
 				password: bcryptjs.hashSync(req.body.password, 10)
 
 			}
-			console.log(userNew)
+			//console.log(userNew)
 			users.push(userNew)
 			//Transformar en JSON
 			usersDataBaseJSON = JSON.stringify(users, null, 4);
@@ -57,13 +57,49 @@ const controller = {
 		res.render(path.resolve(__dirname, "../views/users/login.ejs"))
 	},
 	//vista del proceso del login
-	loginProcess: (req, res) => {
-		// Buscar el usuario en el array
-	},
+	loginProcess: (req,res)=> {
+        
+        //Verificación de email
+        let userToLogin = usersModel.findByField('email', req.body.email);
+
+        if(userToLogin) {
+
+            //Verificación de password
+            let passwordOK = bcrytpjs.compareSync(req.body.password, userToLogin.password)
+            if(passwordOK){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin
+                res.redirect("/");
+            }
+			console.log(passwordOK)
+            //Mensaje de error ante password incorrecto
+            return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
+                errors : 
+                    {
+                        email: {
+                            msg: 'Las credenciales son invalidas'
+                        }
+                    },
+                oldData: req.body
+            });
+        }
+
+        //Mensaje de error ante email no encontrado
+        return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
+            errors : 
+                {
+                    email: {
+                        msg: 'Email no registrado'
+                    }
+                },
+            oldData: req.body
+        });
+    },
 	//vista para recuperar contraseña
 	recuperar: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/recuperar.ejs"))
 	}
+
 
 	// Delete - Delete one product from DB
 	/*destroy : (req, res) => {

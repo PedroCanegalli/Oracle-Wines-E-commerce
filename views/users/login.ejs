@@ -25,10 +25,15 @@
 
         <div class="login-page">
             <div class="form">
-              <form class="login-form">
+              <form action="/users/login" class="login-form" method="POST">
                     <input type="text" placeholder="E-mail"/>
-                    <input type="password" placeholder="repassword"/>
-                        <button type="submit" formaction="/historial">INGRESAR</button>               
+                    <input type="password" placeholder="password"/>
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="errors">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
+                        <button type="submit">INGRESAR</button>               
                 </form>
 
                 <div class="checkbox"> 
