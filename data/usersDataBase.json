@@ -53,5 +53,16 @@
         "interest": "Fiestas",
         "picture": "picture-1658511568028.jpg",
         "password": "$2a$10$2kd9sH7E0nTd6LtbLBKEg.QmLao.cm89F8iGRNIzOhokdRBOmCIQ."
+    },
+    {
+        "idUser": 5,
+        "name": "Homero Simpson",
+        "userName": "homero",
+        "email": "hsimpson@gmail.com",
+        "bday": "1970-10-10",
+        "invoice": "Factura C",
+        "interest": "Reuniones",
+        "picture": "picture-1658598304517.jpg",
+        "password": "$2a$10$0VQLMFpPwb5xtJcClSfOJev4zwBxGGR9nMhGc7TIJvOjnrgM7p47O"
     }
 ]

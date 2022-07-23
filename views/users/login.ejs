@@ -26,8 +26,8 @@
         <div class="login-page">
             <div class="form">
               <form action="/users/login" class="login-form" method="POST">
-                    <input type="text" placeholder="E-mail"/>
-                    <input type="password" placeholder="password"/>
+                    <input name="email" type="text" placeholder="E-mail"/>
+                    <input name="password" type="password" placeholder="password"/>
                     <% if (locals.errors && errors.email) { %>
                         <div class="errors">
                             <%= errors.email.msg %>

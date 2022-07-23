@@ -65,7 +65,7 @@ const controller = {
         if(userToLogin) {
 
             //Verificación de password
-            let passwordOK = bcrytpjs.compareSync(req.body.password, userToLogin.password)
+            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password)
             if(passwordOK){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin
