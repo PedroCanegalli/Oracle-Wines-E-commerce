@@ -41,4 +41,7 @@ router.post('/login', userRouter.loginProcess);
 // vista de recuperar contraseña
 router.get('/recover', userRouter.recuperar);
 
+// Detalle de un usuario
+router.get('/user', userRouter.show);
+
 module.exports = router;

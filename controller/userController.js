@@ -45,7 +45,7 @@ const controller = {
 			fs.writeFileSync(path.resolve(__dirname, "../data/usersDataBase.json"), usersDataBaseJSON);
 			console.log(usersDataBaseJSON)
 			//Redirección a la URL de Login
-			res.redirect('/users/login');
+			res.redirect('/users/' + idUser);
 		}
 	},
 	//vista del historial de compras
@@ -98,8 +98,13 @@ const controller = {
 	//vista para recuperar contraseña
 	recuperar: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/recuperar.ejs"))
-	}
+	},
 
+	show: (req, res) => {
+        let user = usersModel.findByPK(req.params.idUser);
+
+        res.render('users/user', { user });
+    }
 
 	// Delete - Delete one product from DB
 	/*destroy : (req, res) => {
