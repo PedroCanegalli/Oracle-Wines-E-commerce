@@ -3,7 +3,10 @@ var router = express.Router();
 let userRouter = require("../controller/userController")
 const multer = require('multer');
 const path = require('path');
-const { body } = require("express-validator")
+const { body } = require("express-validator");
+const guestMiddlewares = require("../middlewares/guestMiddleware");
+const outMiddlewares = require("../middlewares/outMiddleware");
+
 
 //configuracion del multer
 
@@ -31,17 +34,19 @@ const validation = [
 
 
 // vista de formulario de registro
-router.get('/register', userRouter.register);
+router.get('/register', guestMiddlewares,userRouter.register);
 router.post("/register", upload.single('picture'), validation, userRouter.registerProcess);
 // vista de historial
 router.get('/record', userRouter.historial);
 // vista de formulario de login
-router.get('/login', userRouter.login);
+router.get('/login', guestMiddlewares, userRouter.login);
 router.post('/login', userRouter.loginProcess);
 // vista de recuperar contraseña
 router.get('/recover', userRouter.recuperar);
 
 // Detalle de un usuario
-router.get('/user', userRouter.show);
+router.get('/user', outMiddlewares, userRouter.show);
 
+// logout de un usuario
+router.get('/logout', userRouter.logout);
 module.exports = router;

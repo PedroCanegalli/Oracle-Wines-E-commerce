@@ -86,7 +86,7 @@ const controller = {
 
 		let productJson = JSON.stringify(products, null, 2);
 		fs.writeFileSync(productsFilePath, productJson, "utf-8")
-		console.log(productJson) 
+		//console.log(productJson) 
 		res.redirect(`/products/detail/${id}`)
 		
 	},

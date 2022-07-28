@@ -22,7 +22,22 @@ const controller = {
 				oldData: req.body
 
 			})
-		} else {
+		} 
+		let userEmail = usersModel.findByField('email', req.body.email);
+
+		if(userEmail){
+			
+			return res.render("users/registro", {
+				errors: {
+					email: {
+						msg: "Este usuario ya esta registrado"
+					}
+				},
+				oldData: req.body
+
+			})
+		}
+		
 			//Agregar el usuario nuevo al array
 			let userNew = {
 				idUser: Math.max(...users.map(e => e.idUser)) + 1,
@@ -38,15 +53,15 @@ const controller = {
 
 			}
 			//console.log(userNew)
-			users.push(userNew)
+				users.push(userNew)
 			//Transformar en JSON
-			usersDataBaseJSON = JSON.stringify(users, null, 4);
+				usersDataBaseJSON = JSON.stringify(users, null, 4);
 			//Sobreescribir el archivo
-			fs.writeFileSync(path.resolve(__dirname, "../data/usersDataBase.json"), usersDataBaseJSON);
-			console.log(usersDataBaseJSON)
+				fs.writeFileSync(path.resolve(__dirname, "../data/usersDataBase.json"), usersDataBaseJSON);
+			
 			//Redirección a la URL de Login
-			res.redirect('/users/' + idUser);
-		}
+			res.redirect('/users/login' );
+		
 	},
 	//vista del historial de compras
 	historial: (req, res) => {
@@ -69,9 +84,9 @@ const controller = {
             if(passwordOK){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin
-                res.redirect("/");
+                return res.redirect("user");
             }
-			console.log(passwordOK)
+			//console.log(req.session)
             //Mensaje de error ante password incorrecto
             return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
                 errors : 
@@ -101,10 +116,15 @@ const controller = {
 	},
 
 	show: (req, res) => {
-        let user = usersModel.findByPK(req.params.idUser);
+        
+        res.render('users/user', {user: req.session.userLogged});
 
-        res.render('users/user', { user });
-    }
+    },
+
+	logout: (req,res)=>{
+		req.session.destroy();
+		return res.redirect("/")
+	}
 
 	// Delete - Delete one product from DB
 	/*destroy : (req, res) => {

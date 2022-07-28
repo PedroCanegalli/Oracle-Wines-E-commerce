@@ -29,21 +29,6 @@
         "password": "hola1234"
     },
     {
-        "idUser": 3,
-        "name": "Rocky",
-        "userName": "Balboa",
-        "email": "elsemental@italiano.com",
-        "bday": "1980-02-19",
-        "invoice": "Factura A",
-        "interest": [
-            "Casamientos",
-            "Eventos Formales",
-            "Vida sana"
-        ],
-        "picture": "picture-1658414886091.jpg",
-        "password": "1234"
-    },
-    {
         "idUser": 4,
         "name": "aaaa",
         "userName": "gsd",
@@ -64,5 +49,16 @@
         "interest": "Reuniones",
         "picture": "picture-1658598304517.jpg",
         "password": "$2a$10$0VQLMFpPwb5xtJcClSfOJev4zwBxGGR9nMhGc7TIJvOjnrgM7p47O"
+    },
+    {
+        "idUser": 6,
+        "name": "Rocky",
+        "userName": "Balboa",
+        "email": "elsemental@italiano.com",
+        "bday": "1890-12-31",
+        "invoice": "Factura A",
+        "interest": "Fiestas",
+        "picture": "picture-1659010135397.jpg",
+        "password": "$2a$10$veRb3rKfwGVUIYaUD7J84.YRqyGdhC.rbjQ/1bb.IHYNa363xfYf."
     }
 ]
