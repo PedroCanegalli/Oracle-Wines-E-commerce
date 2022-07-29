@@ -84,6 +84,11 @@ const controller = {
             if(passwordOK){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin
+
+				if(req.body.remember_user){
+					res.cookie('userEmail', req.body.email, {maxAge: 1000*60*30});
+				}
+
                 return res.redirect("user");
             }
 			//console.log(req.session)
@@ -122,8 +127,9 @@ const controller = {
     },
 
 	logout: (req,res)=>{
+		res.clearCookie('userEmail');
 		req.session.destroy();
-		return res.redirect("/")
+		return res.redirect("/");
 	}
 
 	// Delete - Delete one product from DB

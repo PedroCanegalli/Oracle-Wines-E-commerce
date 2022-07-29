@@ -3,6 +3,8 @@ let path = require("path");
 let app = express();
 const methodOverride= require("method-override")
 const session = require('express-session');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const cookies = require('cookie-parser');
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use ( express.static(publicPath));
@@ -19,6 +21,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+//Cookies y Logged Middleware
+app.use(cookies());
+app.use(userLoggedMiddleware);
 // rutas requeridas
 let productsRouter = require("./routes/products.routes");
 let usersRouter = require("./routes/users.routes");
