@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;1,900&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="/css/estiloslogin.css">
+        <link rel="stylesheet" href="/css/styles-user.css">
     <title>Oracle Wines - Login</title>
 </head>
 <body>
@@ -25,7 +25,8 @@
         <figure>
             <img src="/images/users/<%= user.picture ? user.picture : 'default.png' %>" alt="" width="20%">
         </figure>
-        <h3>#<%= user.idUser %></h3>
+        <h5>Usuario: <%= user.userName %></a></h5>
+        <h6>Nº de Usuario: <%= user.idUser %></h6>
     </div>
     <div class="card-content">
         
@@ -33,9 +34,9 @@
             <p>Categoría: <%= user.category %></p>
         <%} %>
         <p>Email: <a href="<%= user.email %>" target="_blank"><%= user.email %></a></p>
+
     </div>   
     
-    <a class="" href="/users/logout">Logout</a>
     
 </article>
 
