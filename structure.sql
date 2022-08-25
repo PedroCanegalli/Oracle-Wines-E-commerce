@@ -1,7 +1,7 @@
 CREATE DATABASE oracleWines;
 
 CREATE TABLE products ( 
-  product_id INT NOT NULL UNSIGNED PRIMARY KEY AUTO INCREMENT,
+  product_id INT NOT NULL,
   name VARCHAR(100) NOT NULL,
   price INT NOT NULL,
   discount DECIMAL,
@@ -19,7 +19,7 @@ CREATE TABLE products (
 CREATE TABLE productCategory(
   productCategory_id int NOT NULL,
   name VARCHAR(100) NOT NULL,
-  PRIMARY KEY(productCategory_id),
+  PRIMARY KEY(productCategory_id)
 );
 
 CREATE TABLE cart(
@@ -27,15 +27,15 @@ CREATE TABLE cart(
   user_id INT NOT NULL,
   product_id INT NOT NULL,
   PRIMARY KEY(cart_id),
-  FOREIGN KEY (user_id) REFERENCES productCategory (user_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
   FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
 
 CREATE TABLE users (
-  user_id INT NOT NUL,
+  user_id INT NOT NULL,
   name VARCHAR(100) NOT NULL,
   userName VARCHAR(100) NOT NULL,
-  email TEXT NOT MULL UNIQUE,
+  email TEXT NOT NULL UNIQUE,
   bday DATE NOT NULL,
   invoice_id INT NOT NULL,
   interest_id INT NOT NULL,
