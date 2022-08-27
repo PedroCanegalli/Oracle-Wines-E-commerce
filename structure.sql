@@ -65,3 +65,18 @@ CREATE TABLE usersCategory (
   name VARCHAR(100) NOT NULL,
   PRIMARY KEY(userCategory_id)
 );
+
+INSERT INTO productCategory
+VALUES (1, "Andino");
+
+INSERT INTO productCategory
+VALUES (2, "Patagónico");
+
+INSERT INTO productCategory
+VALUES (3, "Importado");
+
+INSERT INTO products
+VALUES (1, "MOSQUITA MUERTA BLACK", 5000, 10, 20, 1, 1, "BLEND DE CABERNET 750 cc", "Del valle de Uco, en barrica de roble de 12 años", 5, "id1.png");
+
+INSERT INTO products
+VALUES (2, "RUTTINI ROSE DE MALBEC 750 cc", 6899, 15, 0, 1, 2, "Malbec, año 2020", "Del valle de Uco, en barrica de roble de 12 años", 5, "id2.png");

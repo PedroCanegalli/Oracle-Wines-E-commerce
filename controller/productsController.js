@@ -1,6 +1,150 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const moment = require('moment');
 
+
+//Aqui tienen otra forma de llamar a cada uno de los modelos
+const Products = db.Product;
+const Categories = db.Category;
+const Users = db.User;
+
+
+const productsController = {
+    'list': (req, res) => {
+        db.Product.findAll({
+            include: ['category']
+        })
+            .then(products => {
+                res.render('catalogo.ejs', {products})
+            })
+    },
+    'detail': (req, res) => {
+        db.Product.findByPk(req.params.id,
+            {
+                include : ['category']
+            })
+            .then(product => {
+                res.render('productDetail.ejs', {product});
+            });
+    },
+    'new': (req, res) => {
+        db.Product.findAll({
+            order : [
+                ['release_date', 'DESC']
+            ],
+            limit: 5
+        })
+            .then(movies => {
+                res.render('newestMovies', {movies});
+            });
+    },
+/*    'recomended': (req, res) => {
+        db.Movie.findAll({
+            include: ['genre'],
+            where: {
+                rating: {[db.Sequelize.Op.gte] : 8}
+            },
+            order: [
+                ['rating', 'DESC']
+            ]
+        })
+            .then(movies => {
+                res.render('recommendedMovies.ejs', {movies});
+            });
+    }, */
+    //Aqui dispongo las rutas para trabajar con el CRUD
+    /*add: function (req, res) {
+        let promCategories = Categories.findAll();
+        let promUsers = Users.findAll();
+        
+        Promise
+        .all([promCategories, promUsers])
+        .then(([allGenres, allActors]) => {
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
+        .catch(error => res.send(error))
+    },*/
+    create: function (req,res) {
+        Products
+        .create(
+            {
+                name: req.body.name,
+                price: req.body.price,
+                stock: req.body.stock,
+                discount: req.body.discout,
+                category: req.body.category,
+                description: req.body.description,
+				extra_description: req.body.extra_description,
+				rate: req.body.rate,
+				image: req.body.image
+            }
+        )
+        .then(()=> {
+            return res.redirect('/catalogo')})            
+        .catch(error => res.send(error))
+    },
+	/*
+    edit: function(req,res) {
+        let movieId = req.params.id;
+        let promMovies = Movies.findByPk(movieId,{include: ['genre','actors']});
+        let promGenres = Genres.findAll();
+        let promActors = Actors.findAll();
+        Promise
+        .all([promMovies, promGenres, promActors])
+        .then(([Movie, allGenres, allActors]) => {
+            //Movie.release_date = moment( new Date(Movie.release_date)).toLocaleDateString();
+            Movie.release_date = moment( new Date(Movie.release_date)).format('L');
+            //new Date("Sun Jan 03 1999 21:00:00 GMT-0300 (hora estándar de Argentina)").toLocaleDateString()
+            //return res.send(Movie.release_date);
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesEdit'), {Movie,allGenres,allActors})})
+        .catch(error => res.send(error))
+    },
+	*/
+    update: function (req,res) {
+        let productId = req.params.id;
+        Products
+        .update(
+            {
+                name: req.body.name,
+                price: req.body.price,
+                stock: req.body.stock,
+                discount: req.body.discout,
+                category: req.body.category,
+                description: req.body.description,
+				extra_description: req.body.extra_description,
+				rate: req.body.rate,
+				image: req.body.image
+            },
+            {
+                where: {product_id: productId}
+            })
+        .then(()=> {
+            return res.redirect('/catalogo')})            
+        .catch(error => res.send(error))
+    },
+	/*
+    delete: function (req,res) {
+        let movieId = req.params.id;
+        Movies
+        .findByPk(movieId)
+        .then(Movie => {
+            return res.render(path.resolve(__dirname, '..', 'views',  'moviesDelete'), {Movie})})
+        .catch(error => res.send(error))
+    },
+    destroy: function (req,res) {
+        let movieId = req.params.id;
+        Movies
+        .destroy({where: {id: movieId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/movies')})
+        .catch(error => res.send(error)) 
+    }*/
+}
+
+
+/*
 let productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 // console.log(products)
@@ -115,6 +259,6 @@ const controller = {
 		res.render('products/carrito')
 	}  
 };
-
+*/
 
 module.exports = controller;
