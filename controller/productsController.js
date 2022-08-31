@@ -11,14 +11,14 @@ const Products = db.Product;
 const Categories = db.Category;
 const Users = db.User;
 
+console.log(Products)
+
 
 const productsController = {
     'list': (req, res) => {
-        db.Product.findAll({
-            include: ['category']
-        })
+        db.Product.findAll()
             .then(products => {
-                res.render('catalogo.ejs', {products})
+                res.render(path.resolve(__dirname, "../views/products/catalogo.ejs"), { products })
             })
     },
     'detail': (req, res) => {
@@ -26,46 +26,16 @@ const productsController = {
             {
                 include : ['category']
             })
-            .then(product => {
-                res.render('productDetail.ejs', {product});
+            .then(productEncontrado => {
+                res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado});
             });
     },
-    'new': (req, res) => {
-        db.Product.findAll({
-            order : [
-                ['release_date', 'DESC']
-            ],
-            limit: 5
+    add: function (req, res) {
+        db.Category.findAll()
+        .then(categories => {
+            res.render(path.resolve(__dirname, "../views/products/create-product.ejs"), { categories })
         })
-            .then(movies => {
-                res.render('newestMovies', {movies});
-            });
     },
-/*    'recomended': (req, res) => {
-        db.Movie.findAll({
-            include: ['genre'],
-            where: {
-                rating: {[db.Sequelize.Op.gte] : 8}
-            },
-            order: [
-                ['rating', 'DESC']
-            ]
-        })
-            .then(movies => {
-                res.render('recommendedMovies.ejs', {movies});
-            });
-    }, */
-    //Aqui dispongo las rutas para trabajar con el CRUD
-    /*add: function (req, res) {
-        let promCategories = Categories.findAll();
-        let promUsers = Users.findAll();
-        
-        Promise
-        .all([promCategories, promUsers])
-        .then(([allGenres, allActors]) => {
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesAdd'), {allGenres,allActors})})
-        .catch(error => res.send(error))
-    },*/
     create: function (req,res) {
         Products
         .create(
@@ -73,35 +43,30 @@ const productsController = {
                 name: req.body.name,
                 price: req.body.price,
                 stock: req.body.stock,
-                discount: req.body.discout,
-                category: req.body.category,
+                discount: req.body.discount,
+                category_id: req.body.category,
+                awards: req.body.awards,
                 description: req.body.description,
 				extra_description: req.body.extra_description,
 				rate: req.body.rate,
-				image: req.body.image
+				image: req.file.filename
             }
         )
         .then(()=> {
-            return res.redirect('/catalogo')})            
+            return res.redirect('/products')})            
         .catch(error => res.send(error))
     },
-	/*
+
     edit: function(req,res) {
-        let movieId = req.params.id;
-        let promMovies = Movies.findByPk(movieId,{include: ['genre','actors']});
-        let promGenres = Genres.findAll();
-        let promActors = Actors.findAll();
+        let productId = req.params.id;
+        let promProducts = Products.findByPk(productId,{include: ['category']});
+        let promCategories = Categories.findAll();
         Promise
-        .all([promMovies, promGenres, promActors])
-        .then(([Movie, allGenres, allActors]) => {
-            //Movie.release_date = moment( new Date(Movie.release_date)).toLocaleDateString();
-            Movie.release_date = moment( new Date(Movie.release_date)).format('L');
-            //new Date("Sun Jan 03 1999 21:00:00 GMT-0300 (hora estándar de Argentina)").toLocaleDateString()
-            //return res.send(Movie.release_date);
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesEdit'), {Movie,allGenres,allActors})})
+        .all([promProducts, promCategories])
+        .then(([productToEdit, categories]) => {
+           return res.render(path.resolve(__dirname, "../views/products/edit-product.ejs"), {productToEdit,categories})})
         .catch(error => res.send(error))
     },
-	*/
     update: function (req,res) {
         let productId = req.params.id;
         Products
@@ -111,17 +76,18 @@ const productsController = {
                 price: req.body.price,
                 stock: req.body.stock,
                 discount: req.body.discout,
-                category: req.body.category,
+                category_id: req.body.category,
+                awards: req.body.awards,
                 description: req.body.description,
 				extra_description: req.body.extra_description,
 				rate: req.body.rate,
-				image: req.body.image
+				image: req.file.filename
             },
             {
                 where: {product_id: productId}
             })
         .then(()=> {
-            return res.redirect('/catalogo')})            
+            return res.redirect('/products')})            
         .catch(error => res.send(error))
     },
 	/*
@@ -141,6 +107,28 @@ const productsController = {
             return res.redirect('/movies')})
         .catch(error => res.send(error)) 
     }*/
+    	//vista del Carrito de compras
+	carrito: (req,res)=> {
+		res.render('products/carrito')
+	},
+    destroy : (req, res) => {
+	  	
+		const productId = parseInt(req.params.id, 10);
+
+        for (let i = 0; i < products.length; i++) {
+            if ( products[i].id === productId ) {
+                products.splice(i, 1)
+            }
+        }
+
+		productsDataBaseJSON = JSON.stringify(products, null, 4);
+
+		//Sobreescribir el archivo
+
+		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
+
+        res.redirect("/products");
+    },
 }
 
 
@@ -261,4 +249,4 @@ const controller = {
 };
 */
 
-module.exports = controller;
+module.exports = productsController;

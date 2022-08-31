@@ -16,15 +16,15 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 //vista de productos
-router.get("/", productsController.catalogo)
+router.get("/", productsController.list)
 // vista detalle del producto
 router.get("/detail/:id", productsController.detail)
 //vista del creado de producto
-router.get("/create", productsController.create)
-router.post("/create", upload.single("image"), productsController.createProcess)
+router.get("/create", productsController.add)
+router.post("/create", upload.single("image"), productsController.create)
 //vista del editado de producto
 router.get("/edit/:id", productsController.edit)
-router.put("/edit/:id", upload.single("thisimage"), productsController.editProcess)
+router.put("/edit/:id", upload.single("thisimage"), productsController.update)
 //vista del eliminado de producto
 router.delete("/delete/:id", productsController.destroy)
 // vista del carrito de compras

@@ -16,6 +16,8 @@ CREATE TABLE products (
   FOREIGN KEY (category_id) REFERENCES productCategory (productCategory_id)
 );
 
+ALTER TABLE oraclewines.products MODIFY COLUMN product_id int(11) auto_increment NOT NULL;
+
 CREATE TABLE productCategory(
   productCategory_id int NOT NULL,
   name VARCHAR(100) NOT NULL,
@@ -30,6 +32,9 @@ CREATE TABLE cart(
   FOREIGN KEY (user_id) REFERENCES users (user_id),
   FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
+
+ALTER TABLE oraclewines.cart DROP FOREIGN KEY cart_ibfk_2;
+ALTER TABLE oraclewines.cart ADD CONSTRAINT cart_ibfk_2 FOREIGN KEY (product_id) REFERENCES oraclewines.products(product_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TABLE users (
   user_id INT NOT NULL,

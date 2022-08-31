@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING
         },
-        extraDescription: {
+        extra_description: {
             type: dataTypes.STRING
         },
         rate: {
@@ -45,15 +45,13 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: "products",
+        timestamps: false
     }
     const Product = sequelize.define(alias, cols, config); 
 
     Product.associate = function (models) {
-        Movie.belongsTo(models.Category, {
+        Product.belongsTo(models.Category, {
             as: "category",
             foreignKey: "category_id"
         })

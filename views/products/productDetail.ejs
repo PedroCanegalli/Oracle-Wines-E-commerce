@@ -33,9 +33,9 @@
                     <input type="submit" name="submit" value="Agregar al carrito">
                     <input type="submit" name="submit" value="Comprar">
                    
-                    <a href="/products/edit/<%= productEncontrado.id%>"><input type="submit" name="edit" value="Editar"></a>
+                    <a href="/products/edit/<%= productEncontrado.product_id%>"><input type="submit" name="edit" value="Editar"></a>
                     
-                    <form method="POST" action="/products/delete/<%= productEncontrado.id%>?_method=DELETE">
+                    <form method="POST" action="/products/delete/<%= productEncontrado.product_id%>?_method=DELETE">
                 
                     <input type="submit" name="destroy" value="Borrar">
 
