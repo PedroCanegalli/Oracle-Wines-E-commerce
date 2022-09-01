@@ -24,7 +24,7 @@ router.get("/create", productsController.add)
 router.post("/create", upload.single("image"), productsController.create)
 //vista del editado de producto
 router.get("/edit/:id", productsController.edit)
-router.put("/edit/:id", upload.single("thisimage"), productsController.update)
+router.put("/edit/:id", upload.single("image"), productsController.update)
 //vista del eliminado de producto
 router.delete("/delete/:id", productsController.destroy)
 // vista del carrito de compras

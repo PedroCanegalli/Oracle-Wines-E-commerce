@@ -18,7 +18,7 @@
     <%- include('../partials/header') %>
 
     <main>
-            <form action="/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/edit/<%= productToEdit.product_id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <section class="central">
 
                 <div class="descripcionProducto">
@@ -89,7 +89,7 @@
 
                     <div class="descripcion">
                         <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
-                        <input type="text" name="descripcionExtra" value="<%=productToEdit.descripcionExtra%>">
+                        <input type="text" name="descripcionExtra" value="<%=productToEdit.extra_description%>">
                     </div>
 
                     <div class="botones">

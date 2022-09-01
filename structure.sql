@@ -24,17 +24,6 @@ CREATE TABLE productCategory(
   PRIMARY KEY(productCategory_id)
 );
 
-CREATE TABLE cart(
-  cart_id INT NOT NULL,
-  user_id INT NOT NULL,
-  product_id INT NOT NULL,
-  PRIMARY KEY(cart_id),
-  FOREIGN KEY (user_id) REFERENCES users (user_id),
-  FOREIGN KEY (product_id) REFERENCES products (product_id)
-);
-
-ALTER TABLE oraclewines.cart DROP FOREIGN KEY cart_ibfk_2;
-ALTER TABLE oraclewines.cart ADD CONSTRAINT cart_ibfk_2 FOREIGN KEY (product_id) REFERENCES oraclewines.products(product_id) ON DELETE CASCADE ON UPDATE CASCADE;
 
 CREATE TABLE users (
   user_id INT NOT NULL,
@@ -53,6 +42,8 @@ CREATE TABLE users (
   FOREIGN KEY (userCategory_id) REFERENCES usersCategory (userCategory_id)
 );
 
+ALTER TABLE oraclewines.users MODIFY COLUMN user_id int(11) auto_increment NOT NULL;
+
 CREATE TABLE interest (
   interest_id INT NOT NULL,
   name VARCHAR(100) NOT NULL,
@@ -70,6 +61,21 @@ CREATE TABLE usersCategory (
   name VARCHAR(100) NOT NULL,
   PRIMARY KEY(userCategory_id)
 );
+
+CREATE TABLE cart(
+  cart_id INT NOT NULL,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
+  PRIMARY KEY(cart_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
+  FOREIGN KEY (product_id) REFERENCES products (product_id)
+);
+
+ALTER TABLE oraclewines.cart MODIFY COLUMN cart_id int(11) auto_increment NOT NULL;
+
+ALTER TABLE oraclewines.cart DROP FOREIGN KEY cart_ibfk_2;
+ALTER TABLE oraclewines.cart ADD CONSTRAINT cart_ibfk_2 FOREIGN KEY (product_id) REFERENCES oraclewines.products(product_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
 
 INSERT INTO productCategory
 VALUES (1, "Andino");

@@ -77,9 +77,8 @@ div input[type="submit"]{
 
 div input[type="submit"]:hover{
     background-color: #6d0f1c;
-    border: solid 5px #6d0f1c;
+    border: solid 1px #6d0f1c;
 }
-
 
 #form {
     width: 250px;

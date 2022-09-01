@@ -90,47 +90,22 @@ const productsController = {
             return res.redirect('/products')})            
         .catch(error => res.send(error))
     },
-	/*
-    delete: function (req,res) {
-        let movieId = req.params.id;
-        Movies
-        .findByPk(movieId)
-        .then(Movie => {
-            return res.render(path.resolve(__dirname, '..', 'views',  'moviesDelete'), {Movie})})
-        .catch(error => res.send(error))
-    },
     destroy: function (req,res) {
-        let movieId = req.params.id;
-        Movies
-        .destroy({where: {id: movieId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        let productId = req.params.id;
+        Products
+        .destroy({where: {product_id: productId}, force: true})
         .then(()=>{
-            return res.redirect('/movies')})
+            return res.redirect('/products')})
         .catch(error => res.send(error)) 
-    }*/
+    },
     	//vista del Carrito de compras
 	carrito: (req,res)=> {
 		res.render('products/carrito')
-	},
-    destroy : (req, res) => {
-	  	
-		const productId = parseInt(req.params.id, 10);
-
-        for (let i = 0; i < products.length; i++) {
-            if ( products[i].id === productId ) {
-                products.splice(i, 1)
-            }
-        }
-
-		productsDataBaseJSON = JSON.stringify(products, null, 4);
-
-		//Sobreescribir el archivo
-
-		fs.writeFileSync(path.resolve(__dirname, "../data/productsDataBase.json"), productsDataBaseJSON);
-
-        res.redirect("/products");
-    },
+	}
 }
 
+
+//CRUD ANTERIOR CON JSON
 
 /*
 let productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
