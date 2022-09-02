@@ -37,5 +37,5 @@ app.use("/users",usersRouter);
 
 //servidor
 app.listen(3100,() => {
-    console.log("wey esta madre si funciona")
+    console.log("wey esta madre si funciona en el puerto 3100")
 })

@@ -14,8 +14,8 @@ const Users = db.User;
 console.log(Products)
 
 
-const productsController = {
-    'list': (req, res) => {
+const productsController = { 
+    'list': (req, res) => { 
         db.Product.findAll()
             .then(products => {
                 res.render(path.resolve(__dirname, "../views/products/catalogo.ejs"), { products })
@@ -26,7 +26,7 @@ const productsController = {
             {
                 include : ['category']
             })
-            .then(productEncontrado => {
+            .then(productEncontrado => { 
                 res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado});
             });
     },
