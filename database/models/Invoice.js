@@ -14,10 +14,8 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: "invoice",
+        timestamps: false
     }
     const Invoice = sequelize.define(alias, cols, config); 
 

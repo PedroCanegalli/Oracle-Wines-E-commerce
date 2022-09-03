@@ -58,23 +58,17 @@
                     <% } %>
                 <br>
                 <label class="titulos-registros" for="perfilUsuario">Tipo de factura</label>
+                    <% for( let i = 0; i < userInvoice.length; i++ ) { %>
+                        <input name="invoice_id" type="radio" value="<%=userInvoice[i].invoice_id%>"><%=userInvoice[i].name%>
+                    <% } %>
                 <br>
-                <input type="radio" name="invoice" value="Factura A"><label for="invoice">  Factura A  </label>
-                <input type="radio" name="invoice" value="Factura B"><label for="invoice">  Factura B  </label>
-                <input type="radio" name="invoice" value="Factura C"><label for="invoice">  Factura C  </label>
-                <br>
+
                 <label class="titulos-registros" for="checkbox">Categorías de interés</label>
+                <% for( let i = 0; i < userInterest.length; i++ ) { %>
+                    <input name="interest_id" type="radio" value="<%=userInterest[i].interest_id%>"><%=userInterest[i].name%>
+                <% } %>
                 <br>
-                <input type="checkbox" name="interest" value="Fiestas"><label for="interests" > Fiestas </label>
-                <br>
-                <input type="checkbox" name="interest" value="Casamientos"><label for="interest"> Casamientos </label>
-                <br>
-                <input type="checkbox" name="interest" value="Eventos Formales"><label for="interest"> Eventos Formales </label>
-                <br>
-                <input type="checkbox" name="interest" value="Reuniones"><label for="interest"> Reuniones </label>
-                <br>
-                <input type="checkbox" name="interest" value="Vida sana"><label for="interest"> Vida sana </label>
-                <br>
+
                 <label class="titulos-registros" for="foto">Foto de Usuario</label>
                 <br>
                 <input type="file" name="picture" >

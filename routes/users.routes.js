@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let userRouter = require("../controller/userController")
+let userRouter2 = require("../controller/userController2")
 const multer = require('multer');
 const path = require('path');
 const { body } = require("express-validator");
@@ -34,8 +35,8 @@ const validation = [
 
 
 // vista de formulario de registro
-router.get('/register', guestMiddlewares,userRouter.register);
-router.post("/register", upload.single('picture'), validation, userRouter.registerProcess);
+router.get('/register', guestMiddlewares,userRouter2.register);
+router.post("/register", upload.single('picture'), validation, userRouter2.registerProcess);
 // vista de historial
 router.get('/record', userRouter.historial);
 // vista de formulario de login

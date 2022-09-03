@@ -14,10 +14,8 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: "interest",
+        timestamps: false
     }
     const Interest = sequelize.define(alias, cols, config); 
 
