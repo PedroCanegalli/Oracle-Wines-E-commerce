@@ -38,16 +38,16 @@ const validation = [
 router.get('/register', guestMiddlewares,userRouter2.register);
 router.post("/register", upload.single('picture'), validation, userRouter2.registerProcess);
 // vista de historial
-router.get('/record', userRouter.historial);
+router.get('/record', userRouter2.historial);
 // vista de formulario de login
-router.get('/login', guestMiddlewares, userRouter.login);
-router.post('/login', userRouter.loginProcess);
+router.get('/login', guestMiddlewares, userRouter2.login);
+router.post('/login', userRouter2.loginProcess);
 // vista de recuperar contraseña
-router.get('/recover', userRouter.recuperar);
+router.get('/recover', userRouter2.recuperar);
 
 // Detalle de un usuario
-router.get('/user', outMiddlewares, userRouter.show);
+router.get('/user', outMiddlewares, userRouter2.show);
 
 // logout de un usuario
-router.get('/logout', userRouter.logout);
+router.get('/logout', userRouter2.logout);
 module.exports = router;
