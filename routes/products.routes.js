@@ -29,5 +29,7 @@ router.put("/edit/:id", upload.single("image"), productsController.update)
 router.delete("/delete/:id", productsController.destroy)
 // vista del carrito de compras
 router.get("/cart", productsController.carrito)
+// buscar producto
+router.post("/buscar/detail", productsController.buscar)
 
 module.exports = router;

@@ -101,6 +101,20 @@ const productsController = {
     	//vista del Carrito de compras
 	carrito: (req,res)=> {
 		res.render('products/carrito')
+	},
+	buscar: async(req,res) =>{
+		
+		const keyword = req.body.keyword
+		console.log(keyword)
+		const Products = await db.Product.findAll({
+			where: {
+				name: { [Op.like]: "%" + keyword + "%"}
+			}
+		})
+		.then(([products]) =>{
+			console.log(products)
+			res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado:products});
+		}) 
 	}
 }
 
