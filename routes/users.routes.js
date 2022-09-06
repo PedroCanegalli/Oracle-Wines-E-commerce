@@ -49,8 +49,8 @@ router.get('/recover', userRouter2.recuperar);
 router.get('/user', outMiddlewares, userRouter2.show);
 
 //vista del editado del Usuario
-router.get("/edit/:id", userRouter2.userEdit)
-router.put("/edit/:id", upload.single("image"), userRouter2.editProcess)
+router.get("/edit/:id", userRouter2.userEdit);
+router.put("/edit/:id", upload.single("picture"), userRouter2.editProcess);
 
 // logout de un usuario
 router.get('/logout', userRouter2.logout);

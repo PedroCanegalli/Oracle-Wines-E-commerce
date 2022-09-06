@@ -32,6 +32,19 @@ figure{
     border-radius:2em;
 }
 
+.submit-button{
+    background-color: #6d0f1c;
+    border: solid 5px #6d0f1c;
+    color: white;
+    font-weight: bold;
+    transition: all 450ms;
+}
+
+.submit-button:hover{
+    background-color: black;
+    border: solid 5px black;
+}
+
 @media(min-width: 361px){
 
     .form1{
