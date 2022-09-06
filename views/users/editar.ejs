@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Wines</title>
+    <link rel="stylesheet" href="/css/styles-registro.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@600&family=Roboto&family=Tiro+Devanagari+Sanskrit:ital@1&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+        <main>
+            <div class="titulo">
+                <h4>EDITAR USUARIO</h4>
+            </div>
+
+            <div class="form">   
+                <form action="/users/edit/<%= userToEdit.user_id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+           
+                    <div class="campos-registro">
+                        <h4>Nombre y Apellido</h4>
+                        <input type="text" name="name"
+                        value="<%=userToEdit.name%>" 
+                        >
+                    </div>
+
+                    <div class="campos-registro">
+                        <h4>Fecha de Nacimiento</h4>
+                        <input type="date" name="bday"
+                        value="<%=userToEdit.bday%>" 
+                        >
+                    </div>
+
+                    <div class="campos-registro">
+                        <h4>Tipo de Factura</h4>
+                        <select name="invoice_id">
+                            <% for( let i = 0; i < userInvoice.length; i++ ) { %>
+                                <option value="<%=userInvoice[i].invoice_id%>"><%=userInvoice[i].name%></option>
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div class="campos-registro">
+                        <h4>Intereses</h4>
+                        <select name="interest_id">
+                            <% for( let i = 0; i < userInterest.length; i++ ) { %>
+                                <option value="<%=userInterest[i].interest_id%>"><%=userInterest[i].name%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <label class="titulos-registros" for="foto">Foto de Usuario</label>
+                    <br>
+                    <input type="file" name="image">
+
+                    
+                    <br>
+                    <input class="enviar" type="submit" name="enviar" value="Confirmar Cambios" >
+                    <input class="reset" type="reset" name="borrar" value="Borrar">
+                </form>
+            </div>   
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

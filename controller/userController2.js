@@ -109,7 +109,37 @@ const userController = {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect("/");
-	}
+	},
+
+	//vista para editar usuario
+	userEdit: function (req, res) {
+		let userId = req.params.id;
+        let promUser = Users.findByPk(userId,{include: ['invoice','interest']});
+		let promInvoice = Invoice.findAll();
+		let promInterest = Interests.findAll();
+        Promise
+        .all([promUser, promInterest, promInvoice])
+        .then(([userToEdit, userInterest, userInvoice]) => {
+           return res.render(path.resolve(__dirname, "../views/users/editar.ejs"), {userToEdit, userInvoice, userInterest})})
+        .catch(error => res.send(error))
+    },
+    editProcess: function (req,res) {
+        Users
+        .update(
+            {
+				name: req.body.name,
+				bday: req.body.bday,
+				address: req.body.addres,
+				invoice_id: req.body.invoice_id,
+				interest_id: req.body.interest_id,
+				picture: req.file.filename
+            }
+        )
+        .then(()=> {
+            return res.redirect('/users/user')})            
+        .catch(error => res.send(error))
+    }
+
 }
 
 /*CRUD Anterior con JSON

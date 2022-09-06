@@ -36,7 +36,11 @@
         <%} %>
         <p>Email: <a href="<%= user.email %>" target="_blank"><%= user.email %></a></p>
 
-    </div>   
+    </div>
+
+    <div>
+        <a href="/users/edit/<%= user.user_id%>"><input type="submit" name="edit" value="Editar"></a>
+    </div>
     
     
 </article>
