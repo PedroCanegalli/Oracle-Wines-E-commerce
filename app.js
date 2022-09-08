@@ -8,6 +8,7 @@ const cookies = require('cookie-parser');
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use ( express.static(publicPath));
+
 app.use (methodOverride("_method")) // configuracion para el metodo PUT y DELETE
 //configuracion para el req.body
 app.use(express.urlencoded({extended:false}))

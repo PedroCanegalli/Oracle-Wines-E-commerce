@@ -6,6 +6,7 @@ const { Op } = require("sequelize");
 const moment = require('moment');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const user = require('../models/user');
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Users = db.User;
@@ -28,7 +29,37 @@ const userController = {
            return res.render(path.resolve(__dirname, "../views/users/registro.ejs"), {userInterest,userInvoice})})
         .catch(error => res.send(error))
     },
-    registerProcess: function (req,res) {
+    registerProcess: async function (req,res) {
+		let resultValidation = validationResult(req)
+		// if para encontrar el error 
+		if (resultValidation.errors.length > 0) {
+
+			res.render("users/registro", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+
+			})
+		} 
+		let userEmail =  await Users.findOne({where: {'email': req.body.email}})
+		if(userEmail != null){
+		
+		console.log(userEmail.email)
+	//	console.log(req.body.email)
+		let email = userEmail.email
+		console.log(email)
+		if(email){
+			
+			return res.render("users/registro", {
+				errors: {
+					email: {
+						msg: "Este usuario ya esta registrado"
+					}
+				},
+				oldData: req.body
+
+			})
+		}
+	}
         Users
         .create(
             {
