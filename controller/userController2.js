@@ -155,17 +155,18 @@ const userController = {
         .catch(error => res.send(error))
     },
     editProcess: function (req,res) {
+		let userId = req.params.id;
         Users
         .update(
             {
 				name: req.body.name,
 				bday: req.body.bday,
-				address: req.body.addres,
 				invoice_id: req.body.invoice_id,
-				interest_id: req.body.interest_id,
-				picture: req.file.filename
-            }
-        )
+				interest_id: req.body.interest_id
+            },
+			{
+                where: {user_id: userId}
+            })
         .then(()=> {
             return res.redirect('/users/user')})            
         .catch(error => res.send(error))

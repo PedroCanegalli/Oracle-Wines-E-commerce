@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="/css/estiloslogin.css">
     <title>Oracle Wines - Login</title>
     <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+    <script src="/js/login.js"></script>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -27,8 +28,9 @@
         <div class="login-page">
             <div class="form">
               <form action="/users/login" class="login-form" method="POST">
-                    <input name="email" type="text" placeholder="E-mail"/>
-                    <input name="password" type="password" placeholder="password"/>
+                    <input name="email" type="text" placeholder="E-mail" class="email"/>
+                    <div class="errorEmail"></div>
+                    <input name="password" type="password" placeholder="password" class="password"/>
                     <% if (locals.errors && errors.email) { %>
                         <div class="errors">
                             <%= errors.email.msg %>
