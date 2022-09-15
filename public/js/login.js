@@ -20,7 +20,7 @@ window.addEventListener('load', function(){
 
     form.addEventListener('submit', function(event){
         let em = email.value;
-        event.preventDefault();
+        //event.preventDefault();
         const validateEmail = (em) => {
             return String(em)
             .toLowerCase()

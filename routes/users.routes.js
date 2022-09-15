@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 //CONTROLLER
-let userRouter = require("../controller/userController")
+//let userRouter = require("../controller/userController")
 let userRouter2 = require("../controller/userController2")
 
      //REQUIRE MIDDLEWARES

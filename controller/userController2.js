@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 const moment = require('moment');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const user = require('../models/user');
+//const user = require('../models/user');
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Users = db.User;
@@ -14,71 +14,91 @@ const Interests = db.Interest;
 const Invoice = db.Invoice;
 const UserCategories = db.UserCategory;
 
-const userController = { 
-    show: (req, res) => {
-        
-        res.render('users/user', {user: req.session.userLogged});
+const userController = {
+	show: (req, res) => {
 
-    },
-    register: function (req, res) {
-        let promInterest = Interests.findAll();
-        let promInvoice = Invoice.findAll();
-        Promise
-        .all([promInterest, promInvoice])
-        .then(([userInterest, userInvoice]) => {
-           return res.render(path.resolve(__dirname, "../views/users/registro.ejs"), {userInterest,userInvoice})})
-        .catch(error => res.send(error))
-    },
-    registerProcess: async function (req,res) {
+		res.render('users/user', { user: req.session.userLogged });
+
+	},
+	register: function (req, res) {
+		let promInterest = Interests.findAll();
+		let promInvoice = Invoice.findAll();
+		Promise
+			.all([promInterest, promInvoice])
+			.then(([userInterest, userInvoice]) => {
+				return res.render(path.resolve(__dirname, "../views/users/registro.ejs"), { userInterest, userInvoice })
+			})
+			.catch(error => res.send(error))
+	},
+	registerProcess: function (req, res) {
 		let resultValidation = validationResult(req)
-		// if para encontrar el error 
-		if (resultValidation.errors.length > 0) {
+		let promInvoice = Invoice.findAll()
+		let promInterest = Interests.findAll()
 
-			res.render("users/registro", {
-				errors: resultValidation.mapped(),
-				oldData: req.body
+		//variable donde guardo el objeto encontrado de acuerdo al email
+		let userEmail = Users.findOne({ where: { 'email': req.body.email } })
 
-			})
-		} 
-		let userEmail =  await Users.findOne({where: {'email': req.body.email}})
-		if(userEmail != null){
-		
-		console.log(userEmail.email)
-	//	console.log(req.body.email)
-		let email = userEmail.email
-		console.log(email)
-		if(email){
+		Promise
+			.all([promInvoice, promInterest, userEmail])
+			.then(([userInvoice, userInterest, userEmail]) => {
+
+				//return userInterest, userInvoice
+
+
+				// if para encontrar el error 
+				if (resultValidation.errors.length > 0) {
+
+					res.render("users/registro", {
+						errors: resultValidation.mapped(),
+						oldData: req.body,
+						userInvoice,
+						userInterest
+
+					})
+				}
+				//console.log(userInvoice)
+
+
+				//condicion si no encuentra vacio el objeto donde esta el email, procede a a la siguiente condicion
+				if (userEmail != null) {
+
+
+					return res.render("users/registro", {
+						errors: {
+							email: {
+								msg: "Este usuario ya esta registrado"
+							}
+						},
+						oldData: req.body,
+						userInvoice,
+						userInterest
+
+					})
+
+				}
 			
-			return res.render("users/registro", {
-				errors: {
-					email: {
-						msg: "Este usuario ya esta registrado"
-					}
-				},
-				oldData: req.body
+		Users
+			.create(
+				{
+					name: req.body.name,
+					userName: req.body.userName,
+					email: req.body.email,
+					bday: req.body.bday,
+					address: req.body.addres,
+					invoice_id: req.body.invoice_id,
+					interest_id: req.body.interest_id,
+					picture: req.file.filename,
+					password: bcryptjs.hashSync(req.body.password, 10),
+					userCategory_id: 2
+				}
+			)
+			.then(() => {
 
+				return res.redirect('/users/login')
 			})
-		}
-	}
-        Users
-        .create(
-            {
-				name: req.body.name,
-				userName: req.body.userName,
-				email: req.body.email,
-				bday: req.body.bday,
-				address: req.body.addres,
-				invoice_id: req.body.invoice_id,
-				interest_id: req.body.interest_id,
-				picture: req.file.filename,
-				password: bcryptjs.hashSync(req.body.password, 10),
-                userCategory_id: 2
-            }
-        )
-        .then(()=> {
-            return res.redirect('/users/login')})            
-        .catch(error => res.send(error))
-    },
+		})
+			.catch(error => res.send(error))
+	},
 	//vista del historial de compras
 	historial: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/historial.ejs"))
@@ -88,55 +108,55 @@ const userController = {
 		res.render(path.resolve(__dirname, "../views/users/login.ejs"))
 	},
 
-    	//vista del proceso del login
-	loginProcess: async (req,res)=> {
-        
-        //Verificación de email
-        let userToLogin = await Users.findOne({where: {'email': req.body.email}});
+	//vista del proceso del login
+	loginProcess: async (req, res) => {
 
-        if(userToLogin) {
+		//Verificación de email
+		let userToLogin = await Users.findOne({ where: { 'email': req.body.email } });
 
-            //Verificación de password
-            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            if(passwordOK){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin
+		if (userToLogin) {
 
-				if(req.body.remember_user){
-					res.cookie('userEmail', req.body.email, {maxAge: 1000*60*30});
+			//Verificación de password
+			let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password)
+			if (passwordOK) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin
+
+				if (req.body.remember_user) {
+					res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 30 });
 				}
 
-                return res.redirect("user");
-            }
+				return res.redirect("user");
+			}
 			//console.log(req.session)
-            //Mensaje de error ante password incorrecto
-            return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
-                errors : 
-                    {
-                        email: {
-                            msg: 'Las credenciales son invalidas'
-                        }
-                    },
-                oldData: req.body
-            });
-        }
+			//Mensaje de error ante password incorrecto
+			return res.render(path.resolve(__dirname, "../views/users/login.ejs"), {
+				errors:
+				{
+					email: {
+						msg: 'Las credenciales son invalidas'
+					}
+				},
+				oldData: req.body
+			});
+		}
 
-        //Mensaje de error ante email no encontrado
-        return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
-            errors : 
-                {
-                    email: {
-                        msg: 'Email no registrado'
-                    }
-                },
-            oldData: req.body
-        });
-    },
+		//Mensaje de error ante email no encontrado
+		return res.render(path.resolve(__dirname, "../views/users/login.ejs"), {
+			errors:
+			{
+				email: {
+					msg: 'Email no registrado'
+				}
+			},
+			oldData: req.body
+		});
+	},
 	//vista para recuperar contraseña
 	recuperar: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/recuperar.ejs"))
 	},
-    logout: (req,res)=>{
+	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect("/");
@@ -145,32 +165,34 @@ const userController = {
 	//vista para editar usuario
 	userEdit: function (req, res) {
 		let userId = req.params.id;
-        let promUser = Users.findByPk(userId,{include: ['invoice','interest']});
+		let promUser = Users.findByPk(userId, { include: ['invoice', 'interest'] });
 		let promInvoice = Invoice.findAll();
 		let promInterest = Interests.findAll();
-        Promise
-        .all([promUser, promInterest, promInvoice])
-        .then(([userToEdit, userInterest, userInvoice]) => {
-           return res.render(path.resolve(__dirname, "../views/users/editar.ejs"), {userToEdit, userInvoice, userInterest})})
-        .catch(error => res.send(error))
-    },
-    editProcess: function (req,res) {
+		Promise
+			.all([promUser, promInterest, promInvoice])
+			.then(([userToEdit, userInterest, userInvoice]) => {
+				return res.render(path.resolve(__dirname, "../views/users/editar.ejs"), { userToEdit, userInvoice, userInterest })
+			})
+			.catch(error => res.send(error))
+	},
+	editProcess: function (req, res) {
 		let userId = req.params.id;
-        Users
-        .update(
-            {
-				name: req.body.name,
-				bday: req.body.bday,
-				invoice_id: req.body.invoice_id,
-				interest_id: req.body.interest_id
-            },
-			{
-                where: {user_id: userId}
-            })
-        .then(()=> {
-            return res.redirect('/users/user')})            
-        .catch(error => res.send(error))
-    }
+		Users
+			.update(
+				{
+					name: req.body.name,
+					bday: req.body.bday,
+					invoice_id: req.body.invoice_id,
+					interest_id: req.body.interest_id
+				},
+				{
+					where: { user_id: userId }
+				})
+			.then(() => {
+				return res.redirect('/users/user')
+			})
+			.catch(error => res.send(error))
+	}
 
 }
 
@@ -251,58 +273,58 @@ const controller = {
 	},
 	//vista del proceso del login
 	loginProcess: (req,res)=> {
-        
-        //Verificación de email
-        let userToLogin = usersModel.findByField('email', req.body.email);
+	    
+		//Verificación de email
+		let userToLogin = usersModel.findByField('email', req.body.email);
 
-        if(userToLogin) {
+		if(userToLogin) {
 
-            //Verificación de password
-            let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password)
-            if(passwordOK){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin
+			//Verificación de password
+			let passwordOK = bcryptjs.compareSync(req.body.password, userToLogin.password)
+			if(passwordOK){
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin
 
 				if(req.body.remember_user){
 					res.cookie('userEmail', req.body.email, {maxAge: 1000*60*30});
 				}
 
-                return res.redirect("user");
-            }
+				return res.redirect("user");
+			}
 			//console.log(req.session)
-            //Mensaje de error ante password incorrecto
-            return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
-                errors : 
-                    {
-                        email: {
-                            msg: 'Las credenciales son invalidas'
-                        }
-                    },
-                oldData: req.body
-            });
-        }
+			//Mensaje de error ante password incorrecto
+			return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
+				errors : 
+					{
+						email: {
+							msg: 'Las credenciales son invalidas'
+						}
+					},
+				oldData: req.body
+			});
+		}
 
-        //Mensaje de error ante email no encontrado
-        return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
-            errors : 
-                {
-                    email: {
-                        msg: 'Email no registrado'
-                    }
-                },
-            oldData: req.body
-        });
-    },
+		//Mensaje de error ante email no encontrado
+		return res.render(path.resolve(__dirname,"../views/users/login.ejs"), {
+			errors : 
+				{
+					email: {
+						msg: 'Email no registrado'
+					}
+				},
+			oldData: req.body
+		});
+	},
 	//vista para recuperar contraseña
 	recuperar: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/recuperar.ejs"))
 	},
 
 	show: (req, res) => {
-        
-        res.render('users/user', {user: req.session.userLogged});
+	    
+		res.render('users/user', {user: req.session.userLogged});
 
-    },
+	},
 
 	logout: (req,res)=>{
 		res.clearCookie('userEmail');

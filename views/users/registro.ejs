@@ -70,7 +70,7 @@
                      <!--* Tipo de Factura -->
                     <label class="titulos-registros" for="perfilUsuario">Tipo de factura</label>
                     <select name="invoice_id">
-                        <% for( let i = 0; i < userInvoice.length; i++ ) { %>
+                        <% for( let i = 0; i < userInvoice.length ; i++ ) { %>
                             <option value="<%=userInvoice[i].invoice_id%>"><%=userInvoice[i].name%></option>
                         <% } %>
                     </select>
