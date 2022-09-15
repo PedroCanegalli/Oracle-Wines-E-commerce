@@ -47,7 +47,7 @@ const userController = {
 
 				// if para encontrar el error 
 				if (resultValidation.errors.length > 0) {
-
+					
 					res.render("users/registro", {
 						errors: resultValidation.mapped(),
 						oldData: req.body,
@@ -61,7 +61,7 @@ const userController = {
 
 				//condicion si no encuentra vacio el objeto donde esta el email, procede a a la siguiente condicion
 				if (userEmail != null) {
-
+					console.log(userEmail)
 
 					return res.render("users/registro", {
 						errors: {
@@ -92,6 +92,7 @@ const userController = {
 					userCategory_id: 2
 				}
 			)
+			
 			.then(() => {
 
 				return res.redirect('/users/login')
