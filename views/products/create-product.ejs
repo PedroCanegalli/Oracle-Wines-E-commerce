@@ -25,23 +25,43 @@
                     
                     <div class="name">
                         <h4>Nombre del producto</h1>
-                        <input type="text" name="name">
+                        <input type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>">
                     </div>
+                    <% if (locals.errors && errors.name) {%>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                     
-                    <div class="precio">
+                    <div class="precio" >
                         <h4>Precio</h4>
-                        <input type="number" name="price">
+                        <input type="number" name="price" value="<%= locals.oldData ? oldData.price : null %>">
                     </div>
+                    <% if (locals.errors && errors.price) {%>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="cant">
                         <h4>Cantidad</h4>
-                        <input type="number" id="cantidad" name="stock" min="1">
+                        <input type="number" id="cantidad" name="stock" min="1" value="<%= locals.oldData ? oldData.stock : null %>">
                     </div>
+                    <% if (locals.errors && errors.stock) {%>
+                        <div class="text-danger">
+                            <%= errors.stock.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="descuento">
                         <h4>Descuento</h4>
-                        <input type="number" name="discount">
+                        <input type="number" name="discount" value="<%= locals.oldData ? oldData.discount : null %>">
                     </div>
+                    <% if (locals.errors && errors.discount) {%>
+                        <div class="text-danger">
+                            <%= errors.discount.msg %>
+                        </div>
+                    <% } %>
 
                     <div class="categoria">
                         <h4>Tipo de vino</h4>
@@ -66,13 +86,23 @@
 
                     <div class="precio">
                         <h4>Cantidad de Premios</h4>
-                        <input type="number" name="awards">
+                        <input type="number" name="awards" value="<%= locals.oldData ? oldData.awards : null %>">
                     </div>
+                    <% if (locals.errors && errors.awards) {%>
+                        <div class="text-danger">
+                            <%= errors.awards.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="descripcion">
                         <h4>Descripcion del procucto</h2>
-                        <input type="text" name="description">
+                        <input type="textarea" name="description" value="<%= locals.oldData ? oldData.description : null %>">
                     </div>
+                    <% if (locals.errors && errors.description) {%>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
 
                 </div>
 
@@ -81,13 +111,18 @@
                     <div class="imagen">
                         <div class="in-imagen">
                             <label for="image">Seleccionar una imagen para el producto:</label>
-                            <input type="file" name="image">
+                            <input type="file" name="image" value="<%= locals.oldData ? oldData.image : null %>">
                         </div>
                     </div>
+                    <% if (locals.errors && errors.image) {%>
+                        <div class="text-danger">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
 
                     <div class="descripcion">
                         <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
-                        <input type="text" name="extra_description">
+                        <input type="textarea" name="extra_description">
                     </div>
 
                     <div class="botones">

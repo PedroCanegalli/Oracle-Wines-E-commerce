@@ -103,6 +103,11 @@ h1, h2, h4{
     margin: 5px 0px 5px 0px;
 }
 
+.text-danger{
+    color: #6d0f1c;
+    font-size: small;
+}
+
 @media (min-width: 425px){
 
     section div.imagen label{

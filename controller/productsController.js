@@ -4,7 +4,7 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
-
+const { validationResult } = require("express-validator");
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 const Products = db.Product;
@@ -37,24 +37,43 @@ const productsController = {
         })
     },
     create: function (req,res) {
-        Products
-        .create(
-            {
-                name: req.body.name,
-                price: req.body.price,
-                stock: req.body.stock,
-                discount: req.body.discount,
-                category_id: req.body.category,
-                awards: req.body.awards,
-                description: req.body.description,
-				extra_description: req.body.extra_description,
-				rate: req.body.rate,
-				image: req.file.filename
-            }
-        )
-        .then(()=> {
-            return res.redirect('/products')})            
-        .catch(error => res.send(error))
+		let resultValidation = validationResult(req)
+		let promCategories = db.Category.findAll()
+		
+		Promise
+			.all([promCategories])
+			.then(([categories]) => {
+
+			if (resultValidation.errors.length > 0) {
+						
+				res.render("products/create-product", {
+					errors: resultValidation.mapped(),
+					oldData: req.body,
+					categories
+
+				})
+			} else {
+		
+			Products
+			.create(
+				{
+					name: req.body.name,
+					price: req.body.price,
+					stock: req.body.stock,
+					discount: req.body.discount,
+					category_id: req.body.category,
+					awards: req.body.awards,
+					description: req.body.description,
+					extra_description: req.body.extra_description,
+					rate: req.body.rate,
+					image: req.file.filename
+				}
+			)
+			.then(()=> {
+				return res.redirect('/products')})
+			}})      
+			.catch(error => res.send(error))
+		
     },
 
     edit: function(req,res) {
@@ -69,6 +88,25 @@ const productsController = {
     },
     update: function (req,res) {
         let productId = req.params.id;
+		let promProducts = Products.findByPk(productId,{include: ['category']});
+		let promCategories = db.Category.findAll()
+		let resultValidation = validationResult(req)
+		
+		Promise
+			.all([promCategories, promProducts])
+			.then(([categories, productToEdit]) => {
+
+			if (resultValidation.errors.length > 0) {
+						
+				res.render("products/edit-product", {
+					errors: resultValidation.mapped(),
+					oldData: req.body,
+					productToEdit,
+					categories
+
+				})
+			} else {
+		
         Products
         .update(
             {
@@ -87,7 +125,8 @@ const productsController = {
                 where: {product_id: productId}
             })
         .then(()=> {
-            return res.redirect('/products')})            
+            return res.redirect('/products')})
+		}})            
         .catch(error => res.send(error))
     },
     destroy: function (req,res) {

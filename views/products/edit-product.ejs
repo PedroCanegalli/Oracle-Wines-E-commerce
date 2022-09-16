@@ -25,25 +25,45 @@
                     
                     <div class="name">
                         <h4>Nombre del producto</h1>
-                        <input type="text" name="name"
-                        value="<%=productToEdit.name%>" 
+                        <input type="text" name="name" 
+                        value="<%=locals.oldData ? oldData.name : productToEdit.name%>" 
                         >
                     </div>
+                    <% if (locals.errors && errors.name) {%>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="precio">
                         <h4>Precio</h4>
-                        <input type="number" name="price" value="<%=productToEdit.price%>">
+                        <input type="number" name="price" value="<%=locals.oldData ? oldData.price : productToEdit.price%>">
                     </div>
+                    <% if (locals.errors && errors.price) {%>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="cant">
                         <h4>Cantidad</h4>
-                        <input type="number" id="cantidad" name="stock" min="1" value="<%=productToEdit.stock%>">
+                        <input type="number" id="cantidad" name="stock" min="1" value="<%= locals.oldData ? oldData.stock : productToEdit.stock%>">
                     </div>
+                    <% if (locals.errors && errors.stock) {%>
+                        <div class="text-danger">
+                            <%= errors.stock.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="descuento">
                         <h4>Descuento</h4>
-                        <input type="number" name="discount" value="<%=productToEdit.discount%>">
+                        <input type="number" name="discount" value="<%=locals.oldData ? oldData.discount : productToEdit.discount%>">
                     </div>
+                    <% if (locals.errors && errors.discount) {%>
+                        <div class="text-danger">
+                            <%= errors.discount.msg %>
+                        </div>
+                    <% } %>
 
                     <div class="categoria">
                         <h4>Tipo de vino</h4>
@@ -68,13 +88,23 @@
 
                     <div class="precio">
                         <h4>Cantidad de Premios</h4>
-                        <input type="number" name="awards" value="<%=productToEdit.awards%>">
+                        <input type="number" name="awards" value="<%=locals.oldData ? oldData.awards : productToEdit.awards%>">
                     </div>
+                    <% if (locals.errors && errors.awards) {%>
+                        <div class="text-danger">
+                            <%= errors.awards.msg %>
+                        </div>
+                    <% } %>
                     
                     <div class="descripcion">
                         <h4>Descripcion del procucto</h2>
-                        <input type="text" name="description" value="<%=productToEdit.description%>">
+                        <input type="text" name="description" value="<%=locals.oldData ? oldData.description : productToEdit.description%>">
                     </div>
+                    <% if (locals.errors && errors.description) {%>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
 
                 </div>
 
@@ -86,10 +116,15 @@
                             <input type="file" name="image">
                         </div>
                     </div>
+                    <% if (locals.errors && errors.image) {%>
+                        <div class="text-danger">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
 
                     <div class="descripcion">
                         <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
-                        <input type="text" name="descripcionExtra" value="<%=productToEdit.extra_description%>">
+                        <input type="text" name="extra_description" value="<%=locals.oldData ? oldData.extra_description : productToEdit.extra_description%>">
                     </div>
 
                     <div class="botones">
