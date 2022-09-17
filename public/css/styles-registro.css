@@ -158,5 +158,24 @@ form label{
 
 }
 
+.erroresName {
+    color: red;
+    font-weight: bold;
+}
+
+.erroresEmail {
+    color: red;
+    font-weight: bold;
+}
+
+.erroresContra {
+    color: red;
+    font-weight: bold;
+}
+
+.erroresImagen {
+    color: red;
+    font-weight: bold;
+}
 
 
