@@ -115,6 +115,19 @@ const userController = {
 		//Verificación de email
 		let userToLogin = await Users.findOne({ where: { 'email': req.body.email } });
 
+		//Validacion de Email Valido
+		let resultValidation = validationResult(req)
+
+		if (resultValidation.errors.length > 0) {
+			
+					
+			res.render("users/login", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+
+			})
+		}
+
 		if (userToLogin) {
 
 			//Verificación de password
@@ -152,7 +165,10 @@ const userController = {
 			},
 			oldData: req.body
 		});
+
+		//
 	},
+
 	//vista para recuperar contraseña
 	recuperar: (req, res) => {
 		res.render(path.resolve(__dirname, "../views/users/recuperar.ejs"))

@@ -10,6 +10,7 @@ const { body } = require("express-validator");
 const guestMiddlewares = require("../middlewares/guestMiddleware");
 const outMiddlewares = require("../middlewares/outMiddleware");
 const validation =  require("../middlewares/registerValidation")
+const validationLogin =  require("../middlewares/loginValidation")
 const upload = require("../middlewares/multerUsers")
 
 
@@ -23,7 +24,8 @@ router.post("/register", upload.single('picture'), validation, userRouter2.regis
 router.get('/record', userRouter2.historial);
 // vista de formulario de login
 router.get('/login', guestMiddlewares, userRouter2.login);
-router.post('/login', userRouter2.loginProcess);
+router.post('/login', validationLogin, userRouter2.loginProcess);
+
 // vista de recuperar contraseña
 router.get('/recover', userRouter2.recuperar);
 

@@ -30,10 +30,15 @@
               <form action="/users/login" class="login-form" method="POST">
                     <input name="email" type="text" placeholder="E-mail" class="email"/>
                     <div class="errorEmail"></div>
-                    <input name="password" type="password" placeholder="password" class="password"/>
                     <% if (locals.errors && errors.email) { %>
                         <div class="errors">
                             <%= errors.email.msg %>
+                        </div>
+                    <% } %>
+                    <input name="password" type="password" placeholder="password" class="password"/>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="errors">
+                            <%= errors.password.msg %>
                         </div>
                     <% } %>
                         <button type="submit">INGRESAR</button>               

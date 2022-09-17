@@ -18,7 +18,7 @@ window.addEventListener('load', function(){
     let form = document.querySelector('.login-form');
 
 
-    form.addEventListener('submit', function(event){
+    form.addEventListener('mouseleave', function(event){
         let em = email.value;
         //event.preventDefault();
         const validateEmail = (em) => {
@@ -29,5 +29,10 @@ window.addEventListener('load', function(){
             );
           };
           console.log(validateEmail(em));
+          if(validateEmail(em) ==null){
+            errorEmail.innerText = "El formato de mail no es valido"
+          }else{
+            errorEmail.innerText = "";
+          } 
     })
 })
