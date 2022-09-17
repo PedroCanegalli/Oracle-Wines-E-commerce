@@ -17,6 +17,7 @@
     rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+    <script src="/js/registro.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,10 @@
             <div class="form">   
                 <form action="/users/register" method="POST" enctype="multipart/form-data">
                      <!--* Nombre -->
-                    <input class="campos-registro"type="text" name="name" placeholder="Nombre y Apellido" value="<%= locals.oldData ? oldData.name : null %>">
+                    <input id= "name" class="campos-registro"type="text" name="name" placeholder="Nombre y Apellido" value="<%= locals.oldData ? oldData.name : null %>">
+                    <!--* Validacion Frontend-->
+                    <div class = "erroresName">
+                    </div>
                     <!--* Validacion Backend -->
                     <% if (locals.errors && errors.name) {%>
                     <div class="text-danger">
@@ -48,8 +52,11 @@
                         <% } %>
                     <br>
                      <!--* Email -->
-                    <input class="campos-registro" type="email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email : null %>">
-                     <!--* Validacion Backend -->
+                    <input id = "email" class="campos-registro" type="email" name="email" placeholder="E-mail" value="<%= locals.oldData ? oldData.email : null %>">
+                    <!--* Validacion Frontend-->
+                    <div class = "erroresEmail">
+                    </div>
+                    <!--* Validacion Backend -->
                     <% if (locals.errors && errors.email) {%>
                         <div class="text-danger">
                             <%= errors.email.msg %>
@@ -89,7 +96,10 @@
                      <!--* Foto de Usuario -->
                     <label class="titulos-registros" for="foto">Foto de Usuario</label>
                     <br>
-                    <input type="file" name="picture" >
+                    <input id = "picture" type="file" name="picture" >
+                    <!--* Validacion Frontend-->
+                    <div class = "erroresImagen">
+                    </div>
                     <!--* Validacion Backend -->
                     <% if (locals.errors && errors.picture) {%>
                         <div class="text-danger">
@@ -98,7 +108,10 @@
                         <% } %>
                     <br>
                      <!--* Password -->
-                    <input class="campos-registro" type="password" name="password" placeholder="Contraseña">
+                    <input id = "password" class="campos-registro" type="password" name="password" placeholder="Contraseña">
+                    <!--* Validacion Frontend-->
+                    <div class = "erroresContra">
+                    </div>
                    <!--* Validacion Backend -->
                     <% if (locals.errors && errors.password) {%>
                         <div class="text-danger">
