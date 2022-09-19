@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/styles-admin.css">
     <title>Administrador productos</title>
     <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+    <script src="/js/create-products.js"></script>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -22,17 +23,19 @@
             <section class="central">
 
                 <div class="descripcionProducto">
-                    
+                    <!--* Nombre producto -->
                     <div class="name">
                         <h4>Nombre del producto</h1>
-                        <input type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>">
+                        <input id="name" type="text" name="name" value="<%= locals.oldData ? oldData.name : null %>">
                     </div>
+                    <!--* Validacion Frontend-->
+                    <div class="errorName"></div>
                     <% if (locals.errors && errors.name) {%>
                         <div class="text-danger">
                             <%= errors.name.msg %>
                         </div>
                     <% } %>
-                    
+                    <!--* Precio producto -->
                     <div class="precio" >
                         <h4>Precio</h4>
                         <input type="number" name="price" value="<%= locals.oldData ? oldData.price : null %>">
@@ -42,7 +45,7 @@
                             <%= errors.price.msg %>
                         </div>
                     <% } %>
-                    
+                    <!--* Cantidad -->
                     <div class="cant">
                         <h4>Cantidad</h4>
                         <input type="number" id="cantidad" name="stock" min="1" value="<%= locals.oldData ? oldData.stock : null %>">
@@ -52,7 +55,7 @@
                             <%= errors.stock.msg %>
                         </div>
                     <% } %>
-                    
+                    <!--* Descuento producto -->
                     <div class="descuento">
                         <h4>Descuento</h4>
                         <input type="number" name="discount" value="<%= locals.oldData ? oldData.discount : null %>">
@@ -62,7 +65,7 @@
                             <%= errors.discount.msg %>
                         </div>
                     <% } %>
-
+                    <!--* Categoría producto -->
                     <div class="categoria">
                         <h4>Tipo de vino</h4>
                         <select name="category">
@@ -72,7 +75,7 @@
                             <% } %>
                         </select>
                     </div>
-
+                    <!--* Calificación producto -->
                     <div class="categoria">
                         <h4>Calificación</h4>
                         <select name="rate" >
@@ -83,7 +86,7 @@
                             <option value="5">5 Estellas</option>
 					    </select>
                     </div>
-
+                    <!--* Premios -->
                     <div class="precio">
                         <h4>Cantidad de Premios</h4>
                         <input type="number" name="awards" value="<%= locals.oldData ? oldData.awards : null %>">
@@ -93,11 +96,13 @@
                             <%= errors.awards.msg %>
                         </div>
                     <% } %>
-                    
+                    <!--* Descripción producto -->
                     <div class="descripcion">
                         <h4>Descripcion del procucto</h2>
-                        <input type="textarea" name="description" value="<%= locals.oldData ? oldData.description : null %>">
+                        <input id="description" type="textarea" name="description" value="<%= locals.oldData ? oldData.description : null %>">
                     </div>
+                    <!--* Validacion Frontend-->
+                    <div class="errorDescription"></div>
                     <% if (locals.errors && errors.description) {%>
                         <div class="text-danger">
                             <%= errors.description.msg %>
@@ -107,24 +112,26 @@
                 </div>
 
                 <div class="imagen-con-botones">
-
+                    <!--* Imagen producto -->
                     <div class="imagen">
                         <div class="in-imagen">
                             <label for="image">Seleccionar una imagen para el producto:</label>
-                            <input type="file" name="image" value="<%= locals.oldData ? oldData.image : null %>">
+                            <input id="image" type="file" name="image" value="<%= locals.oldData ? oldData.image : null %>">
                         </div>
+                        <!--* Validacion Frontend-->
+                        <div class = "errorImagen"></div>
                     </div>
                     <% if (locals.errors && errors.image) {%>
                         <div class="text-danger">
                             <%= errors.image.msg %>
                         </div>
                     <% } %>
-
+                    <!--* Detalles producto -->
                     <div class="descripcion">
                         <h4>Mas detalles sobre el producto, de donde viene, etc</h2>
                         <input type="textarea" name="extra_description">
                     </div>
-
+                    <!--* Botones -->
                     <div class="botones">
                         <button type="submit">Añadir producto</button>
                         <button type="reset">Restablecer</button>
