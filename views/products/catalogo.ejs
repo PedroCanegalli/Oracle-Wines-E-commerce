@@ -24,8 +24,16 @@
             <% for(let i = 0 ; i < products.length; i++){%>
             <article class="producto">
                 <img class="imagen-vino" src="/images/<%= products[i].image%>" alt="Vino">
+                <% if (products[i].discount > 0) { %>
+                    <div class="descuento-producto"> -<%= products[i].discount%>% OFF</div>
+                <% } %>
                 <div class="detalle-producto">
                     <div class="nombre-producto"><%= products[i].name%></div>
+                    <% if (products[i].awards > 0) { %>
+                        <div class="premios-producto">
+                            Premios: <%= products[i].awards%>
+                        </div>
+                    <% } %>
                     <div class="precio-producto">$<%= products[i].price%></div>
                     <a href="/products/detail/<%= products[i].product_id%>"><button class="boton-eliminar">Ver producto</button></a>
                 </div>

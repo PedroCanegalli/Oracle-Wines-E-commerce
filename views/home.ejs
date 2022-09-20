@@ -51,35 +51,21 @@
         <section class="vinos-premiados">
             <h2>VINOS PREMIADOS</h2>
             <div class="lista-premiados">
-                <article class="producto">
-                    <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
-                    <div class="detalle-producto">
-                        <div class="nombre-producto">Vino 1</div>
-                        <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
-                        <div class="precio-producto">$100</div>
-                        <a href="/products"><button class="boton-eliminar">Ver producto</button></a>
-                    </div>
-                </article>
-                
-                <article class="producto">
-                    <img class="imagen-vino" src="/images/Vino4.png" alt="Vino">
-                    <div class="detalle-producto">
-                        <div class="nombre-producto">Vino 2</div>
-                        <div class="descripcion-producto">Vino de Mendoza Cabernet Cosecha 2018</div>
-                        <div class="precio-producto">$100</div>
-                        <a href="/products"><button class="boton-eliminar">Ver producto</button></a>
-                    </div>
-                </article>
-                
-                <article class="producto">
-                    <img class="imagen-vino" src="/images/Vino1.png" alt="Vino">
-                    <div class="detalle-producto">
-                        <div class="nombre-producto">Vino 3</div>
-                        <div class="descripcion-producto">Vino de Mendoza Malbec Roble Cosecha 2020</div>
-                        <div class="precio-producto">$200</div>
-                        <a href="/products"><button class="boton-eliminar">Ver producto</button></a>
-                    </div>
-                </article>
+                <% for(let i = 0 ; i < winnerProducts.length; i++){%>
+                    <article class="producto">
+                        <img class="imagen-vino" src="/images/<%= winnerProducts[i].image%>" alt="Vino">
+                        <% if (winnerProducts[i].discount > 0) { %>
+                            <div class="descuento-producto"> -<%= winnerProducts[i].discount%>% OFF</div>
+                        <% } %>
+                        <div class="detalle-producto">
+                            <div class="nombre-producto"><%= winnerProducts[i].name%></div>
+                            <div class="premios-producto">Premios: <%= winnerProducts[i].awards%></div>
+                            <div class="precio-producto">$<%= winnerProducts[i].price%></div>
+                            <a href="/products/detail/<%= winnerProducts[i].product_id%>"><button class="boton-eliminar">Ver producto</button></a>
+                        </div>
+                    </article>
+                <% } %>
+
             </div>
             <div class="boton-ver-mas"><button>Ver más</button></div>
         </section>

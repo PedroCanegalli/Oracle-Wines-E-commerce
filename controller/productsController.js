@@ -11,9 +11,6 @@ const Products = db.Product;
 const Categories = db.Category;
 const Users = db.User;
 
-console.log(Products)
-
-
 const productsController = { 
     'list': (req, res) => { 
         db.Product.findAll()

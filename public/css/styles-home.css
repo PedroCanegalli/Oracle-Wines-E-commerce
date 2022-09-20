@@ -154,6 +154,7 @@ main h2{
 .producto{
     display: flex;
     width: 250px;
+    height: 300px;
     align-items: center;
     justify-content: space-around;
     border: solid 1px lightgrey;
@@ -163,6 +164,7 @@ main h2{
     padding: 0 20px;
     transition: all 300ms;
     background-color: white;
+    position: relative;
 }
 
 .vinos-premiados{
@@ -187,15 +189,52 @@ main h2{
 }
 
 .nombre-producto{
-    font-size: 20px;
+    font-size: 100%;
     font-weight: bold;
+    
 }
 
 .precio-producto{
-    font-size: 20px;
+    font-size: 100%;
     color: #6d0f1c;
     font-weight: bold;
     padding: 15px 0;
+}
+
+.premios-producto{
+    font-size: 90%;
+    text-align: center;
+    color: white;
+    background-color: rgb(199, 149, 22);
+    border-radius: 5%;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-top: 10px;
+    transition: all 300ms;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.premios-producto:hover{
+    background-color: rgb(148, 108, 8);
+}
+
+.descuento-producto{
+    background-color: #6d0f1c;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 6% 2%;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    opacity: 0.4;
+    transition: all 300ms;
+
+}
+
+.descuento-producto:hover{
+    opacity: 0.6;
 }
 
 .unidades-producto{
