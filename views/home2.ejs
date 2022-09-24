@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles-home.css">
+    <link rel="stylesheet" href="/css/styles-home2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
     <title>OracleWines-Inicio</title>
     <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+    <script src="/js/home.js"></script>
 </head>
 <body>
     <%- include('./partials/header') %>
@@ -50,23 +51,29 @@
 
         <section class="vinos-premiados">
             <h2>VINOS PREMIADOS</h2>
-            
-            <div class="lista-premiados">
-                <% for(let i = 0 ; i < winnerProducts.length; i++){%>
-                    <article class="producto">
-                        <img class="imagen-vino" src="/images/<%= winnerProducts[i].image%>" alt="Vino">
-                        <% if (winnerProducts[i].discount > 0) { %>
-                            <div class="descuento-producto"> -<%= winnerProducts[i].discount%>% OFF</div>
-                        <% } %>
-                        <div class="detalle-producto">
-                            <div class="nombre-producto"><%= winnerProducts[i].name%></div>
-                            <div class="premios-producto">Premios: <%= winnerProducts[i].awards%></div>
-                            <div class="precio-producto">$<%= winnerProducts[i].price%></div>
-                            <a href="/products/detail/<%= winnerProducts[i].product_id%>"><button class="boton-eliminar">Ver producto</button></a>
-                        </div>
-                    </article>
-                <% } %>
-
+            <div class="carrusel">
+                
+                <div class="lista-premiados">
+                    
+                    <% for(let i = 0 ; i < winnerProducts.length; i++){%>
+                        <article class="producto">
+                            <img class="imagen-vino" src="/images/<%= winnerProducts[i].image%>" alt="Vino">
+                            <% if (winnerProducts[i].discount > 0) { %>
+                                <div class="descuento-producto"> -<%= winnerProducts[i].discount%>% OFF</div>
+                            <% } %>
+                            <div class="detalle-producto">
+                                <div class="nombre-producto"><%= winnerProducts[i].name%></div>
+                                <div class="premios-producto">Premios: <%= winnerProducts[i].awards%></div>
+                                <div class="precio-producto">$<%= winnerProducts[i].price%></div>
+                                <a href="/products/detail/<%= winnerProducts[i].product_id%>"><button class="boton-eliminar">Ver producto</button></a>
+                            </div>
+                        </article>
+                    <% } %>
+                </div>
+           </div>
+            <div class="botones-carrusel">
+                <button role="button" id="boton-izquierda" class="boton-izquierda"><i class="fas fa-angle-left"></i></button>
+                <button role="button" id="boton-derecha" class="boton-derecha"><i class="fas fa-angle-right"></i></button>
             </div>
             <div class="boton-ver-mas"><button>Ver más</button></div>
         </section>

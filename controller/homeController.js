@@ -22,6 +22,20 @@ let homeController = {
                 res.render(path.resolve(__dirname, "../views/home.ejs"), {winnerProducts});
             });
     },
+    home2: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                awards: {[db.Sequelize.Op.gt] : 0}
+            },
+            order: [
+                ['awards', 'DESC']
+            ]
+        })
+            .then(winnerProducts => {
+                res.render(path.resolve(__dirname, "../views/home2.ejs"), {winnerProducts});
+            });
+    },
 }
 
 module.exports = homeController
