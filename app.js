@@ -9,6 +9,9 @@ const cookies = require('cookie-parser');
 const publicPath = path.resolve(__dirname, "./public");
 app.use ( express.static(publicPath));
 
+//Aquí llamo a la ruta de las api de user
+const apiUsersRouter = require('./routes/api/user')
+
 app.use (methodOverride("_method")) // configuracion para el metodo PUT y DELETE
 //configuracion para el req.body
 app.use(express.urlencoded({extended:false}))
@@ -34,6 +37,10 @@ app.use('/', homeRouter);
 app.use("/products",productsRouter);
 app.use("/users",usersRouter);
 
+
+
+//Aquí creo la colección de mis recursos de movies (APIs)
+app.use('/api/users', apiUsersRouter);
 
 
 //servidor
