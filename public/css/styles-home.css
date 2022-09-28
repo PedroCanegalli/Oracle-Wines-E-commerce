@@ -303,6 +303,7 @@ button{
     color: white;
     font-weight: bold;
     transition: all 450ms;
+    cursor: pointer;
 }
 
 button:hover{

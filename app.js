@@ -12,6 +12,9 @@ app.use ( express.static(publicPath));
 //Aquí llamo a la ruta de las api de user
 const apiUsersRouter = require('./routes/api/user')
 
+//Aquí llamo a la ruta de las api de producs
+const apiProductsRouter = require('./routes/api/productsAPI.routes')
+
 app.use (methodOverride("_method")) // configuracion para el metodo PUT y DELETE
 //configuracion para el req.body
 app.use(express.urlencoded({extended:false}))
@@ -42,6 +45,7 @@ app.use("/users",usersRouter);
 //Aquí creo la colección de mis recursos de movies (APIs)
 app.use('/api/users', apiUsersRouter);
 
+app.use('/api/products', apiProductsRouter);
 
 //servidor
 app.listen(3100,() => {

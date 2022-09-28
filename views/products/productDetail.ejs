@@ -22,27 +22,17 @@
         <main>
             <section class="central">
                 <div class="imagen">
+
                     <img src="/images/<%= productEncontrado.image%>" alt="Imagen del producto">
                 </div>
 
                 <div class="descripcionProducto">
                    
                     <h1> <%= productEncontrado.name%> </h1>
-                    <h3> $<%= productEncontrado.price%> </h3>
-                    <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad" min="1" max=<%= productEncontrado.stock%>>
-                    <input type="submit" name="submit" value="Agregar al carrito">
-                    <input type="submit" name="submit" value="Comprar">
-                   
-                    <a href="/products/edit/<%= productEncontrado.product_id%>"><input type="submit" name="edit" value="Editar"></a>
-                    
-                    <form method="POST" action="/products/delete/<%= productEncontrado.product_id%>?_method=DELETE">
-                
-                    <input type="submit" name="destroy" value="Borrar">
+                    <% if (productEncontrado.awards > 0) { %>
+                        <h4 class="premios">Premios: <%= productEncontrado.awards%></h4>
+                    <% } %>
 
-                    </form>
-                   
-                    <h2><%= productEncontrado.description%></h2>
-                    
                     <form>
                         <p class="clasificacion">
                           <input id="radio1" type="radio" name="estrellas" value="5">
@@ -57,12 +47,35 @@
                           <label for="radio5">★</label>
                         </p>
                       </form>
+                    
+                    <div class="precio-descuento">
+                        <h2 class="precio"> $<%= productEncontrado.price%> </h2>
+                        <% if (productEncontrado.discount > 0) { %>
+                            <h4 class="descuento-producto"> -<%= productEncontrado.discount%>% OFF</h4>
+                        <% } %>
+                        
+                    </div>
+                    <h4> Stock disponible: <%= productEncontrado.stock%> </h4>
 
+                    <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad a comprar" min="1" max=<%= productEncontrado.stock%>>
+                    <input type="submit" name="submit" value="Agregar al carrito">
+                    <input type="submit" name="submit" value="Comprar">
+                   
+                    <a href="/products/edit/<%= productEncontrado.product_id%>"><input type="submit" name="edit" value="Editar"></a>
+                    
+                    <form method="POST" action="/products/delete/<%= productEncontrado.product_id%>?_method=DELETE">
+                
+                    <input type="submit" name="destroy" value="Borrar">
+
+                    </form>
+                   
+                    <h4 class="descripcion"><%= productEncontrado.description%></h4>
+                    
                 </div>
                 
             </section>
             <div class="masDescripcion">
-                <h3><%= productEncontrado.extra_description%></h3>
+                <h4><%= productEncontrado.extra_description%></h4>
             </div>
 
         </main>
