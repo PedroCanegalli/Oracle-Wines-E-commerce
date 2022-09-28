@@ -24,12 +24,33 @@ const userAPIController = {
                     total: users.length,
                     url: 'api/users'
                 },
-                data: {
-                    
-                }
+                data: users
             }
                 res.json(respuesta);
             })
+    },
+    'detail': (req, res) => {
+        db.User.findByPk(req.params.id)
+            .then(user => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        url: '/api/actor/:id'
+                    },
+                    data: {
+                        "user_id": user.user_id,
+                        "name": user.name,
+                        "userName": user.userName,
+                        "email": user.email,
+                        "bday": user.bday,
+                        "invoice_id": user.invoice_id,
+                        "interest_id": user.interest_id,
+                        "picture": "http://localhost:3100/images/users/"+ user.picture
+
+                    }
+                }
+                res.json(respuesta);
+        });
     }
 }   
 
