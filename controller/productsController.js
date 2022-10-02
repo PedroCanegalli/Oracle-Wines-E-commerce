@@ -151,7 +151,54 @@ const productsController = {
 			console.log(products)
 			res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado:products});
 		}) 
-	}
+	},
+	andinos: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                category_id: 1
+            }
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/andinos"), {products});
+            });
+    },
+	patagonicos: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                category_id: 2
+            }
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/patagonicos"), {products});
+            });
+    },
+	importados: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                category_id: 3
+            }
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/importados"), {products});
+            });
+    },
+	premiados: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                awards: {[db.Sequelize.Op.gt] : 0}
+            },
+            order: [
+                ['awards', 'DESC']
+            ]
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/premiados"), {products});
+            });
+    }
 }
 
 

@@ -76,9 +76,9 @@ header{
     height: 2px;
     width: 100%;
     background-color:#bebebe;
-   transform-origin: right;
-   transform: scaleX(0);
-   transition: transform 500ms ease-in-out;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 500ms ease-in-out;
 }
 .seccion-menu:hover:after{
     transform-origin: left;
@@ -128,6 +128,26 @@ header button:hover{
     border: solid 3px lightgrey;
 }
 
+.tipos-vinos{
+    display: none;
+    list-style: none;
+    position: absolute;
+    background-color: hsl(352, 76%, 24%);
+    color: white;
+    padding-top: 10px;
+    
+}
+
+#secciones{
+    position: relative;
+    transition: all 450ms;
+}
+
+#secciones:hover .tipos-vinos{
+    display: block;
+    justify-content: left;
+        
+}
 
 
 @media (min-width: 425px){

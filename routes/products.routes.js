@@ -32,5 +32,11 @@ router.delete("/delete/:id", productsController.destroy)
 router.get("/cart", productsController.carrito)
 // buscar producto
 router.post("/buscar/detail", productsController.buscar)
+//Vistas por categoría
+router.get("/andinos", productsController.andinos)
+router.get("/patagonicos", productsController.patagonicos)
+router.get("/importados", productsController.importados)
+//Vista vinos premiados
+router.get("/premiados", productsController.premiados)
 
 module.exports = router;

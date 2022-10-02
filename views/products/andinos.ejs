@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style-catalogo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Lato&family=Nunito&display=swap" rel="stylesheet">
+    <title>Oracle Wines - Carrito</title>
+    <link rel="icon" type="image/jpg" href="/images/glass-and-bottle-of-wine-icon.jpg" />
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <h2>Nuestro catalogo de vinos Andinos</h2>
+
+        <section class="lista-productos">
+            <% for(let i = 0 ; i < products.length; i++){%>
+            <article class="producto">
+                <img class="imagen-vino" src="/images/<%= products[i].image%>" alt="Vino">
+                <% if (products[i].discount > 0) { %>
+                    <div class="descuento-producto"> -<%= products[i].discount%>% OFF</div>
+                <% } %>
+                <div class="detalle-producto">
+                    <div class="nombre-producto"><%= products[i].name%></div>
+                    <% if (products[i].awards > 0) { %>
+                        <div class="premios-producto">
+                            Premios: <%= products[i].awards%>
+                        </div>
+                    <% } %>
+                    <div class="precio-producto">$<%= products[i].price%></div>
+                    <a href="/products/detail/<%= products[i].product_id%>"><button class="boton-eliminar">Ver producto</button></a>
+                </div>
+            </article>
+            <% } %>
+
+        </section>
+
+        
+    <%- include('../partials/footer') %>
+
+</body>
+</html>
