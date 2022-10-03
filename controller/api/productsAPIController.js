@@ -55,6 +55,7 @@ const productsController = {
 													url: 'api/products'
 												},
 												data: products
+												
 											}
 											res.json(respuesta);
 										})					

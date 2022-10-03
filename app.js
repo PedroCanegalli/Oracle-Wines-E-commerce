@@ -5,6 +5,8 @@ const methodOverride= require("method-override")
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
+//CORS
+const cors = require("cors");
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use ( express.static(publicPath));
@@ -39,7 +41,7 @@ let homeRouter = require("./routes/home.routes");
 app.use('/', homeRouter);
 app.use("/products",productsRouter);
 app.use("/users",usersRouter);
-
+app.use(cors())
 
 
 //Aquí creo la colección de mis recursos de movies (APIs)

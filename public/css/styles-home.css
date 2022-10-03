@@ -195,6 +195,7 @@ main h2{
     transition: all 450ms;
     text-align: center;
     margin-bottom: 15px;
+    text-decoration: none;
 
 }
 

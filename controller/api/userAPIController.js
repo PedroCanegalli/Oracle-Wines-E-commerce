@@ -30,26 +30,30 @@ const userAPIController = {
             })
     },
     'detail': (req, res) => {
+        
         db.User.findByPk(req.params.id)
-            .then(user => {
+       
+            .then(users => {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: '/api/actor/:id'
+                        url: '/api/users/:id'
                     },
                     data: {
-                        "user_id": user.user_id,
-                        "name": user.name,
-                        "userName": user.userName,
-                        "email": user.email,
-                        "bday": user.bday,
-                        "invoice_id": user.invoice_id,
-                        "interest_id": user.interest_id,
-                        "picture": "http://localhost:3100/images/users/"+ user.picture
+                        "user_id": users.user_id,
+                        "name": users.name,
+                        "userName": users.userName,
+                        "email": users.email,
+                        "bday": users.bday,
+                        "invoice_id": users.invoice_id,
+                        "interest_id": users.interest_id,
+                        "picture": "http://localhost:3100/images/users/"+ users.picture
 
                     }
+                    
                 }
                 res.json(respuesta);
+                
         });
     }
 }   
