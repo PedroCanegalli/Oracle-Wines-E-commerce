@@ -68,7 +68,9 @@ const productsController = {
 
 		})
     },'detail': (req, res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id,{
+			include: ['category']
+		})
             .then(product => {
                 let respuesta = {
                     meta: {
@@ -81,7 +83,7 @@ const productsController = {
                         "price": product.price,
                         "discount": product.discount,
                         "stock": product.stock,
-                        "category_id": product.category_id,
+                        "category_id": [product.category_id, product.category.name],
                         "awards": product.awards,
 						"description": product.description,
 						"extra_description": product.extra_description,
