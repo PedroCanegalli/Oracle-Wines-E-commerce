@@ -36,7 +36,9 @@ router.post("/buscar/detail", productsController.buscar)
 router.get("/andinos", productsController.andinos)
 router.get("/patagonicos", productsController.patagonicos)
 router.get("/importados", productsController.importados)
-//Vista vinos premiados
+//Vista vinos especiales
 router.get("/premiados", productsController.premiados)
+router.get("/recomendados", productsController.recomendados)
+router.get("/ofertas", productsController.ofertas)
 
 module.exports = router;

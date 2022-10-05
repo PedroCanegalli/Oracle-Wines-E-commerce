@@ -32,7 +32,12 @@
                     <% if (productEncontrado.awards > 0) { %>
                         <h4 class="premios">Premios: <%= productEncontrado.awards%></h4>
                     <% } %>
+                    
+                    <h4 class="valoracion-expertos">Valoración por Expertos:</h4>
 
+                    <img src="/images/<%=productEncontrado.rate%> Estrellas.png" class="star-rating">
+                    
+                    <h4>Tu valoración:</h4>
                     <form>
                         <p class="clasificacion">
                           <input id="radio1" type="radio" name="estrellas" value="5">
@@ -60,15 +65,17 @@
                     <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad a comprar" min="1" max=<%= productEncontrado.stock%>>
                     <input type="submit" name="submit" value="Agregar al carrito">
                     <input type="submit" name="submit" value="Comprar">
-                   
-                    <a href="/products/edit/<%= productEncontrado.product_id%>"><input type="submit" name="edit" value="Editar"></a>
                     
-                    <form method="POST" action="/products/delete/<%= productEncontrado.product_id%>?_method=DELETE">
-                
-                    <input type="submit" name="destroy" value="Borrar">
+                    <% if (locals.isLogged) { %>
+                        <a href="/products/edit/<%= productEncontrado.product_id%>"><input type="submit" name="edit" value="Editar"></a>
+                        
+                        <form method="POST" action="/products/delete/<%= productEncontrado.product_id%>?_method=DELETE">
+                    
+                        <input type="submit" name="destroy" value="Borrar">
 
-                    </form>
-                   
+                        </form>
+                    <% } %>
+                    
                     <h4 class="descripcion"><%= productEncontrado.description%></h4>
                     
                 </div>

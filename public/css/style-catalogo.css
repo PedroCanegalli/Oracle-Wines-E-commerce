@@ -140,6 +140,28 @@ button:hover{
     display: none;
 }
 
+.titulo-estrellas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.estrellas{
+    width: 150px;
+    
+}
+
+.vinos-5-estrellas{
+    text-align: center;
+}
+
+.ofertas-titulo{
+    margin: auto;
+    text-align: center;
+}
+
 @media (min-width: 425px){
 
 

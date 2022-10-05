@@ -167,6 +167,15 @@ div input[type="submit"]:hover{
     color: grey;
   }
 
+  .star-rating{
+    width: 175px;
+    padding: 10px;
+  }
+
+  .valoracion-expertos{
+    padding-top: 10px;
+  }
+
 
 @media (min-width: 769px){
   main section.central{

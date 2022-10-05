@@ -142,7 +142,7 @@ const userController = {
 
 				return res.redirect("user");
 			}
-			//console.log(req.session)
+			console.log(req.session)
 			//Mensaje de error ante password incorrecto
 			return res.render(path.resolve(__dirname, "../views/users/login.ejs"), {
 				errors:

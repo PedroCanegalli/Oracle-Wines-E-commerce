@@ -198,7 +198,32 @@ const productsController = {
             .then(products => {
                 res.render(path.resolve(__dirname, "../views/products/premiados"), {products});
             });
-    }
+    },
+	recomendados: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                rate: 5
+            }
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/recomendados"), {products});
+            });
+    },
+	ofertas: (req, res) => {
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                discount: {[db.Sequelize.Op.gte] : 15}
+            },
+            order: [
+                ['discount', 'DESC']
+            ]
+        })
+            .then(products => {
+                res.render(path.resolve(__dirname, "../views/products/ofertas"), {products});
+            });
+    },
 }
 
 
