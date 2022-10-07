@@ -25,3 +25,7 @@ Pedro Canegalli
 Patricio Pellegrino
 Mayra Roa
 Franco Mauricio Cuello
+
+
+LINK DEL DASHBOARD DE REACT : 
+https://github.com/francmauric/proyecto-react.git
