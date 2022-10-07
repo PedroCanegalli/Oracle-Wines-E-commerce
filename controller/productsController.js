@@ -23,8 +23,8 @@ const productsController = {
             {
                 include : ['category']
             })
-            .then(productEncontrado => { 
-                res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado});
+            .then(productEncontrado => {
+				res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado});
             });
     },
     add: function (req, res) {
@@ -149,7 +149,10 @@ const productsController = {
 		})
 		.then(([products]) =>{
 			console.log(products)
-			res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado:products});
+			if(products != null){
+				res.render(path.resolve(__dirname, "../views/products/productDetail.ejs"), {productEncontrado:products});
+			}else res.render(path.resolve(__dirname, "../views/products/no-encontrado.ejs"));
+			
 		}) 
 	},
 	andinos: (req, res) => {
